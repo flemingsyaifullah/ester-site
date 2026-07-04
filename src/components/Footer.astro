@@ -1,0 +1,50 @@
+---
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+---
+<footer class="border-t border-line bg-blueprint-dark text-paper">
+  <div class="blueprint-grid">
+    <div class="mx-auto max-w-6xl px-5 py-14">
+      <div class="grid gap-10 md:grid-cols-4">
+        <div class="md:col-span-2">
+          <div class="mb-3 flex items-center gap-2">
+            <span class="font-display text-lg font-bold text-paper">ESTER GLOBALINDO</span>
+            <span class="rounded-sm bg-stamp px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper">PERIZINAN</span>
+          </div>
+          <p class="max-w-sm font-body text-sm leading-relaxed text-blueprint-light">
+            Ester Globalindo adalah konsultan pengurusan Persetujuan Bangunan Gedung (PBG) dan
+            Sertifikat Laik Fungsi (SLF) untuk bangunan komersial, industri, dan hunian, berbasis di
+            Surabaya dan melayani seluruh Jawa Timur.
+          </p>
+        </div>
+
+        <div>
+          <p class="mb-3 font-mono text-xs uppercase tracking-widest text-blueprint-light">Layanan</p>
+          <ul class="space-y-2 font-body text-sm">
+            <li><a href="/jasa-pbg" class="hover:text-white">Jasa Pengurusan PBG</a></li>
+            <li><a href="/jasa-slf" class="hover:text-white">Jasa Pengurusan SLF</a></li>
+            <li><a href="/blog" class="hover:text-white">Panduan &amp; Artikel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="mb-3 font-mono text-xs uppercase tracking-widest text-blueprint-light">Hubungi Kami</p>
+          <ul class="space-y-2 font-body text-sm">
+            <li>
+              <a href={`https://wa.me/${waNumber}?text=${waMsg}`} target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                0822 3002 7878 (WhatsApp)
+              </a>
+            </li>
+            <li><a href="mailto:ester.globalindo@gmail.com" class="hover:text-white">ester.globalindo@gmail.com</a></li>
+            <li><a href="https://instagram.com/ester.globalindo" target="_blank" rel="noopener noreferrer" class="hover:text-white">@ester.globalindo</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 font-mono text-xs text-blueprint-light sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} Ester Globalindo. Seluruh hak cipta dilindungi.</p>
+        <p>PBG mengganti IMB sejak berlakunya UU Cipta Kerja.</p>
+      </div>
+    </div>
+  </div>
+</footer>

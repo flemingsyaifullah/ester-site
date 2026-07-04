@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://globalindoperizinan.id/sitemap-index.xml

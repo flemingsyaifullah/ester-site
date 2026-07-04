@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Stamp from "../components/Stamp.astro";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin tahu lebih lanjut tentang Ester Globalindo.");
+
+const nilai = [
+  { title: "Transparan", desc: "Setiap tahap proses dan status dokumen Anda kami laporkan secara berkala, tanpa istilah teknis yang membingungkan." },
+  { title: "Dikerjakan oleh Ahli Bersertifikat", desc: "Data teknis arsitektur, struktur, dan MEP dikerjakan oleh tim dengan SKK yang sesuai bidangnya." },
+  { title: "Fokus pada Kelengkapan Sejak Awal", desc: "Sebagian besar keterlambatan proses PBG/SLF terjadi karena dokumen kurang lengkap sejak pengajuan pertama — ini yang kami cegah sejak awal." },
+];
+---
+<Layout
+  title="Tentang Kami | Ester Globalindo"
+  description="Ester Globalindo adalah konsultan jasa pengurusan PBG dan SLF berbasis di Surabaya, melayani seluruh Jawa Timur, mendampingi pemilik bangunan dari penyiapan dokumen hingga penerbitan izin."
+  path="/tentang-kami"
+>
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Tentang kami</p>
+          <h1 class="mt-2 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+            Pendamping Perizinan Bangunan Anda
+          </h1>
+          <p class="mt-5 max-w-lg font-body text-blueprint-light leading-relaxed">
+            Berbasis di <span class="text-paper font-medium">Surabaya</span> dan melayani seluruh Jawa
+            Timur, Ester Globalindo membantu pemilik bangunan komersial, industri, dan hunian
+            menyiapkan serta mengurus dokumen PBG dan SLF — dari penyiapan dokumen teknis,
+            pendampingan konsultasi dengan TPA/TPT, sampai izin resmi diterbitkan.
+          </p>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <Stamp size={160} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Cara kami bekerja</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">Prinsip Kerja Kami</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {nilai.map((n) => (
+          <div class="border-t-2 border-stamp pt-4">
+            <h3 class="font-display font-bold text-ink">{n.title}</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{n.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line bg-paper-dim text-center">
+    <div class="mx-auto max-w-2xl px-5 py-16">
+      <h2 class="text-balance font-display text-2xl font-bold text-ink">
+        Ada proyek yang butuh izin bangunan? Ceritakan kebutuhan Anda ke kami.
+      </h2>
+      <a
+        href={`https://wa.me/${waNumber}?text=${waMsg}`}
+        target="_blank" rel="noopener noreferrer"
+        class="mt-6 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper"
+      >
+        Hubungi Kami
+      </a>
+    </div>
+  </section>
+</Layout>

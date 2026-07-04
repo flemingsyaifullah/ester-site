@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+---
+<Layout
+  title="Kontak Kami | Ester Globalindo"
+  description="Hubungi Ester Globalindo untuk konsultasi jasa pengurusan PBG dan SLF melalui WhatsApp, email, atau Instagram."
+  path="/kontak"
+>
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-3xl px-5 py-16 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Kontak</p>
+        <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">Mari Berdiskusi</h1>
+        <p class="mt-4 font-body text-blueprint-light">
+          Ceritakan jenis bangunan dan lokasi proyek Anda, kami bantu petakan dokumen yang perlu disiapkan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto grid max-w-3xl gap-4 px-5 py-16 sm:grid-cols-3">
+      <a
+        href={`https://wa.me/${waNumber}?text=${waMsg}`}
+        target="_blank" rel="noopener noreferrer"
+        class="rounded-sm border-2 border-ink p-6 text-center hover:bg-ink hover:text-paper"
+      >
+        <p class="font-mono text-xs uppercase tracking-widest text-stamp">WhatsApp</p>
+        <p class="mt-2 font-display font-bold">0822 3002 7878</p>
+      </a>
+      <a
+        href="mailto:ester.globalindo@gmail.com"
+        class="rounded-sm border-2 border-ink p-6 text-center hover:bg-ink hover:text-paper"
+      >
+        <p class="font-mono text-xs uppercase tracking-widest text-stamp">Email</p>
+        <p class="mt-2 font-display font-bold break-words">ester.globalindo@gmail.com</p>
+      </a>
+      <a
+        href="https://instagram.com/ester.globalindo"
+        target="_blank" rel="noopener noreferrer"
+        class="rounded-sm border-2 border-ink p-6 text-center hover:bg-ink hover:text-paper"
+      >
+        <p class="font-mono text-xs uppercase tracking-widest text-stamp">Instagram</p>
+        <p class="mt-2 font-display font-bold">@ester.globalindo</p>
+      </a>
+    </div>
+  </section>
+</Layout>

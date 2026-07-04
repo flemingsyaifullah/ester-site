@@ -1,0 +1,197 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Stamp from "../components/Stamp.astro";
+import { daftarKota } from "../data/kota";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+
+const layanan = [
+  {
+    href: "/jasa-pbg",
+    kode: "PBG",
+    nama: "Persetujuan Bangunan Gedung",
+    desc: "Izin pelaksanaan konstruksi, wajib disiapkan sebelum pembangunan dimulai — mulai dari dokumen tanah sampai perhitungan struktur & MEP.",
+  },
+  {
+    href: "/jasa-slf",
+    kode: "SLF",
+    nama: "Sertifikat Laik Fungsi",
+    desc: "Bukti bahwa bangunan yang sudah selesai dibangun benar-benar laik dan aman untuk dioperasikan atau dihuni.",
+  },
+];
+
+const proses = [
+  "Menyiapkan dokumen tanah, PKKPR & KRK, dan dokumen lingkungan",
+  "Mendaftar & mengunggah dokumen pada sistem SIMBG",
+  "Verifikasi dokumen oleh Dinas Teknis",
+  "Konsultasi dokumen bersama TPA/TPT",
+  "Revisi & konsultasi ulang hingga disetujui",
+  "Upload berkas final, retribusi, dan penerbitan PBG",
+];
+
+const alasan = [
+  { angka: "12+", label: "kategori dokumen teknis yang kami kelola untuk Anda" },
+  { angka: "9", label: "tahap pengurusan resmi, kami dampingi dari awal sampai terbit" },
+  { angka: "6", label: "kota layanan di Jawa Timur, fokus utama Surabaya" },
+];
+---
+<Layout
+  title="Jasa Pengurusan PBG & SLF Terpercaya | Ester Globalindo"
+  description="Konsultan jasa pengurusan Persetujuan Bangunan Gedung (PBG) dan Sertifikat Laik Fungsi (SLF) untuk bangunan komersial, industri, dan hunian. Berbasis di Surabaya, melayani Sidoarjo, Gresik, Pasuruan, Mojokerto, dan Malang."
+  path="/"
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-blueprint-dark text-paper">
+    <div class="blueprint-grid absolute inset-0"></div>
+    <div class="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-28">
+      <div>
+        <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-blueprint-light">
+          Konsultan PBG &amp; SLF — Berbasis di Surabaya
+        </p>
+        <h1 class="text-balance font-display text-4xl font-bold leading-[1.08] sm:text-5xl md:text-[3.2rem]">
+          Urus PBG &amp; SLF Tanpa Bolak-Balik ke Dinas
+        </h1>
+        <p class="mt-5 max-w-lg font-body text-base leading-relaxed text-blueprint-light sm:text-lg">
+          Kami menyiapkan dokumen, mendampingi konsultasi TPA/TPT, sampai izin bangunan Anda
+          benar-benar terbit — dari pengajuan pertama sampai stempel disetujui.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href={`https://wa.me/${waNumber}?text=${waMsg}`}
+            target="_blank" rel="noopener noreferrer"
+            class="rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
+          >
+            Konsultasi Gratis Sekarang
+          </a>
+          <a
+            href="/jasa-pbg"
+            class="rounded-sm border-2 border-blueprint-light px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
+          >
+            Lihat Layanan PBG
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <Stamp size={180} />
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS / ALASAN -->
+  <section class="border-b border-line bg-paper">
+    <div class="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
+      {alasan.map((a) => (
+        <div class="border-l-2 border-stamp pl-4">
+          <p class="font-display text-4xl font-bold text-ink">{a.angka}</p>
+          <p class="mt-1 font-body text-sm text-slate">{a.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- KENAPA PENTING -->
+  <section class="paper-grid bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Kenapa ini penting</p>
+      <h2 class="mt-2 max-w-2xl text-balance font-display text-3xl font-bold text-ink sm:text-4xl">
+        Bangunan tanpa izin yang sah bukan cuma soal administrasi.
+      </h2>
+      <p class="mt-4 max-w-2xl font-body text-slate">
+        PBG merupakan pengganti sistem IMB sejak berlakunya UU Cipta Kerja, dan berfungsi sebagai
+        instrumen pengendalian tata ruang — memeriksa kesesuaian rencana teknis dengan fungsi
+        bangunan, tata bangunan (KDB &amp; KLB), serta standar keandalan bangunan. Tanpa PBG,
+        proses SLF dan berbagai izin operasional lain juga ikut terhambat.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section class="border-y border-line bg-paper-dim">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Layanan kami</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">Dua Izin, Satu Pendamping</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {layanan.map((l) => (
+          <a href={l.href} class="group block rounded-sm border-2 border-ink bg-paper p-8 transition-colors hover:bg-ink">
+            <span class="font-mono text-xs tracking-widest text-stamp">{l.kode}</span>
+            <h3 class="mt-3 font-display text-2xl font-bold text-ink group-hover:text-paper">{l.nama}</h3>
+            <p class="mt-3 font-body text-sm leading-relaxed text-slate group-hover:text-blueprint-light">{l.desc}</p>
+            <span class="mt-5 inline-block font-mono text-xs uppercase tracking-wider text-ink group-hover:text-paper">
+              Lihat detail &rarr;
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSES -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Tahap pengurusan</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">Alur Kerja Kami</h2>
+      <ol class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {proses.map((p, i) => (
+          <li class="flex gap-4 border-t border-line pt-4">
+            <span class="font-mono text-2xl font-medium text-line">0{i + 1}</span>
+            <p class="font-body text-sm leading-relaxed text-ink">{p}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-8 font-body text-sm text-slate">
+        Lihat rincian dokumen yang perlu disiapkan di halaman <a href="/jasa-pbg" class="underline underline-offset-2 hover:text-ink">Jasa PBG</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- AREA LAYANAN -->
+  <section class="border-t border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Area layanan</p>
+        <h2 class="mt-2 font-display text-3xl font-bold sm:text-4xl">Berbasis di Surabaya, Melayani Jawa Timur</h2>
+        <p class="mt-3 max-w-xl font-body text-sm text-blueprint-light">
+          Surabaya adalah fokus utama kami — respons tercepat dan koordinasi paling intensif dengan
+          dinas teknis ada di sini. Kami juga melayani kota-kota sekitarnya.
+        </p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {daftarKota.map((k) => (
+            <a
+              href={`/area-layanan/${k.slug}`}
+              class={`relative rounded-sm border p-5 transition-colors ${
+                k.utama
+                  ? "border-stamp bg-stamp/10 hover:bg-stamp/15"
+                  : "border-white/15 hover:bg-white/5"
+              }`}
+            >
+              {k.utama && (
+                <span class="absolute -top-3 left-5 rounded-sm bg-stamp px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-paper">
+                  Fokus Utama
+                </span>
+              )}
+              <h3 class="font-display text-lg font-bold">{k.nama}</h3>
+              <p class="mt-2 font-body text-xs leading-relaxed text-blueprint-light">{k.dinas}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16 text-center">
+      <h2 class="mx-auto max-w-xl text-balance font-display text-3xl font-bold text-ink sm:text-4xl">
+        Konsultasikan kebutuhan izin bangunan Anda, tanpa biaya di awal.
+      </h2>
+      <a
+        href={`https://wa.me/${waNumber}?text=${waMsg}`}
+        target="_blank" rel="noopener noreferrer"
+        class="mt-7 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
+      >
+        Chat WhatsApp Sekarang
+      </a>
+    </div>
+  </section>
+</Layout>

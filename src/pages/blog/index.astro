@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { posts } from "../../data/blog";
+
+const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+---
+<Layout
+  title="Panduan & Artikel PBG, SLF, dan Perizinan Bangunan | Ester Globalindo"
+  description="Kumpulan panduan seputar PBG, SLF, dan proses perizinan bangunan gedung di Indonesia — ditulis untuk membantu pemilik bangunan memahami prosesnya."
+  path="/blog"
+>
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-4xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Panduan</p>
+        <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">Blog Perizinan Bangunan</h1>
+        <p class="mt-5 max-w-xl font-body text-blueprint-light">
+          Kumpulan artikel seputar PBG, SLF, dan proses perizinan bangunan — ditulis untuk membantu
+          Anda memahami setiap tahapnya sebelum berkonsultasi dengan kami.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <div class="grid gap-6">
+        {sorted.map((p) => (
+          <a href={`/blog/${p.slug}`} class="group block rounded-sm border border-line bg-paper-dim p-6 transition-colors hover:border-ink">
+            <p class="font-mono text-xs uppercase tracking-wider text-slate">
+              {new Date(p.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })} · {p.readTime}
+            </p>
+            <h2 class="mt-2 font-display text-xl font-bold text-ink group-hover:underline">{p.title}</h2>
+            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{p.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

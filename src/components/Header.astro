@@ -1,0 +1,69 @@
+---
+const nav = [
+  { href: "/jasa-pbg", label: "Jasa PBG" },
+  { href: "/jasa-slf", label: "Jasa SLF" },
+  { href: "/area-layanan/surabaya", label: "Area Layanan" },
+  { href: "/blog", label: "Blog" },
+  { href: "/tentang-kami", label: "Tentang Kami" },
+];
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+---
+<header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <a href="/" class="flex items-center gap-2">
+      <span class="font-display text-lg font-bold tracking-tight text-ink">ESTER GLOBALINDO</span>
+      <span class="rounded-sm bg-blueprint px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper">PERIZINAN</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex">
+      {nav.map((item) => (
+        <a href={item.href} class="font-body text-sm text-slate transition-colors hover:text-ink">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href={`https://wa.me/${waNumber}?text=${waMsg}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden rounded-sm border-2 border-ink px-4 py-2 font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-block"
+    >
+      Konsultasi Gratis
+    </a>
+
+    <button id="menuBtn" class="md:hidden" aria-label="Buka menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobileMenu" class="hidden flex-col gap-1 border-t border-line px-5 py-3 md:hidden">
+    {nav.map((item) => (
+      <a href={item.href} class="rounded-sm px-2 py-2 font-body text-sm text-slate hover:bg-paper-dim hover:text-ink">
+        {item.label}
+      </a>
+    ))}
+    <a
+      href={`https://wa.me/${waNumber}?text=${waMsg}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-2 rounded-sm bg-ink px-4 py-2 text-center font-mono text-xs font-medium uppercase tracking-wider text-paper"
+    >
+      Konsultasi Gratis via WhatsApp
+    </a>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+  btn?.addEventListener("click", () => {
+    const isHidden = menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+    btn.setAttribute("aria-expanded", String(isHidden));
+  });
+</script>

@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { daftarKota } from "../../data/kota";
+
+export function getStaticPaths() {
+  return daftarKota.map((k) => ({
+    params: { kota: k.slug },
+    props: { kota: k },
+  }));
+}
+
+const { kota } = Astro.props;
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent(`Halo, saya ingin konsultasi soal pengurusan PBG/SLF di ${kota.nama}.`);
+const kotaLain = daftarKota.filter((k) => k.slug !== kota.slug);
+---
+<Layout
+  title={`Jasa Pengurusan PBG & SLF di ${kota.nama} | Ester Globalindo`}
+  description={`Konsultan jasa pengurusan PBG dan SLF di ${kota.nama}. Kami dampingi mulai dari penyiapan dokumen hingga koordinasi dengan ${kota.dinas}.`}
+  path={`/area-layanan/${kota.slug}`}
+>
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-4xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Area layanan</p>
+        <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">
+          Jasa PBG &amp; SLF di {kota.nama}
+        </h1>
+        <p class="mt-5 max-w-xl font-body text-blueprint-light">
+          Kami membantu proses pengurusan PBG dan SLF di wilayah {kota.nama}, termasuk koordinasi
+          dokumen dan konsultasi teknis bersama {kota.dinas}.
+        </p>
+        <a
+          href={`https://wa.me/${waNumber}?text=${waMsg}`}
+          target="_blank" rel="noopener noreferrer"
+          class="mt-7 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper"
+        >
+          Konsultasi untuk {kota.nama}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Catatan lapangan</p>
+      <h2 class="mt-2 font-display text-2xl font-bold text-ink">Yang Perlu Diperhatikan di {kota.nama}</h2>
+      <p class="mt-4 max-w-2xl font-body text-slate leading-relaxed">{kota.catatan}</p>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        <a href="/jasa-pbg" class="rounded-sm border-2 border-ink p-6 hover:bg-ink hover:text-paper">
+          <h3 class="font-display font-bold">Detail Jasa PBG &rarr;</h3>
+        </a>
+        <a href="/jasa-slf" class="rounded-sm border-2 border-ink p-6 hover:bg-ink hover:text-paper">
+          <h3 class="font-display font-bold">Detail Jasa SLF &rarr;</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line bg-paper-dim">
+    <div class="mx-auto max-w-4xl px-5 py-14">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Kota lain yang kami layani</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {kotaLain.map((k) => (
+          <a href={`/area-layanan/${k.slug}`} class="rounded-sm border border-ink px-4 py-2 font-body text-sm text-ink hover:bg-ink hover:text-paper">
+            {k.nama}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

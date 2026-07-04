@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan SLF.");
+
+const syarat = [
+  "Dokumen Kepemilikan Tanah",
+  "KTP, NIB, dan Akta Pendirian Perusahaan",
+  "PKKPR dan KRK",
+  "Dokumen Lingkungan",
+  "Pengesahan Site Plan",
+  "Rekomendasi BPBD",
+  "Sertifikat Laik Operasi (SLO)",
+  "Ikatan kerja dengan Badan Usaha Pengkaji Teknis (SKK Arsitektur, Struktur, MEP)",
+];
+
+const dataTeknis = [
+  {
+    kategori: "Arsitektur",
+    items: [
+      "Gambar denah, tampak, potongan, detail pintu & jendela",
+      "Denah lantai, plafon, rangka atap, detail toilet",
+      "Spesifikasi material arsitektur",
+    ],
+  },
+  {
+    kategori: "Struktur",
+    items: [
+      "Gambar denah, pondasi, sloof, kolom, balok, plat lantai",
+      "Detail tangga, lift, atau eskalator",
+      "Spesifikasi material & perhitungan struktur",
+    ],
+  },
+  {
+    kategori: "MEP",
+    items: [
+      "Gambar kelistrikan, penangkal petir, air bersih & kotor, air hujan, drainase",
+      "Proteksi kebakaran, jalur evakuasi, jalur sirkulasi kendaraan",
+      "Pengolahan sampah, spesifikasi material & perhitungan MEP",
+    ],
+  },
+  {
+    kategori: "Kajian Teknis Bangunan",
+    items: [
+      "Laporan pemeriksaan kelaikan dan pemeriksaan berkala",
+      "Gambar As Built terbangun",
+      "Perhitungan struktur dan MEP terbangun, data pengkaji teknis",
+    ],
+  },
+];
+
+const proses = [
+  "Menyiapkan dokumen tanah, PKKPR & KRK, dan dokumen lingkungan",
+  "Mendaftar, membuat permohonan, dan mengunggah dokumen di SIMBG",
+  "Verifikasi dokumen dari Dinas Teknis",
+  "Konsultasi dokumen bersama TPA/TPT",
+  "Revisi dokumen sesuai rekomendasi dan saran TPA/TPT",
+  "Konsultasi ulang hingga mendapat persetujuan TPA/TPT",
+  "Upload berkas final, perhitungan retribusi, dan validasi Dinas Teknis",
+  "Pembayaran retribusi melalui bank atau mobile banking",
+  "Penerbitan dokumen SLF, dan PBG sekaligus jika belum dimiliki",
+];
+---
+<Layout
+  title="Jasa Pengurusan SLF (Sertifikat Laik Fungsi) Surabaya | Ester Globalindo"
+  description="Jasa pengurusan SLF di Surabaya dan Jawa Timur: penyiapan dokumen legalitas, kajian teknis bangunan gedung, pendampingan konsultasi TPA/TPT, sampai penerbitan SLF."
+  path="/jasa-slf"
+>
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-4xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Layanan · SLF</p>
+        <h1 class="mt-2 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+          Sertifikat Laik Fungsi
+        </h1>
+        <p class="mt-5 max-w-xl font-body text-blueprint-light">
+          SLF adalah sertifikat yang diberikan oleh Pemerintah Daerah untuk menyatakan keandalan
+          bangunan gedung sebelum bangunan tersebut digunakan atau dimanfaatkan secara operasional.
+          Diurus setelah konstruksi selesai, namun sebelum bangunan dihuni atau dioperasikan.
+        </p>
+        <a
+          href={`https://wa.me/${waNumber}?text=${waMsg}`}
+          target="_blank" rel="noopener noreferrer"
+          class="mt-7 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper"
+        >
+          Konsultasi Pengurusan SLF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOKUS PEMERIKSAAN -->
+  <section class="bg-paper">
+    <div class="mx-auto grid max-w-4xl gap-8 px-5 py-14 sm:grid-cols-3">
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">Fungsi Utama</h3>
+        <p class="mt-2 font-body text-sm text-slate">Menjamin keamanan, kesehatan, kenyamanan, dan kemudahan bangunan bagi penggunanya.</p>
+      </div>
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">Fokus Pemeriksaan</h3>
+        <p class="mt-2 font-body text-sm text-slate">Kesesuaian hasil pembangunan di lapangan dengan dokumen PBG, serta pengujian instalasi listrik, sistem pemadam kebakaran, dan sanitasi.</p>
+      </div>
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">Masa Berlaku</h3>
+        <p class="mt-2 font-body text-sm text-slate">Biasanya 5 tahun untuk bangunan umum dan 20 tahun untuk bangunan tempat tinggal, dan harus diperpanjang secara berkala.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYARAT DOKUMEN -->
+  <section class="border-y border-line bg-paper-dim">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Persyaratan dokumen</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">Yang Perlu Disiapkan</h2>
+      <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+        {syarat.map((s) => (
+          <li class="flex items-start gap-3 rounded-sm border border-line bg-paper px-4 py-3">
+            <span class="mt-0.5 font-mono text-xs text-stamp">✓</span>
+            <span class="font-body text-sm text-ink">{s}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- DATA TEKNIS -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Data teknis &amp; kajian</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">Empat Bidang yang Kami Kelola</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {dataTeknis.map((d) => (
+          <div class="rounded-sm border-2 border-ink p-6">
+            <h3 class="font-display text-lg font-bold text-ink">{d.kategori}</h3>
+            <ul class="mt-4 space-y-2">
+              {d.items.map((item) => (
+                <li class="font-body text-sm leading-relaxed text-slate">— {item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSES -->
+  <section class="border-t border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-4xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Tahap pengurusan</p>
+        <h2 class="mt-2 font-display text-3xl font-bold">9 Langkah Menuju SLF Terbit</h2>
+        <ol class="mt-8 space-y-4">
+          {proses.map((p, i) => (
+            <li class="flex gap-4 border-b border-white/10 pb-4">
+              <span class="font-mono text-sm text-stamp">{String(i + 1).padStart(2, "0")}</span>
+              <p class="font-body text-sm leading-relaxed">{p}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-6 font-body text-sm text-blueprint-light">
+          Jika bangunan Anda belum memiliki PBG, dokumen PBG akan diterbitkan bersamaan dengan SLF pada tahap akhir proses ini.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper text-center">
+    <div class="mx-auto max-w-2xl px-5 py-16">
+      <h2 class="text-balance font-display text-3xl font-bold text-ink">
+        Pastikan bangunan Anda siap beroperasi secara sah.
+      </h2>
+      <a
+        href={`https://wa.me/${waNumber}?text=${waMsg}`}
+        target="_blank" rel="noopener noreferrer"
+        class="mt-7 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper"
+      >
+        Mulai Konsultasi
+      </a>
+    </div>
+  </section>
+</Layout>
