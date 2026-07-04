@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin meminta brosur lengkap tentang layanan PBG/SLF Ester Globalindo.");
+
+const brosur = [
+  {
+    id: "brosur-pbg",
+    kode: "PBG",
+    judul: "Brosur Layanan PBG",
+    nama: "Persetujuan Bangunan Gedung",
+    desc: "Panduan lengkap layanan pengurusan Persetujuan Bangunan Gedung (PBG) oleh Ester Globalindo — mencakup dokumen yang dibutuhkan, alur proses, dan keunggulan layanan kami.",
+    file: "/brosur/BROSUR PBG ESTER.pdf",
+    namaFile: "BROSUR PBG ESTER.pdf",
+  },
+  {
+    id: "brosur-slf",
+    kode: "SLF",
+    judul: "Brosur Layanan SLF",
+    nama: "Sertifikat Laik Fungsi",
+    desc: "Panduan lengkap layanan pengurusan Sertifikat Laik Fungsi (SLF) oleh Ester Globalindo — mencakup syarat kelengkapan dokumen, tahapan proses, dan manfaat memiliki SLF.",
+    file: "/brosur/BROSUR SLF ESTER.pdf",
+    namaFile: "BROSUR SLF ESTER.pdf",
+  },
+];
+---
+
+<Layout
+  title="Unduh Brosur | Ester Globalindo"
+  description="Unduh brosur layanan PBG dan SLF dari Ester Globalindo. Dapatkan informasi lengkap mengenai pengurusan Persetujuan Bangunan Gedung dan Sertifikat Laik Fungsi."
+  path="/brosur"
+>
+  <!-- HERO -->
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-16 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Unduh Brosur</p>
+        <h1 class="mt-2 text-balance font-display text-4xl font-bold sm:text-5xl">
+          Informasi Layanan dalam Satu Dokumen
+        </h1>
+        <p class="mt-4 mx-auto max-w-xl font-body text-blueprint-light leading-relaxed">
+          Unduh brosur layanan kami dalam format PDF untuk referensi atau dibagikan kepada tim Anda.
+          Tersedia brosur khusus untuk layanan PBG dan SLF.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROSUR CARDS -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <div class="grid gap-8 md:grid-cols-2">
+        {brosur.map((b) => (
+          <div id={b.id} class="flex flex-col rounded-sm border-2 border-ink bg-paper p-8">
+            <!-- Kode badge -->
+            <span class="font-mono text-xs tracking-widest text-stamp">{b.kode}</span>
+            <h2 class="mt-3 font-display text-2xl font-bold text-ink">{b.nama}</h2>
+            <p class="mt-4 font-body text-sm leading-relaxed text-slate flex-1">{b.desc}</p>
+
+            <!-- Divider -->
+            <div class="my-6 border-t border-line"></div>
+
+            <!-- File info -->
+            <div class="flex items-center gap-3 mb-5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-stamp flex-shrink-0">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14,2 14,8 20,8" />
+              </svg>
+              <span class="font-mono text-xs text-slate">{b.namaFile}</span>
+            </div>
+
+            <!-- Download button -->
+            <a
+              href={b.file}
+              download={b.namaFile}
+              class="block rounded-sm bg-stamp px-6 py-3 text-center font-mono text-xs font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.02]"
+            >
+              Unduh PDF &darr;
+            </a>
+
+            <!-- Preview / open in tab -->
+            <a
+              href={b.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-3 block rounded-sm border-2 border-ink px-6 py-3 text-center font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              Buka di Tab Baru &rarr;
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-2xl px-5 py-16 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Masih ada pertanyaan?</p>
+        <h2 class="mt-3 text-balance font-display text-2xl font-bold">
+          Konsultasikan langsung dengan tim kami
+        </h2>
+        <p class="mt-3 font-body text-sm text-blueprint-light">
+          Kami siap membantu Anda memahami dokumen yang perlu disiapkan sesuai jenis bangunan dan lokasi proyek.
+        </p>
+        <a
+          href={`https://wa.me/${waNumber}?text=${waMsg}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-6 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
+        >
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

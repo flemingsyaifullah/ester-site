@@ -1,0 +1,124 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+
+const proyek = [
+  {
+    id: "prodia-mojokerto",
+    nama: "Prodia Laboratory Mojokerto",
+    klien: "Prodia",
+    lokasi: "Mojokerto, Jawa Timur",
+    website: "https://prodia.co.id",
+    foto: "/images/prodia.jpg",
+    fotoAlt: "Prodia Laboratory Mojokerto",
+    deskripsi:
+      "Prodia merupakan jaringan laboratorium klinik terkemuka di Indonesia. Ester Globalindo dipercaya mengurus perizinan bangunan untuk cabang Prodia di Mojokerto, mencakup pengurusan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi) sehingga operasional laboratorium dapat berjalan sesuai regulasi yang berlaku.",
+    capaian: [
+      {
+        kode: "PBG",
+        label: "Persetujuan Bangunan Gedung",
+        desc: "Dokumen izin pelaksanaan konstruksi berhasil diterbitkan, memastikan bangunan laboratorium memenuhi seluruh persyaratan teknis dan tata ruang.",
+      },
+      {
+        kode: "SLF",
+        label: "Sertifikat Laik Fungsi",
+        desc: "Sertifikasi kelaikan fungsi bangunan berhasil diterbitkan, menjamin bangunan aman dan layak beroperasi sebagai fasilitas layanan kesehatan.",
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Portofolio Proyek | Ester Globalindo"
+  description="Portofolio proyek pengurusan PBG dan SLF oleh Ester Globalindo, termasuk Prodia Laboratory Mojokerto dan proyek bangunan komersial lainnya di Jawa Timur."
+  path="/portofolio"
+>
+  <!-- HERO -->
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Portofolio</p>
+        <h1 class="mt-2 max-w-2xl text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+          Proyek yang Telah Kami Tangani
+        </h1>
+        <p class="mt-4 max-w-xl font-body text-blueprint-light leading-relaxed">
+          Kepercayaan klien adalah pencapaian terbaik kami. Berikut sebagian proyek pengurusan PBG
+          dan SLF yang telah berhasil kami selesaikan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYEK LIST -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <div class="space-y-20">
+        {proyek.map((p) => (
+          <article id={p.id} class="grid gap-10 md:grid-cols-2 md:items-start">
+            <!-- Foto -->
+            <div class="overflow-hidden rounded-sm border-2 border-line">
+              <img
+                src={p.foto}
+                alt={p.fotoAlt}
+                class="h-72 w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Detail -->
+            <div>
+              <p class="font-mono text-xs uppercase tracking-widest text-stamp">{p.klien}</p>
+              <h2 class="mt-2 font-display text-3xl font-bold text-ink">{p.nama}</h2>
+              <p class="mt-1 font-mono text-xs text-slate tracking-wide">{p.lokasi}</p>
+
+              <p class="mt-5 font-body text-sm leading-relaxed text-slate">{p.deskripsi}</p>
+
+              <!-- Capaian / Izin yang didapat -->
+              <div class="mt-8">
+                <p class="font-mono text-xs uppercase tracking-widest text-stamp mb-4">Izin yang Berhasil Diterbitkan</p>
+                <div class="space-y-4">
+                  {p.capaian.map((c) => (
+                    <div class="border-l-2 border-stamp pl-4">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="rounded-sm bg-blueprint px-2 py-0.5 font-mono text-[10px] font-medium tracking-wider text-paper">
+                          {c.kode}
+                        </span>
+                        <span class="font-display font-bold text-ink">{c.label}</span>
+                      </div>
+                      <p class="font-body text-sm text-slate leading-relaxed">{c.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-line bg-paper-dim text-center">
+    <div class="mx-auto max-w-2xl px-5 py-16">
+      <h2 class="text-balance font-display text-2xl font-bold text-ink">
+        Ingin proyek Anda menjadi bagian dari daftar ini?
+      </h2>
+      <p class="mt-3 font-body text-sm text-slate">
+        Konsultasikan kebutuhan izin bangunan Anda — tanpa biaya di awal.
+      </p>
+      <a
+        href={`https://wa.me/${waNumber}?text=${waMsg}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
+      >
+        Konsultasi Gratis via WhatsApp
+      </a>
+    </div>
+  </section>
+</Layout>
