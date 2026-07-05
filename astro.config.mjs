@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://globalindoperizinan.id",
+  site: "https://www.ester-globalindo.com",
   adapter: vercel(),
   vite: {
     plugins: [tailwindcss()]

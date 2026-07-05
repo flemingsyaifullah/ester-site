@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://globalindoperizinan.id/sitemap-index.xml
+Sitemap: https://www.ester-globalindo.com/sitemap-index.xml
