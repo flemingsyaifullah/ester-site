@@ -2,11 +2,11 @@
   "proyek": [
     {
       "id": "prodia-mojokerto",
-      "nama": "Prodia Laboratory Mojokerto",
+      "nama": "Prodia Laboratory Mojokerto Test",
       "klien": "Prodia",
       "lokasi": "Mojokerto, Jawa Timur",
       "foto": "/images/prodia.jpg",
-      "fotoAlt": "Prodia Laboratory Mojokerto",
+      "fotoAlt": "Prodia Laboratory Mojokerto Test",
       "deskripsi": "Prodia merupakan jaringan laboratorium klinik terkemuka di Indonesia. Ester Globalindo dipercaya mengurus perizinan bangunan untuk cabang Prodia di Mojokerto, mencakup pengurusan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi) sehingga operasional laboratorium dapat berjalan sesuai regulasi yang berlaku.",
       "capaian": [
         {
