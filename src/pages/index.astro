@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Stamp from "../components/Stamp.astro";
 import { daftarKota } from "../data/kota";
+import siteContent from "../data/site-content.json";
 
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
@@ -30,11 +31,8 @@ const proses = [
   "Upload berkas final, retribusi, dan penerbitan PBG",
 ];
 
-const alasan = [
-  { angka: "12+", label: "kategori dokumen teknis yang kami kelola untuk Anda" },
-  { angka: "9", label: "tahap pengurusan resmi, kami dampingi dari awal sampai terbit" },
-  { angka: "6", label: "kota layanan di Jawa Timur, fokus utama Surabaya" },
-];
+const alasan = siteContent.alasan;
+
 ---
 <Layout
   title="Jasa Pengurusan PBG & SLF Terpercaya | Ester Globalindo"

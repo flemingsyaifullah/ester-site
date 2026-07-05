@@ -1,35 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import portfolioData from "../data/portfolio.json";
 
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
 
-const proyek = [
-  {
-    id: "prodia-mojokerto",
-    nama: "Prodia Laboratory Mojokerto",
-    klien: "Prodia",
-    lokasi: "Mojokerto, Jawa Timur",
-    website: "https://prodia.co.id",
-    foto: "/images/prodia.jpg",
-    fotoAlt: "Prodia Laboratory Mojokerto",
-    deskripsi:
-      "Prodia merupakan jaringan laboratorium klinik terkemuka di Indonesia. Ester Globalindo dipercaya mengurus perizinan bangunan untuk cabang Prodia di Mojokerto, mencakup pengurusan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi) sehingga operasional laboratorium dapat berjalan sesuai regulasi yang berlaku.",
-    capaian: [
-      {
-        kode: "PBG",
-        label: "Persetujuan Bangunan Gedung",
-        desc: "Dokumen izin pelaksanaan konstruksi berhasil diterbitkan, memastikan bangunan laboratorium memenuhi seluruh persyaratan teknis dan tata ruang.",
-      },
-      {
-        kode: "SLF",
-        label: "Sertifikat Laik Fungsi",
-        desc: "Sertifikasi kelaikan fungsi bangunan berhasil diterbitkan, menjamin bangunan aman dan layak beroperasi sebagai fasilitas layanan kesehatan.",
-      },
-    ],
-  },
-];
+const proyek = portfolioData.proyek;
 ---
+
 
 <Layout
   title="Portofolio Proyek | Ester Globalindo"

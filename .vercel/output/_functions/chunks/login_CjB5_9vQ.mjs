@@ -1,0 +1,27 @@
+import { t as __exportAll } from "./rolldown-runtime_D7D4PA-g.mjs";
+import { C as createComponent, S as createAstro, a as renderComponent, d as renderTemplate, h as maybeRenderHead, n as renderScript } from "./server_eIjUU75i.mjs";
+import "./compiler_Ca1DtYCd.mjs";
+import { t as $$AdminLayout } from "./AdminLayout_CWadpLv6.mjs";
+import { t as verifyToken } from "./auth_DdaVijL3.mjs";
+//#region src/pages/admin/login.astro
+var login_exports = /* @__PURE__ */ __exportAll({
+	default: () => $$Login,
+	file: () => $$file,
+	prerender: () => false,
+	url: () => $$url
+});
+createAstro("https://globalindoperizinan.id");
+var $$Login = createComponent(async ($$result, $$props, $$slots) => {
+	const Astro = $$result.createAstro($$props, $$slots);
+	Astro.self = $$Login;
+	const token = Astro.cookies.get("admin_token")?.value;
+	if (token && await verifyToken(token)) return Astro.redirect("/admin/dashboard");
+	return renderTemplate`${renderComponent($$result, "AdminLayout", $$AdminLayout, { "title": "Login" }, { "default": ($$result) => renderTemplate`${maybeRenderHead($$result)}<div class="min-h-screen bg-blueprint-dark blueprint-grid flex items-center justify-center px-4"><div class="w-full max-w-sm"><!-- Logo --><div class="mb-8 text-center"><div class="inline-flex items-center gap-2 mb-2"><span class="font-display text-xl font-bold text-paper">ESTER GLOBALINDO</span><span class="rounded-sm bg-stamp px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper">ADMIN</span></div><p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Panel Pengelola Konten</p></div><!-- Card --><div class="rounded-sm border-2 border-white/10 bg-paper p-8 shadow-2xl"><h1 class="mb-6 font-display text-2xl font-bold text-ink">Masuk ke Panel Admin</h1><form id="loginForm" novalidate><div class="mb-4"><label for="username" class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Username</label><input id="username" name="username" type="text" autocomplete="username" required class="w-full rounded-sm border-2 border-line bg-paper px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint" placeholder="admin"></div><div class="mb-6"><label for="password" class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required class="w-full rounded-sm border-2 border-line bg-paper px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint" placeholder="••••••••"></div><!-- Error message --><p id="errorMsg" class="mb-4 hidden rounded-sm bg-stamp/10 px-3 py-2 font-body text-sm text-stamp"></p><button id="submitBtn" type="submit" class="w-full rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90 disabled:opacity-50">Masuk ke Panel Admin</button></form></div><p class="mt-6 text-center font-mono text-xs text-blueprint-light">&larr; <a href="/" class="underline underline-offset-2 hover:text-paper">Kembali ke Website</a></p></div></div>` })}${renderScript($$result, "C:/D/ester/ester-site/src/pages/admin/login.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/D/ester/ester-site/src/pages/admin/login.astro", void 0);
+var $$file = "C:/D/ester/ester-site/src/pages/admin/login.astro";
+var $$url = "/admin/login";
+//#endregion
+//#region \0virtual:astro:page:src/pages/admin/login@_@astro
+var page = () => login_exports;
+//#endregion
+export { page };
