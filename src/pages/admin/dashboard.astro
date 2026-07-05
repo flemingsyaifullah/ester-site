@@ -283,38 +283,12 @@ try {
   const fotoPath    = document.getElementById('fotoPath') as HTMLInputElement;
   const uploadStatus = document.getElementById('uploadStatus') as HTMLParagraphElement;
 
-  imageInput?.addEventListener('change', async () => {
-    const file = imageInput.files?.[0];
-    if (!file) return;
-
-    // Local preview immediately
-    imgPreview.src = URL.createObjectURL(file);
-    uploadStatus.textContent = 'Mengupload foto...';
-
-    const fd = new FormData();
-    fd.append('image', file);
-
-    try {
-      const res = await fetch('/api/upload-image', { method: 'POST', body: fd });
-      const data = await res.json();
-      if (res.ok && data.ok) {
-        fotoPath.value = data.path;
-        uploadStatus.textContent = `✓ Foto berhasil diupload: ${data.path}`;
-      } else {
-        uploadStatus.textContent = `✗ Upload gagal: ${data.error}`;
-      }
-    } catch (e) {
-      uploadStatus.textContent = `✗ Upload gagal: ${e}`;
-    }
-  });
-
-  /* ---- Save portfolio ---- */
-  const portfolioForm   = document.getElementById('portfolioForm') as HTMLFormElement;
-  const portfolioStatus = document.getElementById('portfolioStatus') as HTMLParagraphElement;
+  /* ---- Save portfolio (extracted as function so bisa dipanggil dari mana saja) ---- */
+  const portfolioForm    = document.getElementById('portfolioForm') as HTMLFormElement;
+  const portfolioStatus  = document.getElementById('portfolioStatus') as HTMLParagraphElement;
   const savePortfolioBtn = document.getElementById('savePortfolioBtn') as HTMLButtonElement;
 
-  portfolioForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  async function savePortfolio() {
     savePortfolioBtn.disabled = true;
     savePortfolioBtn.textContent = 'Menyimpan...';
     portfolioStatus.textContent = '';
@@ -364,6 +338,40 @@ try {
       savePortfolioBtn.disabled = false;
       savePortfolioBtn.textContent = 'Simpan Perubahan';
     }
+  }
+
+  /* Upload foto: upload dulu, lalu langsung auto-save portfolio agar path foto ikut tersimpan */
+  imageInput?.addEventListener('change', async () => {
+    const file = imageInput.files?.[0];
+    if (!file) return;
+
+    // Tampilkan preview lokal dulu
+    imgPreview.src = URL.createObjectURL(file);
+    uploadStatus.textContent = 'Mengupload foto...';
+
+    const fd = new FormData();
+    fd.append('image', file);
+
+    try {
+      const res = await fetch('/api/upload-image', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        fotoPath.value = data.path;
+        uploadStatus.textContent = `✓ Foto terupload! Menyimpan ke portfolio...`;
+        // Auto-save agar portfolio.json langsung terupdate dengan path foto baru
+        await savePortfolio();
+        uploadStatus.textContent = `✓ Foto berhasil disimpan: ${data.path}`;
+      } else {
+        uploadStatus.textContent = `✗ Upload gagal: ${data.error}`;
+      }
+    } catch (e) {
+      uploadStatus.textContent = `✗ Upload gagal: ${e}`;
+    }
+  });
+
+  portfolioForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await savePortfolio();
   });
 
   /* ---- Save stats ---- */
