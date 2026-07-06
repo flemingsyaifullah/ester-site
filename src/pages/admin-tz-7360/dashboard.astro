@@ -15,10 +15,12 @@ type Capaian = { kode: string; label: string; desc: string };
 type Proyek  = { id: string; nama: string; klien: string; lokasi: string; foto: string; fotoAlt: string; deskripsi: string; capaian: Capaian[] };
 type Alasan  = { angka: string; label: string };
 type BlogPost = { slug: string; title: string; excerpt: string; date: string; readTime: string; content: string[] };
+type NewsItem = { slug: string; title: string; excerpt: string; date: string; readTime: string; content: string[] };
 
 let proyek: Proyek | null = null;
 let alasan: Alasan[] = [];
 let blogs: BlogPost[] = [];
+let newsItems: NewsItem[] = [];
 let loadError = '';
 
 try {
@@ -30,6 +32,8 @@ try {
     alasan = sc.alasan ?? [];
     const { data: bc } = await ghReadJson('src/data/blog.json') as { data: BlogPost[]; sha: string };
     blogs = bc ?? [];
+    const { data: nc } = await ghReadJson('src/data/news.json') as { data: NewsItem[]; sha: string };
+    newsItems = nc ?? [];
   } else {
     loadError = 'GITHUB_TOKEN atau GITHUB_REPO belum diset di environment variables.';
   }
@@ -92,6 +96,10 @@ try {
       <button id="tab-blog" data-tab="blog"
         class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink whitespace-nowrap">
         Blog & Artikel
+      </button>
+      <button id="tab-berita" data-tab="berita"
+        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink whitespace-nowrap">
+        Berita
       </button>
     </div>
 
@@ -320,6 +328,75 @@ try {
               </button>
               <button type="submit" id="saveBlogBtn" class="rounded-sm bg-stamp px-8 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90 disabled:opacity-50">
                 Simpan Artikel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== PANEL: BERITA ===== -->
+    <section id="panel-berita" class="tab-panel hidden">
+      <div class="rounded-sm border-2 border-line bg-paper p-8">
+        <div class="mb-6 flex items-center justify-between">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest text-stamp">Terkini</p>
+            <h2 class="mt-1 font-display text-xl font-bold text-ink">Manajemen Berita</h2>
+          </div>
+          <a href="/berita" target="_blank" class="font-mono text-xs text-slate underline underline-offset-2 hover:text-ink">
+            Lihat berita &rarr;
+          </a>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+          <select id="newsSelect" class="flex-1 rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm outline-none focus:border-blueprint text-ink">
+            <option value="">-- Pilih Berita untuk Diedit --</option>
+            {newsItems.map(n => (
+              <option value={n.slug}>{n.title}</option>
+            ))}
+          </select>
+          <button id="newNewsBtn" type="button" class="rounded-sm border-2 border-ink bg-paper px-6 py-2.5 font-mono text-xs uppercase font-medium tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+            + Berita Baru
+          </button>
+        </div>
+
+        <form id="newsForm" class="hidden" novalidate>
+          <input type="hidden" id="newsSlug" name="slug" />
+          <input type="hidden" id="newsIsNew" value="0" />
+          
+          <div class="grid gap-5">
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Berita</label>
+              <input id="newsTitle" name="title" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+            </div>
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan (Excerpt)</label>
+              <textarea id="newsExcerpt" name="excerpt" rows="2" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none" required></textarea>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Tanggal (YYYY-MM-DD)</label>
+                <input id="newsDate" name="date" type="date" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+              </div>
+              <div>
+                <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Waktu Baca</label>
+                <input id="newsReadTime" name="readTime" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required placeholder="2 menit baca" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (Pisahkan paragraf dengan ENTER kosong / Double Enter)</label>
+              <textarea id="newsContent" name="content" rows="12" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+            </div>
+          </div>
+          
+          <div class="mt-8 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p id="newsStatus" class="font-mono text-xs text-slate"></p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button type="button" id="deleteNewsBtn" class="hidden rounded-sm border border-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-stamp transition-opacity hover:bg-stamp hover:text-paper">
+                Hapus
+              </button>
+              <button type="submit" id="saveNewsBtn" class="rounded-sm bg-stamp px-8 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90 disabled:opacity-50">
+                Simpan Berita
               </button>
             </div>
           </div>
@@ -622,5 +699,112 @@ try {
     await submitBlogData(newBlogsData);
     blogForm.classList.add('hidden');
     blogSelect.value = '';
+  });
+</script>
+
+<script id="newsDataScript" type="application/json" set:html={JSON.stringify(newsItems)}></script>
+<script>
+  /* ---- News JS ---- */
+  let newsData = [];
+  try {
+    newsData = JSON.parse(document.getElementById('newsDataScript')?.textContent || '[]');
+  } catch(e) {}
+
+  const newsSelect = document.getElementById('newsSelect') as HTMLSelectElement;
+  const newNewsBtn = document.getElementById('newNewsBtn') as HTMLButtonElement;
+  const newsForm = document.getElementById('newsForm') as HTMLFormElement;
+  const deleteNewsBtn = document.getElementById('deleteNewsBtn') as HTMLButtonElement;
+  const saveNewsBtn = document.getElementById('saveNewsBtn') as HTMLButtonElement;
+  const newsStatus = document.getElementById('newsStatus') as HTMLParagraphElement;
+
+  function slugifyNews(text: string) {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w\-]+/g, '')
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '').replace(/-+$/, '');
+  }
+
+  function renderNewsForm(item: any, isNew: boolean) {
+    newsForm.classList.remove('hidden');
+    (document.getElementById('newsIsNew') as HTMLInputElement).value = isNew ? '1' : '0';
+    (document.getElementById('newsSlug') as HTMLInputElement).value = item?.slug || '';
+    (document.getElementById('newsTitle') as HTMLInputElement).value = item?.title || '';
+    (document.getElementById('newsExcerpt') as HTMLTextAreaElement).value = item?.excerpt || '';
+    (document.getElementById('newsDate') as HTMLInputElement).value = item?.date || new Date().toISOString().split('T')[0];
+    (document.getElementById('newsReadTime') as HTMLInputElement).value = item?.readTime || '2 menit baca';
+    (document.getElementById('newsContent') as HTMLTextAreaElement).value = item?.content?.join('\n\n') || '';
+    if (isNew) { deleteNewsBtn.classList.add('hidden'); newsSelect.value = ''; }
+    else { deleteNewsBtn.classList.remove('hidden'); }
+  }
+
+  newsSelect?.addEventListener('change', (e) => {
+    const slug = (e.target as HTMLSelectElement).value;
+    if (!slug) { newsForm.classList.add('hidden'); return; }
+    const item = newsData.find((n: any) => n.slug === slug);
+    if (item) renderNewsForm(item, false);
+  });
+
+  newNewsBtn?.addEventListener('click', () => renderNewsForm(null, true));
+
+  async function submitNewsData(updatedNews: any[]) {
+    saveNewsBtn.disabled = true;
+    saveNewsBtn.textContent = 'Menyimpan...';
+    newsStatus.textContent = '';
+    try {
+      const res = await fetch('/api/save-news', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedNews),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        newsStatus.textContent = '\u2713 Tersimpan! Website akan diperbarui dalam ~1-2 menit.';
+        newsData = updatedNews;
+        newsSelect.innerHTML = '<option value="">-- Pilih Berita untuk Diedit --</option>' +
+          newsData.map((n: any) => `<option value="${n.slug}">${n.title}</option>`).join('');
+        newsSelect.value = (document.getElementById('newsSlug') as HTMLInputElement).value;
+      } else { newsStatus.textContent = `\u2717 Gagal: ${data.error}`; }
+    } catch (err) {
+      newsStatus.textContent = `\u2717 Gagal: ${err}`;
+    } finally {
+      saveNewsBtn.disabled = false;
+      saveNewsBtn.textContent = 'Simpan Berita';
+    }
+  }
+
+  newsForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const isNew = (document.getElementById('newsIsNew') as HTMLInputElement).value === '1';
+    let slug = (document.getElementById('newsSlug') as HTMLInputElement).value;
+    const title = (document.getElementById('newsTitle') as HTMLInputElement).value;
+    if (isNew) {
+      slug = slugifyNews(title);
+      let counter = 1; let orig = slug;
+      while(newsData.some((n: any) => n.slug === slug)) { slug = `${orig}-${counter}`; counter++; }
+      (document.getElementById('newsSlug') as HTMLInputElement).value = slug;
+    }
+    const newItem = {
+      slug, title,
+      excerpt: (document.getElementById('newsExcerpt') as HTMLTextAreaElement).value,
+      date: (document.getElementById('newsDate') as HTMLInputElement).value,
+      readTime: (document.getElementById('newsReadTime') as HTMLInputElement).value,
+      content: (document.getElementById('newsContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter((p: string) => p.trim() !== '')
+    };
+    let updated = [...newsData];
+    if (isNew) { updated.unshift(newItem); }
+    else { updated = updated.map((n: any) => n.slug === slug ? newItem : n); }
+    await submitNewsData(updated);
+    deleteNewsBtn.classList.remove('hidden');
+    (document.getElementById('newsIsNew') as HTMLInputElement).value = '0';
+  });
+
+  deleteNewsBtn?.addEventListener('click', async () => {
+    if (!confirm('Yakin ingin menghapus berita ini?')) return;
+    const slug = (document.getElementById('newsSlug') as HTMLInputElement).value;
+    const updated = newsData.filter((n: any) => n.slug !== slug);
+    await submitNewsData(updated);
+    newsForm.classList.add('hidden');
+    newsSelect.value = '';
   });
 </script>
