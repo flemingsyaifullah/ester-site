@@ -7,7 +7,7 @@ import { ghReadJson } from '../../lib/github';
 // Auth guard
 const token = Astro.cookies.get('admin_token')?.value;
 if (!token || !(await verifyToken(token))) {
-  return Astro.redirect('/admin/login');
+  return Astro.redirect('/admin-tz-7360/login');
 }
 
 // Read current content from GitHub (always latest committed state)
@@ -274,7 +274,7 @@ try {
   /* ---- Logout ---- */
   document.getElementById('logoutBtn')?.addEventListener('click', async () => {
     await fetch('/api/admin-logout', { method: 'POST' });
-    window.location.href = '/admin/login';
+    window.location.href = '/admin-tz-7360/login';
   });
 
   /* ---- Image upload ---- */

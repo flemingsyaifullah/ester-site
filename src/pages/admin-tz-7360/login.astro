@@ -6,7 +6,7 @@ import { verifyToken } from '../../lib/auth';
 // If already logged in, redirect to dashboard
 const token = Astro.cookies.get('admin_token')?.value;
 if (token && (await verifyToken(token))) {
-  return Astro.redirect('/admin/dashboard');
+  return Astro.redirect('/admin-tz-7360/dashboard');
 }
 ---
 <AdminLayout title="Login">
@@ -94,7 +94,7 @@ if (token && (await verifyToken(token))) {
       const res = await fetch('/api/admin-login', { method: 'POST', body: fd });
       const data = await res.json();
       if (res.ok && data.ok) {
-        window.location.href = '/admin/dashboard';
+        window.location.href = '/admin-tz-7360/dashboard';
       } else {
         errEl.textContent = data.error ?? 'Login gagal. Coba lagi.';
         errEl.classList.remove('hidden');

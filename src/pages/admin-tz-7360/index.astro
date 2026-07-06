@@ -5,5 +5,5 @@ import { verifyToken } from '../../lib/auth';
 const token = Astro.cookies.get('admin_token')?.value;
 const valid = token ? await verifyToken(token) : false;
 
-return Astro.redirect(valid ? '/admin/dashboard' : '/admin/login');
+return Astro.redirect(valid ? '/admin-tz-7360/dashboard' : '/admin-tz-7360/login');
 ---
