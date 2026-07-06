@@ -14,9 +14,11 @@ if (!token || !(await verifyToken(token))) {
 type Capaian = { kode: string; label: string; desc: string };
 type Proyek  = { id: string; nama: string; klien: string; lokasi: string; foto: string; fotoAlt: string; deskripsi: string; capaian: Capaian[] };
 type Alasan  = { angka: string; label: string };
+type BlogPost = { slug: string; title: string; excerpt: string; date: string; readTime: string; content: string[] };
 
 let proyek: Proyek | null = null;
 let alasan: Alasan[] = [];
+let blogs: BlogPost[] = [];
 let loadError = '';
 
 try {
@@ -26,6 +28,8 @@ try {
     proyek = pd.proyek?.[0] ?? null;
     const { data: sc } = await ghReadJson('src/data/site-content.json') as { data: { alasan: Alasan[] }; sha: string };
     alasan = sc.alasan ?? [];
+    const { data: bc } = await ghReadJson('src/data/blog.json') as { data: BlogPost[]; sha: string };
+    blogs = bc ?? [];
   } else {
     loadError = 'GITHUB_TOKEN atau GITHUB_REPO belum diset di environment variables.';
   }
@@ -76,14 +80,18 @@ try {
     )}
 
     <!-- TABS -->
-    <div class="mb-6 flex gap-1 border-b-2 border-line">
+    <div class="mb-6 flex gap-1 border-b-2 border-line overflow-x-auto">
       <button id="tab-portofolio" data-tab="portofolio"
-        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors bg-ink text-paper">
+        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors bg-ink text-paper whitespace-nowrap">
         Portofolio
       </button>
       <button id="tab-stats" data-tab="stats"
-        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink">
-        Statistik Homepage
+        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink whitespace-nowrap">
+        Statistik
+      </button>
+      <button id="tab-blog" data-tab="blog"
+        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink whitespace-nowrap">
+        Blog & Artikel
       </button>
     </div>
 
@@ -245,6 +253,75 @@ try {
               class="rounded-sm bg-stamp px-8 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90 disabled:opacity-50">
               Simpan Perubahan
             </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== PANEL: BLOG ===== -->
+    <section id="panel-blog" class="tab-panel hidden">
+      <div class="rounded-sm border-2 border-line bg-paper p-8">
+        <div class="mb-6 flex items-center justify-between">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest text-stamp">Artikel</p>
+            <h2 class="mt-1 font-display text-xl font-bold text-ink">Manajemen Blog</h2>
+          </div>
+          <a href="/blog" target="_blank" class="font-mono text-xs text-slate underline underline-offset-2 hover:text-ink">
+            Lihat blog &rarr;
+          </a>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+          <select id="blogSelect" class="flex-1 rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm outline-none focus:border-blueprint text-ink">
+            <option value="">-- Pilih Artikel untuk Diedit --</option>
+            {blogs.map(b => (
+              <option value={b.slug}>{b.title}</option>
+            ))}
+          </select>
+          <button id="newBlogBtn" type="button" class="rounded-sm border-2 border-ink bg-paper px-6 py-2.5 font-mono text-xs uppercase font-medium tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+            + Artikel Baru
+          </button>
+        </div>
+
+        <form id="blogForm" class="hidden" novalidate>
+          <input type="hidden" id="blogSlug" name="slug" />
+          <input type="hidden" id="blogIsNew" value="0" />
+          
+          <div class="grid gap-5">
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Artikel</label>
+              <input id="blogTitle" name="title" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+            </div>
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan (Excerpt)</label>
+              <textarea id="blogExcerpt" name="excerpt" rows="2" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none" required></textarea>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Tanggal (YYYY-MM-DD)</label>
+                <input id="blogDate" name="date" type="date" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+              </div>
+              <div>
+                <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Waktu Baca</label>
+                <input id="blogReadTime" name="readTime" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required placeholder="3 menit baca" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (Pisahkan paragraf dengan ENTER kosong / Double Enter)</label>
+              <textarea id="blogContent" name="content" rows="12" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+            </div>
+          </div>
+          
+          <div class="mt-8 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p id="blogStatus" class="font-mono text-xs text-slate"></p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button type="button" id="deleteBlogBtn" class="hidden rounded-sm border border-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-stamp transition-opacity hover:bg-stamp hover:text-paper">
+                Hapus
+              </button>
+              <button type="submit" id="saveBlogBtn" class="rounded-sm bg-stamp px-8 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90 disabled:opacity-50">
+                Simpan Artikel
+              </button>
+            </div>
           </div>
         </form>
       </div>
@@ -413,5 +490,137 @@ try {
       saveStatsBtn.disabled = false;
       saveStatsBtn.textContent = 'Simpan Perubahan';
     }
+  });
+</script>
+
+<script id="blogDataScript" type="application/json" set:html={JSON.stringify(blogs)}></script>
+<script>
+  /* ---- Blog JS ---- */
+  let blogsData = [];
+  try {
+    blogsData = JSON.parse(document.getElementById('blogDataScript')?.textContent || '[]');
+  } catch(e) {}
+  
+  const blogSelect = document.getElementById('blogSelect') as HTMLSelectElement;
+  const newBlogBtn = document.getElementById('newBlogBtn') as HTMLButtonElement;
+  const blogForm = document.getElementById('blogForm') as HTMLFormElement;
+  const deleteBlogBtn = document.getElementById('deleteBlogBtn') as HTMLButtonElement;
+  const saveBlogBtn = document.getElementById('saveBlogBtn') as HTMLButtonElement;
+  const blogStatus = document.getElementById('blogStatus') as HTMLParagraphElement;
+  
+  function slugify(text: string) {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w\-]+/g, '')
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '');
+  }
+
+  function renderBlogForm(post: any, isNew: boolean) {
+    blogForm.classList.remove('hidden');
+    (document.getElementById('blogIsNew') as HTMLInputElement).value = isNew ? '1' : '0';
+    (document.getElementById('blogSlug') as HTMLInputElement).value = post?.slug || '';
+    (document.getElementById('blogTitle') as HTMLInputElement).value = post?.title || '';
+    (document.getElementById('blogExcerpt') as HTMLTextAreaElement).value = post?.excerpt || '';
+    (document.getElementById('blogDate') as HTMLInputElement).value = post?.date || new Date().toISOString().split('T')[0];
+    (document.getElementById('blogReadTime') as HTMLInputElement).value = post?.readTime || '3 menit baca';
+    (document.getElementById('blogContent') as HTMLTextAreaElement).value = post?.content?.join('\n\n') || '';
+    
+    if (isNew) {
+      deleteBlogBtn.classList.add('hidden');
+      blogSelect.value = '';
+    } else {
+      deleteBlogBtn.classList.remove('hidden');
+    }
+  }
+
+  blogSelect?.addEventListener('change', (e) => {
+    const slug = (e.target as HTMLSelectElement).value;
+    if (!slug) {
+      blogForm.classList.add('hidden');
+      return;
+    }
+    const post = blogsData.find((b: any) => b.slug === slug);
+    if (post) renderBlogForm(post, false);
+  });
+
+  newBlogBtn?.addEventListener('click', () => {
+    renderBlogForm(null, true);
+  });
+  
+  async function submitBlogData(updatedBlogs: any[]) {
+    saveBlogBtn.disabled = true;
+    saveBlogBtn.textContent = 'Menyimpan...';
+    blogStatus.textContent = '';
+    try {
+      const res = await fetch('/api/save-blog', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedBlogs),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        blogStatus.textContent = '✓ Tersimpan! Website akan diperbarui dalam ~1-2 menit.';
+        blogsData = updatedBlogs;
+        // Re-render select options
+        blogSelect.innerHTML = '<option value="">-- Pilih Artikel untuk Diedit --</option>' + 
+          blogsData.map((b: any) => `<option value="${b.slug}">${b.title}</option>`).join('');
+        blogSelect.value = (document.getElementById('blogSlug') as HTMLInputElement).value;
+      } else {
+        blogStatus.textContent = `✗ Gagal: ${data.error}`;
+      }
+    } catch (err) {
+      blogStatus.textContent = `✗ Gagal: ${err}`;
+    } finally {
+      saveBlogBtn.disabled = false;
+      saveBlogBtn.textContent = 'Simpan Artikel';
+    }
+  }
+
+  blogForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const isNew = (document.getElementById('blogIsNew') as HTMLInputElement).value === '1';
+    let slug = (document.getElementById('blogSlug') as HTMLInputElement).value;
+    const title = (document.getElementById('blogTitle') as HTMLInputElement).value;
+    
+    if (isNew) {
+      slug = slugify(title);
+      let counter = 1;
+      let origSlug = slug;
+      while(blogsData.some((b: any) => b.slug === slug)) {
+        slug = `${origSlug}-${counter}`;
+        counter++;
+      }
+      (document.getElementById('blogSlug') as HTMLInputElement).value = slug;
+    }
+    
+    const newPost = {
+      slug,
+      title,
+      excerpt: (document.getElementById('blogExcerpt') as HTMLTextAreaElement).value,
+      date: (document.getElementById('blogDate') as HTMLInputElement).value,
+      readTime: (document.getElementById('blogReadTime') as HTMLInputElement).value,
+      content: (document.getElementById('blogContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter(p => p.trim() !== '')
+    };
+    
+    let newBlogsData = [...blogsData];
+    if (isNew) {
+      newBlogsData.unshift(newPost);
+    } else {
+      newBlogsData = newBlogsData.map((b: any) => b.slug === slug ? newPost : b);
+    }
+    await submitBlogData(newBlogsData);
+    deleteBlogBtn.classList.remove('hidden');
+    (document.getElementById('blogIsNew') as HTMLInputElement).value = '0';
+  });
+
+  deleteBlogBtn?.addEventListener('click', async () => {
+    if (!confirm('Yakin ingin menghapus artikel ini? Tindakan ini tidak bisa dibatalkan.')) return;
+    const slug = (document.getElementById('blogSlug') as HTMLInputElement).value;
+    const newBlogsData = blogsData.filter((b: any) => b.slug !== slug);
+    await submitBlogData(newBlogsData);
+    blogForm.classList.add('hidden');
+    blogSelect.value = '';
   });
 </script>
