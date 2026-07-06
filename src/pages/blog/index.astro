@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { posts } from "../../data/blog";
+import posts from "../../data/blog.json";
 
 const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 ---

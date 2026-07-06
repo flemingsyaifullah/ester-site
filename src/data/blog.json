@@ -1,124 +1,107 @@
-export type Post = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  content: string[];
-};
-
-export const posts: Post[] = [
+[
   {
-    slug: "apa-itu-pbg-beda-imb",
-    title: "Apa Itu PBG dan Bedanya dengan IMB?",
-    excerpt:
-      "Sejak UU Cipta Kerja berlaku, IMB resmi digantikan PBG. Ini yang berubah dan yang perlu disiapkan pemilik bangunan.",
-    date: "2026-01-12",
-    readTime: "4 menit baca",
-    content: [
+    "slug": "apa-itu-pbg-beda-imb",
+    "title": "Apa Itu PBG dan Bedanya dengan IMB?",
+    "excerpt": "Sejak UU Cipta Kerja berlaku, IMB resmi digantikan PBG. Ini yang berubah dan yang perlu disiapkan pemilik bangunan.",
+    "date": "2026-01-12",
+    "readTime": "4 menit baca",
+    "content": [
       "Persetujuan Bangunan Gedung, atau PBG, adalah izin yang wajib dimiliki sebelum seseorang membangun baru, mengubah, memperluas, mengurangi, atau merawat bangunan gedung. PBG menggantikan Izin Mendirikan Bangunan (IMB) sejak Undang-Undang Cipta Kerja berlaku.",
       "Perbedaan paling mendasar bukan cuma nama. Kalau dulu IMB lebih menitikberatkan pada perizinan administratif sebelum konstruksi dimulai, PBG dirancang sebagai instrumen pengendalian tata ruang yang memeriksa kesesuaian rencana teknis dengan fungsi bangunan, ketentuan tata bangunan seperti KDB dan KLB, sampai standar keandalan bangunan itu sendiri.",
       "Prosesnya juga sekarang terpusat lewat sistem SIMBG, mulai dari pendaftaran, verifikasi dokumen oleh Dinas Teknis, konsultasi dengan Tim Profesi Ahli (TPA) dan Tim Penilai Teknis (TPT), sampai penerbitan dokumen akhir. PBG berlaku sekali, selama bangunan tidak mengalami perubahan struktur atau fungsi yang signifikan.",
-      "Buat pemilik bangunan, ini artinya dokumen teknis yang harus disiapkan jauh lebih detail dibanding era IMB: mulai dari data teknis arsitektur, struktur, sampai MEP (mekanikal, elektrikal, plumbing). Kalau dokumen ini tidak lengkap sejak awal, proses bisa berulang kali bolak-balik revisi.",
-    ],
+      "Buat pemilik bangunan, ini artinya dokumen teknis yang harus disiapkan jauh lebih detail dibanding era IMB: mulai dari data teknis arsitektur, struktur, sampai MEP (mekanikal, elektrikal, plumbing). Kalau dokumen ini tidak lengkap sejak awal, proses bisa berulang kali bolak-balik revisi."
+    ]
   },
   {
-    slug: "syarat-lengkap-pbg",
-    title: "Syarat Lengkap Mengurus PBG untuk Bangunan Komersial dan Industri",
-    excerpt:
-      "Dari dokumen tanah sampai perhitungan struktur — ini daftar lengkap yang perlu disiapkan sebelum mendaftar PBG.",
-    date: "2026-02-03",
-    readTime: "5 menit baca",
-    content: [
+    "slug": "syarat-lengkap-pbg",
+    "title": "Syarat Lengkap Mengurus PBG untuk Bangunan Komersial dan Industri",
+    "excerpt": "Dari dokumen tanah sampai perhitungan struktur — ini daftar lengkap yang perlu disiapkan sebelum mendaftar PBG.",
+    "date": "2026-02-03",
+    "readTime": "5 menit baca",
+    "content": [
       "Sebelum mendaftar PBG lewat SIMBG, ada belasan dokumen yang perlu disiapkan lebih dulu. Secara garis besar, dokumennya terbagi jadi tiga kelompok: legalitas, teknis, dan rekomendasi instansi.",
       "Kelompok legalitas mencakup dokumen kepemilikan tanah, dokumen penyelidikan tanah, KTP, NIB, dan akta pendirian perusahaan, ditambah PKKPR (Persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang) dan KRK (Ketetapan Rencana Kota). Di kelompok ini juga ada dokumen lingkungan dan pengesahan site plan.",
       "Kelompok rekomendasi instansi berisi rekomendasi dari BPBD dan rekomendasi peil banjir, yang biasanya jadi salah satu tahap paling memakan waktu kalau lokasi bangunan berada di kawasan rawan genangan.",
       "Kelompok teknis adalah yang paling tebal: gambar dan spesifikasi arsitektur (denah, tampak, potongan, detail pintu-jendela, rangka atap), data teknis struktur (pondasi, sloof, kolom, balok, plat lantai, perhitungan struktur), dan data teknis MEP (kelistrikan, penangkal petir, air bersih dan kotor, drainase, proteksi kebakaran, jalur evakuasi). Semua dokumen teknis ini harus dikerjakan oleh badan usaha pengkaji teknis yang memiliki SKK Arsitektur, SKK Struktur, dan SKK MEP.",
-      "Karena banyaknya dokumen lintas bidang ini, sebagian besar pemilik bangunan memilih menggunakan jasa konsultan perizinan supaya seluruh berkas disiapkan sesuai standar sejak awal, dan tidak bolak-balik direvisi saat konsultasi dengan TPA/TPT.",
-    ],
+      "Karena banyaknya dokumen lintas bidang ini, sebagian besar pemilik bangunan memilih menggunakan jasa konsultan perizinan supaya seluruh berkas disiapkan sesuai standar sejak awal, dan tidak bolak-balik direvisi saat konsultasi dengan TPA/TPT."
+    ]
   },
   {
-    slug: "slf-wajib-sebelum-beroperasi",
-    title: "SLF Wajib Dimiliki Sebelum Bangunan Beroperasi, Ini Alasannya",
-    excerpt:
-      "PBG mengizinkan pembangunan, tapi SLF yang membuktikan bangunan itu benar-benar laik dan aman digunakan.",
-    date: "2026-02-20",
-    readTime: "3 menit baca",
-    content: [
+    "slug": "slf-wajib-sebelum-beroperasi",
+    "title": "SLF Wajib Dimiliki Sebelum Bangunan Beroperasi, Ini Alasannya",
+    "excerpt": "PBG mengizinkan pembangunan, tapi SLF yang membuktikan bangunan itu benar-benar laik dan aman digunakan.",
+    "date": "2026-02-20",
+    "readTime": "3 menit baca",
+    "content": [
       "Banyak pemilik bangunan mengira proses perizinan selesai begitu PBG terbit. Padahal, PBG hanya izin untuk melaksanakan konstruksi. Setelah bangunan selesai dibangun, pemilik masih perlu mengurus Sertifikat Laik Fungsi (SLF) sebelum bangunan itu boleh dioperasikan atau dihuni.",
       "SLF adalah bukti bahwa bangunan yang sudah jadi telah diperiksa dan dinyatakan memenuhi standar keandalan yang dipersyaratkan sejak tahap PBG — mencakup keselamatan struktur, sistem proteksi kebakaran, jalur evakuasi, sampai kelayakan sistem MEP secara keseluruhan.",
       "Tanpa SLF, sebuah gedung komersial, pabrik, atau gedung publik secara teknis belum boleh dioperasikan meskipun konstruksinya sudah rampung 100%. Ini yang sering luput dari perhatian pengembang yang terlalu fokus mengejar PBG di awal proyek tapi lupa menyiapkan proses SLF menjelang bangunan selesai.",
-      "Karena pemeriksaannya dilakukan setelah bangunan berdiri, dokumentasi as-built drawing dan kesesuaiannya dengan dokumen PBG yang sudah disetujui menjadi kunci supaya proses SLF berjalan lancar tanpa banyak temuan di lapangan.",
-    ],
+      "Karena pemeriksaannya dilakukan setelah bangunan berdiri, dokumentasi as-built drawing dan kesesuaiannya dengan dokumen PBG yang sudah disetujui menjadi kunci supaya proses SLF berjalan lancar tanpa banyak temuan di lapangan."
+    ]
   },
   {
-    slug: "berapa-lama-proses-pbg",
-    title: "Berapa Lama Proses PBG? Ini Tahapannya dari Awal sampai Terbit",
-    excerpt:
-      "Sembilan tahap resmi pengurusan PBG lewat SIMBG, dari persiapan dokumen sampai retribusi dan penerbitan.",
-    date: "2026-03-05",
-    readTime: "4 menit baca",
-    content: [
+    "slug": "berapa-lama-proses-pbg",
+    "title": "Berapa Lama Proses PBG? Ini Tahapannya dari Awal sampai Terbit",
+    "excerpt": "Sembilan tahap resmi pengurusan PBG lewat SIMBG, dari persiapan dokumen sampai retribusi dan penerbitan.",
+    "date": "2026-03-05",
+    "readTime": "4 menit baca",
+    "content": [
       "Proses pengurusan PBG mengikuti alur yang cukup terstruktur lewat sistem SIMBG. Tahap pertama adalah menyiapkan dokumen tanah, PKKPR, KRK, dan dokumen lingkungan — fondasi yang harus beres sebelum mendaftar.",
       "Setelah itu pemohon mendaftar dan mengunggah seluruh dokumen ke SIMBG, yang kemudian diverifikasi oleh Dinas Teknis. Bila dokumen dinyatakan lengkap, tahap berikutnya adalah konsultasi bersama Tim Profesi Ahli (TPA) dan Tim Penilai Teknis (TPT).",
       "Di tahap konsultasi inilah biasanya muncul catatan revisi. Pemohon perlu memperbaiki dokumen sesuai rekomendasi, lalu melakukan konsultasi ulang sampai mendapat persetujuan dari TPA/TPT — proses yang bisa berlangsung beberapa putaran tergantung kompleksitas bangunan.",
-      "Setelah disetujui, berkas final diunggah beserta perhitungan retribusi, divalidasi oleh Dinas Teknis, dan retribusi dibayarkan melalui bank atau mobile banking. Barulah dokumen PBG diterbitkan. Lama keseluruhan proses sangat bergantung pada kelengkapan dokumen di awal — semakin lengkap dan sesuai standar sejak pengajuan pertama, semakin sedikit putaran revisi yang dibutuhkan.",
-    ],
+      "Setelah disetujui, berkas final diunggah beserta perhitungan retribusi, divalidasi oleh Dinas Teknis, dan retribusi dibayarkan melalui bank atau mobile banking. Barulah dokumen PBG diterbitkan. Lama keseluruhan proses sangat bergantung pada kelengkapan dokumen di awal — semakin lengkap dan sesuai standar sejak pengajuan pertama, semakin sedikit putaran revisi yang dibutuhkan."
+    ]
   },
   {
-    slug: "risiko-bangunan-tanpa-pbg",
-    title: "Risiko Bangunan Tanpa PBG yang Perlu Diketahui Pemilik Usaha",
-    excerpt:
-      "Bangunan tanpa PBG bukan cuma soal administrasi — ada risiko operasional dan hukum yang mengikuti.",
-    date: "2026-03-18",
-    readTime: "3 menit baca",
-    content: [
+    "slug": "risiko-bangunan-tanpa-pbg",
+    "title": "Risiko Bangunan Tanpa PBG yang Perlu Diketahui Pemilik Usaha",
+    "excerpt": "Bangunan tanpa PBG bukan cuma soal administrasi — ada risiko operasional dan hukum yang mengikuti.",
+    "date": "2026-03-18",
+    "readTime": "3 menit baca",
+    "content": [
       "PBG bukan sekadar formalitas administratif. Karena fungsinya sebagai instrumen pengendalian tata ruang, bangunan yang berdiri tanpa PBG berarti belum pernah diperiksa kesesuaiannya dengan ketentuan tata bangunan seperti KDB dan KLB, maupun standar keandalan struktur dan keselamatannya.",
       "Dalam praktiknya, ketiadaan PBG dapat menghambat proses lain yang justru dibutuhkan pemilik usaha: pengajuan SLF tidak bisa diproses tanpa PBG yang sah, sementara sejumlah izin operasional dan proses perbankan (misalnya pengajuan kredit dengan agunan bangunan) juga umumnya mensyaratkan dokumen ini.",
       "Ada juga risiko yang sifatnya lebih teknis: tanpa proses pemeriksaan PBG, potensi masalah pada struktur, sistem proteksi kebakaran, atau jalur evakuasi mungkin baru terlihat setelah bangunan digunakan — saat perbaikannya jauh lebih mahal dan mengganggu operasional dibanding memperbaikinya di tahap desain.",
-      "Karena itu, menyiapkan PBG sejak tahap perencanaan, bukan setelah bangunan berdiri, tetap jadi langkah yang paling efisien dari segi waktu maupun biaya.",
-    ],
+      "Karena itu, menyiapkan PBG sejak tahap perencanaan, bukan setelah bangunan berdiri, tetap jadi langkah yang paling efisien dari segi waktu maupun biaya."
+    ]
   },
   {
-    slug: "dasar-hukum-pbg-slf",
-    title: "Dasar Hukum PBG dan SLF yang Perlu Diketahui Pemilik Bangunan",
-    excerpt:
-      "Dari UU Bangunan Gedung sampai Peraturan Menteri PUPR — ini payung hukum yang membuat PBG dan SLF wajib dimiliki.",
-    date: "2026-04-02",
-    readTime: "3 menit baca",
-    content: [
+    "slug": "dasar-hukum-pbg-slf",
+    "title": "Dasar Hukum PBG dan SLF yang Perlu Diketahui Pemilik Bangunan",
+    "excerpt": "Dari UU Bangunan Gedung sampai Peraturan Menteri PUPR — ini payung hukum yang membuat PBG dan SLF wajib dimiliki.",
+    "date": "2026-04-02",
+    "readTime": "3 menit baca",
+    "content": [
       "Kewajiban memiliki PBG dan SLF bukan aturan baru yang muncul tiba-tiba. Payung hukumnya bertingkat, mulai dari Undang-Undang Nomor 28 Tahun 2002 tentang Bangunan Gedung sebagai landasan utama, yang kemudian diperbarui lewat Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja.",
       "Aturan pelaksanaannya dijabarkan lebih rinci dalam Peraturan Pemerintah Nomor 16 Tahun 2021, yang menggantikan sistem Izin Mendirikan Bangunan (IMB) dengan Persetujuan Bangunan Gedung (PBG) sekaligus mengatur mekanisme penerbitan Sertifikat Laik Fungsi (SLF) secara terintegrasi lewat sistem SIMBG.",
       "Untuk SLF secara spesifik, ketentuan detailnya diatur dalam Peraturan Menteri PUPR Nomor 27/PRT/M/2018 yang kemudian diubah dengan Peraturan Menteri PUPR Nomor 3 Tahun 2020 — dua aturan ini yang menjadi acuan soal prosedur penerbitan, klasifikasi bangunan, dan masa berlaku SLF.",
-      "Bagi pemilik bangunan, memahami dasar hukum ini penting bukan sekadar untuk kepatuhan administratif, tapi juga karena setiap tahap dalam proses SIMBG — dari verifikasi dokumen sampai konsultasi dengan TPA/TPT — merujuk langsung pada standar teknis yang ditetapkan di peraturan-peraturan tersebut.",
-    ],
+      "Bagi pemilik bangunan, memahami dasar hukum ini penting bukan sekadar untuk kepatuhan administratif, tapi juga karena setiap tahap dalam proses SIMBG — dari verifikasi dokumen sampai konsultasi dengan TPA/TPT — merujuk langsung pada standar teknis yang ditetapkan di peraturan-peraturan tersebut."
+    ]
   },
   {
-    slug: "slf-bangunan-lama-tanpa-pbg",
-    title: "Bangunan Lama Belum Punya PBG? Begini Cara Mengurus SLF-nya",
-    excerpt:
-      "Bangunan yang sudah berdiri lama, bahkan sebelum era PBG, tetap bisa diproses menuju SLF lewat jalur kajian teknis bangunan eksisting.",
-    date: "2026-04-18",
-    readTime: "3 menit baca",
-    content: [
+    "slug": "slf-bangunan-lama-tanpa-pbg",
+    "title": "Bangunan Lama Belum Punya PBG? Begini Cara Mengurus SLF-nya",
+    "excerpt": "Bangunan yang sudah berdiri lama, bahkan sebelum era PBG, tetap bisa diproses menuju SLF lewat jalur kajian teknis bangunan eksisting.",
+    "date": "2026-04-18",
+    "readTime": "3 menit baca",
+    "content": [
       "Banyak pemilik bangunan lama, terutama yang berdiri sebelum sistem PBG diberlakukan, ragu untuk mengurus SLF karena merasa dokumen dasarnya sudah tidak lengkap. Padahal, ada jalur khusus untuk kondisi ini yang disebut kajian teknis bangunan gedung terbangun.",
       "Alih-alih menyerahkan dokumen rencana seperti bangunan baru, pemilik bangunan eksisting perlu menyiapkan laporan pemeriksaan kelaikan, laporan pemeriksaan berkala, gambar as-built (kondisi bangunan sesuai kenyataan di lapangan), serta perhitungan struktur dan MEP dari kondisi bangunan yang sudah terbangun.",
       "Proses ini tetap melibatkan Badan Usaha Pengkaji Teknis yang sama seperti pengajuan PBG baru — mencakup tenaga ahli dengan SKK Arsitektur, Struktur, dan MEP — namun fokus pemeriksaannya bergeser dari rencana di atas kertas menjadi kondisi fisik aktual bangunan.",
-      "Jika hasil kajian menunjukkan bangunan memenuhi standar keandalan, PBG dan SLF dapat diterbitkan sekaligus di tahap akhir proses, tanpa pemilik harus mengulang dari nol seolah-olah bangunan belum pernah dibangun.",
-    ],
+      "Jika hasil kajian menunjukkan bangunan memenuhi standar keandalan, PBG dan SLF dapat diterbitkan sekaligus di tahap akhir proses, tanpa pemilik harus mengulang dari nol seolah-olah bangunan belum pernah dibangun."
+    ]
   },
   {
-    slug: "perbedaan-detail-pbg-slf",
-    title: "PBG vs SLF: Dua Dokumen yang Sering Tertukar Padahal Beda Fungsi",
-    excerpt:
-      "PBG menjawab 'boleh dibangun atau tidak', sedangkan SLF menjawab 'boleh dipakai atau tidak' — ini rincian perbedaannya.",
-    date: "2026-05-10",
-    readTime: "3 menit baca",
-    content: [
+    "slug": "perbedaan-detail-pbg-slf",
+    "title": "PBG vs SLF: Dua Dokumen yang Sering Tertukar Padahal Beda Fungsi",
+    "excerpt": "PBG menjawab 'boleh dibangun atau tidak', sedangkan SLF menjawab 'boleh dipakai atau tidak' — ini rincian perbedaannya.",
+    "date": "2026-05-10",
+    "readTime": "3 menit baca",
+    "content": [
       "Cara paling sederhana untuk membedakan PBG dan SLF adalah dengan melihat pertanyaan yang masing-masing jawab. PBG menjawab pertanyaan 'apakah rencana bangunan ini boleh dibangun?', sementara SLF menjawab 'apakah bangunan yang sudah jadi ini boleh dipakai?'.",
       "Dari sisi waktu pengajuan, PBG diproses sebelum konstruksi dimulai, berdasarkan gambar rencana dan perhitungan di atas kertas. SLF baru diproses setelah bangunan selesai dibangun, dan pemeriksaannya membandingkan kondisi fisik aktual dengan dokumen PBG yang sudah disetujui sebelumnya.",
       "Masa berlakunya juga berbeda jauh. PBG pada dasarnya berlaku selama bangunan tidak mengalami perubahan struktur atau fungsi yang signifikan. SLF punya masa berlaku terbatas — umumnya 5 tahun untuk bangunan umum seperti kantor atau pabrik, dan 20 tahun untuk bangunan tempat tinggal — sehingga wajib diperpanjang secara berkala melalui pemeriksaan ulang.",
-      "Karena keduanya saling terhubung dalam satu alur — PBG lebih dulu, baru SLF menyusul setelah bangunan berdiri — mengelola kedua dokumen ini dengan satu pendamping yang sama biasanya membuat data teknis lebih konsisten antara tahap perencanaan dan tahap pemeriksaan akhir.",
-    ],
-  },
-];
+      "Karena keduanya saling terhubung dalam satu alur — PBG lebih dulu, baru SLF menyusul setelah bangunan berdiri — mengelola kedua dokumen ini dengan satu pendamping yang sama biasanya membuat data teknis lebih konsisten antara tahap perencanaan dan tahap pemeriksaan akhir."
+    ]
+  }
+]
