@@ -1,0 +1,118 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("您好，我想索取 Ester Globalindo 的 PBG/SLF 业务宣传册。");
+
+const brosur = [
+  {
+    id: "brosur-pbg",
+    kode: "PBG",
+    judul: "PBG 服务宣传册",
+    nama: "建筑审批许可证 (PBG)",
+    desc: "Ester Globalindo 建筑审批许可证（PBG）办理服务完整指南 — 包括所需文件、流程步骤以及我们的服务优势。",
+    file: "/brosur/BROSUR PBG ESTER.pdf",
+    namaFile: "BROSUR PBG ESTER.pdf",
+  },
+  {
+    id: "brosur-slf",
+    kode: "SLF",
+    judul: "SLF 服务宣传册",
+    nama: "建筑合格证书 (SLF)",
+    desc: "Ester Globalindo 建筑合格证书（SLF）办理服务完整指南 — 包括文件要求、办理阶段以及拥有 SLF 的法律优势。",
+    file: "/brosur/BROSUR SLF ESTER.pdf",
+    namaFile: "BROSUR SLF ESTER.pdf",
+  },
+];
+---
+
+<Layout
+  title="下载宣传册 | Ester Globalindo"
+  description="下载 Ester Globalindo 的 PBG 和 SLF 服务宣传册。获取有关建筑审批许可证和建筑合格证书的完整信息。"
+  path="/zh-cn/brosur"
+>
+  <!-- HERO -->
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-16 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">下载宣传册</p>
+        <h1 class="mt-2 text-balance font-display text-4xl font-bold sm:text-5xl">
+          一站式服务信息
+        </h1>
+        <p class="mt-4 mx-auto max-w-xl font-body text-blueprint-light leading-relaxed">
+          下载我们的 PDF 格式服务宣传册以供参考或与您的团队分享。我们提供 PBG 和 SLF 专属服务指南。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROSUR CARDS -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <div class="grid gap-8 md:grid-cols-2">
+        {brosur.map((b) => (
+          <div id={b.id} class="flex flex-col rounded-sm border-2 border-ink bg-paper p-8">
+            <!-- Kode badge -->
+            <span class="font-mono text-xs tracking-widest text-stamp">{b.kode}</span>
+            <h2 class="mt-3 font-display text-2xl font-bold text-ink">{b.nama}</h2>
+            <p class="mt-4 font-body text-sm leading-relaxed text-slate flex-1">{b.desc}</p>
+
+            <!-- Divider -->
+            <div class="my-6 border-t border-line"></div>
+
+            <!-- File info -->
+            <div class="flex items-center gap-3 mb-5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-stamp flex-shrink-0">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14,2 14,8 20,8" />
+              </svg>
+              <span class="font-mono text-xs text-slate">{b.namaFile}</span>
+            </div>
+
+            <!-- Download button -->
+            <a
+              href={b.file}
+              download={b.namaFile}
+              class="block rounded-sm bg-stamp px-6 py-3 text-center font-mono text-xs font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.02]"
+            >
+              下载 PDF &darr;
+            </a>
+
+            <!-- Preview / open in tab -->
+            <a
+              href={b.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-3 block rounded-sm border-2 border-ink px-6 py-3 text-center font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              在新标签页中打开 &rarr;
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-2xl px-5 py-16 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">还有其他问题吗？</p>
+        <h2 class="mt-3 text-balance font-display text-2xl font-bold">
+          直接与我们的团队咨询
+        </h2>
+        <p class="mt-3 font-body text-sm text-blueprint-light">
+          我们随时准备协助您了解根据建筑类型和项目地点所需准备的文件。
+        </p>
+        <a
+          href={`https://wa.me/${waNumber}?text=${waMsg}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-6 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
+        >
+          立即通过 WhatsApp 咨询
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
