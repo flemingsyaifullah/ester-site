@@ -2,15 +2,18 @@
   "alasan": [
     {
       "angka": "12+",
-      "label": "kategori dokumen teknis yang kami kelola untuk Anda"
+      "label": "kategori dokumen teknis yang kami kelola untuk Anda",
+      "label_zh": "12+ 类我们为您管理的技术文件"
     },
     {
       "angka": "9",
-      "label": "tahap pengurusan resmi, kami dampingi dari awal sampai terbit"
+      "label": "tahap pengurusan resmi, kami dampingi dari awal sampai terbit",
+      "label_zh": "9 个官方办理阶段，我们从头到尾全程陪同"
     },
     {
       "angka": "6",
-      "label": "kota layanan di Jawa Timur, fokus utama Surabaya"
+      "label": "kota layanan di Jawa Timur, fokus utama Surabaya",
+      "label_zh": "6 个东爪哇服务城市，以泗水为核心"
     }
   ]
 }

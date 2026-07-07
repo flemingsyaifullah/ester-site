@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Stamp from "../../components/Stamp.astro";
 import siteContent from "../../data/site-content.json";
 
 const waNumber = "6282230027878";
@@ -67,14 +68,21 @@ const alasan = siteContent.alasan;
           </a>
         </div>
       </div>
-      <div class="hidden md:grid grid-cols-2 gap-3">
-        {alasan.map((a) => (
-          <div class="rounded-sm border border-white/10 bg-white/5 p-5">
-            <p class="font-display text-3xl font-bold text-paper">{a.angka}</p>
-            <p class="mt-1 font-mono text-xs uppercase tracking-wider text-blueprint-light">{a.label}</p>
-          </div>
-        ))}
+      <div class="flex justify-center md:justify-end">
+        <Stamp size={180} />
       </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="border-b border-line bg-paper">
+    <div class="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
+      {alasan.map((a: any) => (
+        <div class="border-l-2 border-stamp pl-4">
+          <p class="font-display text-4xl font-bold text-ink">{a.angka}</p>
+          <p class="mt-1 font-body text-sm text-slate">{a.label_zh || a.label}</p>
+        </div>
+      ))}
     </div>
   </section>
 
