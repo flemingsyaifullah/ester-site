@@ -43,10 +43,7 @@
   }
 
   .paper-grid {
-    background-image:
-      linear-gradient(rgba(20, 33, 55, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(20, 33, 55, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+    /* grid pattern removed — background color from parent bg-paper */
   }
 
   .stamp-pop {
