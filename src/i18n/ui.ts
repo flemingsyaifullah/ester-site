@@ -7,6 +7,7 @@ export const defaultLang = 'id';
 
 export const ui = {
   id: {
+    'badge.perizinan': 'PERIZINAN',
     'nav.pbg': 'Jasa PBG',
     'nav.slf': 'Jasa SLF',
     'nav.area': 'Area Layanan',
@@ -25,6 +26,7 @@ export const ui = {
     'footer.terms': 'Syarat & Ketentuan',
   },
   'zh-cn': {
+    'badge.perizinan': '许可证',
     'nav.pbg': 'PBG 服务',
     'nav.slf': 'SLF 服务',
     'nav.area': '服务范围',
