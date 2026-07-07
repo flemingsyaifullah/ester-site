@@ -2,6 +2,7 @@
   "proyek": [
     {
       "id": "prodia-mojokerto",
+      "suspended": true,
       "nama": "Prodia Laboratory Mojokerto",
       "nama_zh": "[ZH] Prodia Laboratory Mojokerto",
       "klien": "Prodia",
