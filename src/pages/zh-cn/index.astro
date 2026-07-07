@@ -57,14 +57,9 @@ const alasan = siteContent.alasan;
             href={`https://wa.me/${waNumber}?text=${waMsg}`}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
+            class="inline-block rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
           >
             免费咨询
-          </a>
-          <a href="/zh-cn/jasa-pbg"
-            class="inline-block rounded-sm border-2 border-paper/30 px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper hover:border-paper"
-          >
-            了解 PBG 服务
           </a>
         </div>
       </div>
@@ -105,39 +100,19 @@ const alasan = siteContent.alasan;
   </section>
 
   <!-- PROCESS -->
-  <section class="border-y border-line bg-blueprint-dark text-paper">
-    <div class="blueprint-grid">
-      <div class="mx-auto max-w-6xl px-5 py-20">
-        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">流程</p>
-        <h2 class="mt-2 font-display text-3xl font-bold">PBG 申请流程</h2>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {proses.map((step, i) => (
-            <div class="flex gap-4 rounded-sm border border-white/10 bg-white/5 p-5">
-              <span class="flex-shrink-0 font-mono text-2xl font-bold text-blueprint-light">{String(i + 1).padStart(2, '0')}</span>
-              <p class="font-body text-sm leading-relaxed text-blueprint-light">{step}</p>
-            </div>
-          ))}
-        </div>
+  <section class="border-y border-line bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-20">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">流程</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">PBG 申请流程</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {proses.map((step, i) => (
+          <div class="flex gap-4 rounded-sm border border-line bg-paper-dim p-5">
+            <span class="flex-shrink-0 font-mono text-2xl font-bold text-stamp">{String(i + 1).padStart(2, '0')}</span>
+            <p class="font-body text-sm leading-relaxed text-ink">{step}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-paper">
-    <div class="mx-auto max-w-3xl px-5 py-20 text-center">
-      <p class="font-mono text-xs uppercase tracking-widest text-stamp">立即开始</p>
-      <h2 class="mt-2 font-display text-3xl font-bold text-ink">准备好办理建筑许可证了吗？</h2>
-      <p class="mt-4 font-body text-base leading-relaxed text-slate">
-        立即联系我们，进行免费初始咨询。我们的团队将协助您从零开始完成整个申请流程。
-      </p>
-      <a
-        href={`https://wa.me/${waNumber}?text=${waMsg}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-8 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
-      >
-        WhatsApp 免费咨询
-      </a>
-    </div>
-  </section>
 </Layout>

@@ -42,7 +42,7 @@ const alasan = siteContent.alasan;
   <!-- HERO -->
   <section class="relative overflow-hidden bg-blueprint-dark text-paper">
     <div class="blueprint-grid absolute inset-0"></div>
-    <div class="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-28">
+    <div class="relative mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-16">
       <div>
         <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-blueprint-light">
           Konsultan PBG &amp; SLF — Berbasis di Surabaya
@@ -58,15 +58,9 @@ const alasan = siteContent.alasan;
           <a
             href={`https://wa.me/${waNumber}?text=${waMsg}`}
             target="_blank" rel="noopener noreferrer"
-            class="rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
+            class="rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
           >
             Konsultasi Gratis Sekarang
-          </a>
-          <a
-            href="/jasa-pbg"
-            class="rounded-sm border-2 border-blueprint-light px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
-          >
-            Lihat Layanan PBG
           </a>
         </div>
       </div>
@@ -144,52 +138,35 @@ const alasan = siteContent.alasan;
   </section>
 
   <!-- AREA LAYANAN -->
-  <section class="border-t border-line bg-blueprint-dark text-paper">
-    <div class="blueprint-grid">
-      <div class="mx-auto max-w-6xl px-5 py-16">
-        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Area layanan</p>
-        <h2 class="mt-2 font-display text-3xl font-bold sm:text-4xl">Berbasis di Surabaya, Melayani Jawa Timur</h2>
-        <p class="mt-3 max-w-xl font-body text-sm text-blueprint-light">
-          Surabaya adalah fokus utama kami — respons tercepat dan koordinasi paling intensif dengan
-          dinas teknis ada di sini. Kami juga melayani kota-kota sekitarnya.
-        </p>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {daftarKota.map((k) => (
-            <a
-              href={`/area-layanan/${k.slug}`}
-              class={`relative rounded-sm border p-5 transition-colors ${
-                k.utama
-                  ? "border-stamp bg-stamp/10 hover:bg-stamp/15"
-                  : "border-white/15 hover:bg-white/5"
-              }`}
-            >
-              {k.utama && (
-                <span class="absolute -top-3 left-5 rounded-sm bg-stamp px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-paper">
-                  Fokus Utama
-                </span>
-              )}
-              <h3 class="font-display text-lg font-bold">{k.nama}</h3>
-              <p class="mt-2 font-body text-xs leading-relaxed text-blueprint-light">{k.dinas}</p>
-            </a>
-          ))}
-        </div>
+  <section class="border-t border-line bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Area layanan</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">Berbasis di Surabaya, Melayani Jawa Timur</h2>
+      <p class="mt-3 max-w-xl font-body text-sm text-slate">
+        Surabaya adalah fokus utama kami — respons tercepat dan koordinasi paling intensif dengan
+        dinas teknis ada di sini. Kami juga melayani kota-kota sekitarnya.
+      </p>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {daftarKota.map((k) => (
+          <a
+            href={`/area-layanan/${k.slug}`}
+            class={`relative rounded-sm border p-5 transition-colors ${
+              k.utama
+                ? "border-stamp bg-stamp/5 hover:bg-stamp/10"
+                : "border-line hover:border-ink hover:bg-paper-dim"
+            }`}
+          >
+            {k.utama && (
+              <span class="absolute -top-3 left-5 rounded-sm bg-stamp px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-paper">
+                Fokus Utama
+              </span>
+            )}
+            <h3 class="font-display text-lg font-bold text-ink">{k.nama}</h3>
+            <p class="mt-2 font-body text-xs leading-relaxed text-slate">{k.dinas}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="bg-paper">
-    <div class="mx-auto max-w-6xl px-5 py-16 text-center">
-      <h2 class="mx-auto max-w-xl text-balance font-display text-3xl font-bold text-ink sm:text-4xl">
-        Konsultasikan kebutuhan izin bangunan Anda, tanpa biaya di awal.
-      </h2>
-      <a
-        href={`https://wa.me/${waNumber}?text=${waMsg}`}
-        target="_blank" rel="noopener noreferrer"
-        class="mt-7 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-transform hover:scale-[1.03]"
-      >
-        Chat WhatsApp Sekarang
-      </a>
-    </div>
-  </section>
 </Layout>

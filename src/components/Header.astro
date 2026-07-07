@@ -33,14 +33,6 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
       ))}
     </nav>
 
-    <a
-      href={`https://wa.me/${waNumber}?text=${waMsg}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="hidden rounded-sm border-2 border-ink px-4 py-2 font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-block"
-    >
-      {t('nav.consult')}
-    </a>
 
     <button id="menuBtn" class="md:hidden" aria-label="Buka menu" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -55,14 +47,6 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
         {item.label}
       </a>
     ))}
-    <a
-      href={`https://wa.me/${waNumber}?text=${waMsg}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-2 rounded-sm bg-ink px-4 py-2 text-center font-mono text-xs font-medium uppercase tracking-wider text-paper"
-    >
-      {t('nav.consult.wa')}
-    </a>
   </nav>
 </header>
 

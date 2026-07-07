@@ -21,22 +21,15 @@ const kotaLain = daftarKota.filter((k) => k.slug !== kota.slug);
 >
   <section class="border-b border-line bg-blueprint-dark text-paper">
     <div class="blueprint-grid">
-      <div class="mx-auto max-w-4xl px-5 py-16">
+      <div class="mx-auto max-w-4xl px-5 py-10">
         <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Area layanan</p>
         <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">
-          Jasa PBG &amp; SLF di {kota.nama}
+          Jasa PBG &amp; SLF di {kota.nama} dan Sekitarnya
         </h1>
         <p class="mt-5 max-w-xl font-body text-blueprint-light">
-          Kami membantu proses pengurusan PBG dan SLF di wilayah {kota.nama}, termasuk koordinasi
+          Kami membantu proses pengurusan PBG dan SLF di {kota.nama} dan sekitarnya, termasuk koordinasi
           dokumen dan konsultasi teknis bersama {kota.dinas}.
         </p>
-        <a
-          href={`https://wa.me/${waNumber}?text=${waMsg}`}
-          target="_blank" rel="noopener noreferrer"
-          class="mt-7 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper"
-        >
-          Konsultasi untuk {kota.nama}
-        </a>
       </div>
     </div>
   </section>

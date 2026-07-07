@@ -2,8 +2,8 @@
 
 @theme {
   /* Color: blueprint & official-document palette */
-  --color-paper: #F4F1E9;
-  --color-paper-dim: #EAE5D8;
+  --color-paper: #FFFFFF;
+  --color-paper-dim: #F5F5F5;
   --color-ink: #142137;
   --color-blueprint: #2E5C8A;
   --color-blueprint-light: #6D93B8;
@@ -39,13 +39,7 @@
 
 @layer utilities {
   .blueprint-grid {
-    background-image:
-      linear-gradient(rgba(109, 147, 184, 0.14) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(109, 147, 184, 0.14) 1px, transparent 1px),
-      linear-gradient(rgba(109, 147, 184, 0.28) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(109, 147, 184, 0.28) 1px, transparent 1px);
-    background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px;
-    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    /* grid pattern removed — background color from parent bg-blueprint-dark */
   }
 
   .paper-grid {
