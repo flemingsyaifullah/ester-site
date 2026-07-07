@@ -1,0 +1,72 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import news from "../../../data/news.json";
+
+export function getStaticPaths() {
+  return news.map((n) => ({
+    params: { slug: n.slug },
+    props: { item: n },
+  }));
+}
+
+const { item } = Astro.props;
+const title = (item as any).title_zh || item.title;
+const excerpt = (item as any).excerpt_zh || item.excerpt;
+const content = (item as any).content_zh || item.content;
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent(`您好，我刚读了 "${title}" 这篇资讯，想进一步咨询。`);
+const lainnya = news.filter((n) => n.slug !== item.slug).slice(0, 3);
+---
+<Layout
+  title={`${title} | Ester Globalindo`}
+  description={excerpt}
+  path={`/zh-cn/berita/${item.slug}`}
+>
+  <article class="bg-paper">
+    <div class="border-b border-line bg-blueprint-dark text-paper">
+      <div class="blueprint-grid">
+        <div class="mx-auto max-w-3xl px-5 py-14">
+          <a href="/zh-cn/berita" class="font-mono text-xs uppercase tracking-wider text-blueprint-light hover:text-white">&larr; 返回资讯列表</a>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wider text-blueprint-light">
+            {new Date(item.date).toLocaleDateString("zh-CN", { day: "numeric", month: "long", year: "numeric" })} · {item.readTime}
+          </p>
+          <h1 class="mt-2 text-balance font-display text-3xl font-bold leading-tight sm:text-4xl">{title}</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-3xl px-5 py-14">
+      <div class="space-y-5">
+        {content.map((para: string) => (
+          <p class="font-body text-base leading-relaxed text-ink">{para}</p>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-sm border-2 border-ink p-6 text-center">
+        <p class="font-display text-lg font-bold text-ink">需要帮助处理建筑许可证？</p>
+        <a
+          href={`https://wa.me/${waNumber}?text=${waMsg}`}
+          target="_blank" rel="noopener noreferrer"
+          class="mt-4 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper"
+        >
+          WhatsApp 免费咨询
+        </a>
+      </div>
+    </div>
+  </article>
+
+  {lainnya.length > 0 && (
+    <section class="border-t border-line bg-paper-dim">
+      <div class="mx-auto max-w-3xl px-5 py-14">
+        <p class="font-mono text-xs uppercase tracking-widest text-stamp">更多资讯</p>
+        <div class="mt-6 grid gap-4">
+          {lainnya.map((n) => (
+            <a href={`/zh-cn/berita/${n.slug}`} class="rounded-sm border border-line bg-paper px-5 py-4 hover:border-ink">
+              <h3 class="font-display font-bold text-ink">{(n as any).title_zh || n.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

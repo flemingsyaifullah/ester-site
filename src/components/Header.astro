@@ -1,27 +1,33 @@
 ---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
 const nav = [
-  { href: "/jasa-pbg", label: "Jasa PBG" },
-  { href: "/jasa-slf", label: "Jasa SLF" },
-  { href: "/area-layanan/surabaya", label: "Area Layanan" },
-  { href: "/blog", label: "Blog" },
-  { href: "/berita", label: "Berita" },
-  { href: "/portofolio", label: "Portofolio" },
-  { href: "/brosur", label: "Brosur" },
-  { href: "/tentang-kami", label: "Tentang Kami" },
+  { href: "/jasa-pbg", label: t('nav.pbg') },
+  { href: "/jasa-slf", label: t('nav.slf') },
+  { href: "/area-layanan/surabaya", label: t('nav.area') },
+  { href: "/blog", label: t('nav.blog') },
+  { href: "/berita", label: t('nav.news') },
+  { href: "/portofolio", label: t('nav.portfolio') },
+  { href: "/brosur", label: t('nav.brochure') },
+  { href: "/tentang-kami", label: t('nav.about') },
 ];
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
 ---
 <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-    <a href="/" class="flex items-center gap-2">
+    <a href={translatePath("/")} class="flex items-center gap-2">
       <span class="font-display text-lg font-bold tracking-tight text-ink">ESTER GLOBALINDO</span>
       <span class="rounded-sm bg-blueprint px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper">PERIZINAN</span>
     </a>
 
     <nav class="hidden items-center gap-7 md:flex">
       {nav.map((item) => (
-        <a href={item.href} class="font-body text-sm text-slate transition-colors hover:text-ink">
+        <a href={translatePath(item.href)} class="font-body text-sm text-slate transition-colors hover:text-ink">
           {item.label}
         </a>
       ))}
@@ -33,7 +39,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
       rel="noopener noreferrer"
       class="hidden rounded-sm border-2 border-ink px-4 py-2 font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-block"
     >
-      Konsultasi Gratis
+      {t('nav.consult')}
     </a>
 
     <button id="menuBtn" class="md:hidden" aria-label="Buka menu" aria-expanded="false">
@@ -45,7 +51,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
 
   <nav id="mobileMenu" class="hidden flex-col gap-1 border-t border-line px-5 py-3 md:hidden">
     {nav.map((item) => (
-      <a href={item.href} class="rounded-sm px-2 py-2 font-body text-sm text-slate hover:bg-paper-dim hover:text-ink">
+      <a href={translatePath(item.href)} class="rounded-sm px-2 py-2 font-body text-sm text-slate hover:bg-paper-dim hover:text-ink">
         {item.label}
       </a>
     ))}
@@ -55,7 +61,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
       rel="noopener noreferrer"
       class="mt-2 rounded-sm bg-ink px-4 py-2 text-center font-mono text-xs font-medium uppercase tracking-wider text-paper"
     >
-      Konsultasi Gratis via WhatsApp
+      {t('nav.consult.wa')}
     </a>
   </nav>
 </header>

@@ -1,0 +1,135 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import siteContent from "../../data/site-content.json";
+
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("您好，我想咨询 PBG/SLF 建筑许可证办理业务。");
+
+const layanan = [
+  {
+    href: "/zh-cn/jasa-pbg",
+    kode: "PBG",
+    nama: "建筑审批许可证",
+    desc: "施工执行许可证，在建设开始前必须准备好——从土地文件到结构与 MEP 计算。",
+  },
+  {
+    href: "/zh-cn/jasa-slf",
+    kode: "SLF",
+    nama: "建筑合格证书",
+    desc: "证明已竣工建筑真正适合并安全用于运营或居住。",
+  },
+];
+
+const proses = [
+  "准备土地文件、PKKPR & KRK 以及环境文件",
+  "在 SIMBG 系统上注册并上传文件",
+  "技术部门文件验证",
+  "与 TPA/TPT 进行文件咨询",
+  "修订 & 重复咨询直至批准",
+  "上传最终文件、缴纳税费并颁发 PBG",
+];
+
+const alasan = siteContent.alasan;
+---
+<Layout
+  title="专业 PBG & SLF 建筑许可证代办服务 | Ester Globalindo"
+  description="专业代办印度尼西亚建筑审批许可证（PBG）和建筑合格证书（SLF），服务商业、工业及住宅建筑。总部位于泗水，服务东爪哇全区。"
+  path="/zh-cn"
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-blueprint-dark text-paper">
+    <div class="blueprint-grid absolute inset-0"></div>
+    <div class="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-28">
+      <div>
+        <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-blueprint-light">
+          PBG & SLF 许可证顾问 — 总部位于泗水
+        </p>
+        <h1 class="text-balance font-display text-4xl font-bold leading-[1.08] sm:text-5xl md:text-[3.2rem]">
+          让您的建筑许可<br />
+          <span class="text-blueprint-light">快速合规</span>
+        </h1>
+        <p class="mt-6 max-w-lg font-body text-base leading-relaxed text-blueprint-light">
+          Ester Globalindo 是专业代办 <strong class="text-paper">PBG（建筑审批许可证）</strong> 和 <strong class="text-paper">SLF（建筑合格证书）</strong> 的许可证顾问，服务泗水及东爪哇地区，已拥有多年丰富经验。
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href={`https://wa.me/${waNumber}?text=${waMsg}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
+          >
+            免费咨询
+          </a>
+          <a href="/zh-cn/jasa-pbg"
+            class="inline-block rounded-sm border-2 border-paper/30 px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper hover:border-paper"
+          >
+            了解 PBG 服务
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:grid grid-cols-2 gap-3">
+        {alasan.map((a) => (
+          <div class="rounded-sm border border-white/10 bg-white/5 p-5">
+            <p class="font-display text-3xl font-bold text-paper">{a.angka}</p>
+            <p class="mt-1 font-mono text-xs uppercase tracking-wider text-blueprint-light">{a.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-20">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">服务项目</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">我们提供的服务</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {layanan.map((l) => (
+          <a href={l.href} class="group block rounded-sm border-2 border-line bg-paper-dim p-8 transition-colors hover:border-ink">
+            <span class="inline-block rounded-sm bg-blueprint px-2.5 py-1 font-mono text-xs font-medium tracking-wider text-paper">{l.kode}</span>
+            <h3 class="mt-4 font-display text-xl font-bold text-ink">{l.nama}</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{l.desc}</p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-wider text-stamp group-hover:underline">了解更多 &rarr;</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="border-y border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-20">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">流程</p>
+        <h2 class="mt-2 font-display text-3xl font-bold">PBG 申请流程</h2>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {proses.map((step, i) => (
+            <div class="flex gap-4 rounded-sm border border-white/10 bg-white/5 p-5">
+              <span class="flex-shrink-0 font-mono text-2xl font-bold text-blueprint-light">{String(i + 1).padStart(2, '0')}</span>
+              <p class="font-body text-sm leading-relaxed text-blueprint-light">{step}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-3xl px-5 py-20 text-center">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">立即开始</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">准备好办理建筑许可证了吗？</h2>
+      <p class="mt-4 font-body text-base leading-relaxed text-slate">
+        立即联系我们，进行免费初始咨询。我们的团队将协助您从零开始完成整个申请流程。
+      </p>
+      <a
+        href={`https://wa.me/${waNumber}?text=${waMsg}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
+      >
+        WhatsApp 免费咨询
+      </a>
+    </div>
+  </section>
+</Layout>

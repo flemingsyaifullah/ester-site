@@ -1,8 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
 ---
-<footer class="border-t border-line bg-blueprint-dark text-paper">
+<footer class="border-t border-line bg-blueprint-dark text-paper pt-16 pb-8">
   <div class="blueprint-grid">
     <div class="mx-auto max-w-6xl px-5 py-14">
       <div class="grid gap-10 md:grid-cols-4">
@@ -19,34 +25,44 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
         </div>
 
         <div>
-          <p class="mb-3 font-mono text-xs uppercase tracking-widest text-blueprint-light">Layanan</p>
+          <p class="mb-3 font-mono text-xs uppercase tracking-widest text-blueprint-light">{t('footer.services')}</p>
           <ul class="space-y-2 font-body text-sm">
-            <li><a href="/jasa-pbg" class="hover:text-white">Jasa Pengurusan PBG</a></li>
-            <li><a href="/jasa-slf" class="hover:text-white">Jasa Pengurusan SLF</a></li>
-            <li><a href="/blog" class="hover:text-white">Panduan & Artikel</a></li>
-            <li><a href="/berita" class="hover:text-white">Berita Terkini</a></li>
-            <li><a href="/portofolio" class="hover:text-white">Portofolio</a></li>
-            <li><a href="/brosur" class="hover:text-white">Unduh Brosur</a></li>
+            <li><a href={translatePath("/jasa-pbg")} class="hover:text-white">{t('nav.pbg')}</a></li>
+            <li><a href={translatePath("/jasa-slf")} class="hover:text-white">{t('nav.slf')}</a></li>
+            <li><a href={translatePath("/blog")} class="hover:text-white">{t('nav.blog')}</a></li>
+            <li><a href={translatePath("/berita")} class="hover:text-white">{t('nav.news')}</a></li>
+            <li><a href={translatePath("/portofolio")} class="hover:text-white">{t('nav.portfolio')}</a></li>
+            <li><a href={translatePath("/brosur")} class="hover:text-white">{t('nav.brochure')}</a></li>
           </ul>
         </div>
 
         <div>
-          <p class="mb-3 font-mono text-xs uppercase tracking-widest text-blueprint-light">Hubungi Kami</p>
+          <p class="mb-3 font-mono text-xs uppercase tracking-widest text-blueprint-light">{t('footer.contact')}</p>
           <ul class="space-y-2 font-body text-sm">
             <li>
-              <a href={`https://wa.me/${waNumber}?text=${waMsg}`} target="_blank" rel="noopener noreferrer" class="hover:text-white">
-                0822 3002 7878 (WhatsApp)
-              </a>
+              <a href="mailto:ester.globalindo@gmail.com" class="hover:text-white">ester.globalindo@gmail.com</a>
             </li>
-            <li><a href="mailto:ester.globalindo@gmail.com" class="hover:text-white">ester.globalindo@gmail.com</a></li>
-            <li><a href="https://instagram.com/ester.globalindo" target="_blank" rel="noopener noreferrer" class="hover:text-white">@ester.globalindo</a></li>
+            <li>
+              <a href="tel:+6282230027878" class="hover:text-white">+62 822-3002-7878</a>
+            </li>
+            <li class="pt-2">
+              Surabaya, Jawa Timur<br/>
+              Indonesia
+            </li>
           </ul>
         </div>
       </div>
+    </div>
 
-      <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 font-mono text-xs text-blueprint-light sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Ester Globalindo. Seluruh hak cipta dilindungi.</p>
-        <p>PBG mengganti IMB sejak berlakunya UU Cipta Kerja.</p>
+    <div class="mx-auto mt-12 max-w-6xl border-t border-line/10 px-5 pt-8">
+      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p class="font-mono text-xs text-slate">
+          &copy; {new Date().getFullYear()} Ester Globalindo.
+        </p>
+        <div class="flex gap-4 font-mono text-xs text-slate">
+          <a href="#" class="hover:text-white">{t('footer.privacy')}</a>
+          <a href="#" class="hover:text-white">{t('footer.terms')}</a>
+        </div>
       </div>
     </div>
   </div>

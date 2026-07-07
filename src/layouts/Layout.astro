@@ -1,7 +1,10 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import LangSwitcher from "../components/LangSwitcher.astro";
 import "../styles/global.css";
+import { getLangFromUrl } from "../i18n/utils";
+
 
 export interface Props {
   title: string;
@@ -14,9 +17,11 @@ const siteUrl = "https://globalindoperizinan.id";
 const canonical = new URL(path, siteUrl).toString();
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+
+const lang = getLangFromUrl(Astro.url);
 ---
 <!doctype html>
-<html lang="id">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,6 +64,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
   </head>
   <body class="font-body antialiased">
     <Header />
+    <LangSwitcher />
     <main>
       <slot />
     </main>

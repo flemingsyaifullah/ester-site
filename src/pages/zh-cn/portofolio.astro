@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import portfolioData from "../../data/portfolio.json";
+
+const proyek = (portfolioData as any).proyek?.[0];
+const waNumber = "6282230027878";
+const waMsg = encodeURIComponent("您好，我想了解 Ester Globalindo 的项目案例。");
+---
+<Layout
+  title="项目案例 | Ester Globalindo"
+  description="Ester Globalindo 历年服务的建筑许可证项目案例，包括商业、工业及住宅建筑。"
+  path="/zh-cn/portofolio"
+>
+  <section class="border-b border-line bg-blueprint-dark text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-4xl px-5 py-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">项目案例</p>
+        <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">我们的成功案例</h1>
+        <p class="mt-5 max-w-xl font-body text-blueprint-light">
+          以下是部分我们已成功协助完成建筑许可证申请的客户案例。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      {proyek && (
+        <div class="rounded-sm border-2 border-line bg-paper-dim overflow-hidden">
+          <img src={proyek.foto} alt={proyek.fotoAlt} class="w-full h-64 object-cover" />
+          <div class="p-8">
+            <p class="font-mono text-xs uppercase tracking-widest text-stamp">项目</p>
+            <h2 class="mt-2 font-display text-2xl font-bold text-ink">{(proyek as any).nama_zh || proyek.nama}</h2>
+            <div class="mt-4 flex flex-wrap gap-4 font-mono text-xs text-slate">
+              <span>客户：{(proyek as any).klien_zh || proyek.klien}</span>
+              <span>地点：{(proyek as any).lokasi_zh || proyek.lokasi}</span>
+            </div>
+            <p class="mt-4 font-body text-sm leading-relaxed text-slate">
+              {(proyek as any).deskripsi_zh || proyek.deskripsi}
+            </p>
+            <div class="mt-6 flex gap-4">
+              {proyek.capaian?.map((c: any) => (
+                <div class="rounded-sm border border-blueprint px-4 py-2 font-mono text-xs font-bold text-blueprint">
+                  {c.kode}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+      <div class="mt-12 text-center">
+        <p class="font-body text-slate">想了解更多案例或咨询您的项目？</p>
+        <a
+          href={`https://wa.me/${waNumber}?text=${waMsg}`}
+          target="_blank" rel="noopener noreferrer"
+          class="mt-4 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
+        >
+          WhatsApp 免费咨询
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

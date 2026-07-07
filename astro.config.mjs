@@ -13,6 +13,12 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
+  i18n: {
+    defaultLocale: "id",
+    locales: ["id", "zh-cn"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   integrations: [sitemap()]
 });

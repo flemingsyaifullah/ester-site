@@ -11,11 +11,11 @@ if (!token || !(await verifyToken(token))) {
 }
 
 // Read current content from GitHub (always latest committed state)
-type Capaian = { kode: string; label: string; desc: string };
-type Proyek  = { id: string; nama: string; klien: string; lokasi: string; foto: string; fotoAlt: string; deskripsi: string; capaian: Capaian[] };
+type Capaian = { kode: string; label: string; label_zh?: string; desc: string; desc_zh?: string; };
+type Proyek  = { id: string; nama: string; nama_zh?: string; klien: string; klien_zh?: string; lokasi: string; lokasi_zh?: string; foto: string; fotoAlt: string; deskripsi: string; deskripsi_zh?: string; capaian: Capaian[] };
 type Alasan  = { angka: string; label: string };
-type BlogPost = { slug: string; title: string; excerpt: string; date: string; readTime: string; content: string[] };
-type NewsItem = { slug: string; title: string; excerpt: string; date: string; readTime: string; content: string[] };
+type BlogPost = { slug: string; title: string; title_zh?: string; excerpt: string; excerpt_zh?: string; date: string; readTime: string; content: string[]; content_zh?: string[] };
+type NewsItem = { slug: string; title: string; title_zh?: string; excerpt: string; excerpt_zh?: string; date: string; readTime: string; content: string[]; content_zh?: string[] };
 
 let proyek: Proyek | null = null;
 let alasan: Alasan[] = [];
@@ -120,26 +120,37 @@ try {
           <div class="grid gap-5 sm:grid-cols-2">
 
             <div class="sm:col-span-2">
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Nama Proyek</label>
-              <input name="nama" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint" required
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Nama Proyek (ID)</label>
+              <input name="nama" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint" required
                 value={proyek?.nama ?? ''} />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Nama Proyek (ZH)</label>
+              <input name="nama_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                value={proyek?.nama_zh ?? ''} />
             </div>
 
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Klien</label>
-              <input name="klien" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Klien (ID)</label>
+              <input name="klien" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
                 value={proyek?.klien ?? ''} />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Klien (ZH)</label>
+              <input name="klien_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                value={proyek?.klien_zh ?? ''} />
             </div>
 
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Lokasi</label>
-              <input name="lokasi" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Lokasi (ID)</label>
+              <input name="lokasi" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
                 value={proyek?.lokasi ?? ''} />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Lokasi (ZH)</label>
+              <input name="lokasi_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                value={proyek?.lokasi_zh ?? ''} />
             </div>
 
             <div class="sm:col-span-2">
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Proyek</label>
-              <textarea name="deskripsi" rows="4" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.deskripsi ?? ''}</textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Proyek (ID)</label>
+              <textarea name="deskripsi" rows="4" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.deskripsi ?? ''}</textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Proyek (ZH)</label>
+              <textarea name="deskripsi_zh" rows="4" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.deskripsi_zh ?? ''}</textarea>
             </div>
 
             <!-- PBG -->
@@ -150,13 +161,18 @@ try {
               </p>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label / Judul</label>
-                  <input name="pbg_label" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label (ID)</label>
+                  <input name="pbg_label" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
                     value={proyek?.capaian?.[0]?.label ?? 'Persetujuan Bangunan Gedung'} />
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label (ZH)</label>
+                  <input name="pbg_label_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                    value={proyek?.capaian?.[0]?.label_zh ?? ''} />
                 </div>
                 <div class="sm:row-span-2">
-                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Capaian</label>
-                  <textarea name="pbg_desc" rows="4" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint h-full resize-none">{proyek?.capaian?.[0]?.desc ?? ''}</textarea>
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Capaian (ID)</label>
+                  <textarea name="pbg_desc" rows="4" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.capaian?.[0]?.desc ?? ''}</textarea>
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Capaian (ZH)</label>
+                  <textarea name="pbg_desc_zh" rows="4" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.capaian?.[0]?.desc_zh ?? ''}</textarea>
                 </div>
               </div>
             </div>
@@ -169,13 +185,18 @@ try {
               </p>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label / Judul</label>
-                  <input name="slf_label" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label (ID)</label>
+                  <input name="slf_label" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
                     value={proyek?.capaian?.[1]?.label ?? 'Sertifikat Laik Fungsi'} />
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label (ZH)</label>
+                  <input name="slf_label_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                    value={proyek?.capaian?.[1]?.label_zh ?? ''} />
                 </div>
                 <div class="sm:row-span-2">
-                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Capaian</label>
-                  <textarea name="slf_desc" rows="4" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint h-full resize-none">{proyek?.capaian?.[1]?.desc ?? ''}</textarea>
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Capaian (ID)</label>
+                  <textarea name="slf_desc" rows="4" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.capaian?.[1]?.desc ?? ''}</textarea>
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Deskripsi Capaian (ZH)</label>
+                  <textarea name="slf_desc_zh" rows="4" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint resize-none">{proyek?.capaian?.[1]?.desc_zh ?? ''}</textarea>
                 </div>
               </div>
             </div>
@@ -297,12 +318,16 @@ try {
           
           <div class="grid gap-5">
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Artikel</label>
-              <input id="blogTitle" name="title" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Artikel (ID)</label>
+              <input id="blogTitle" name="title" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Artikel (ZH)</label>
+              <input id="blogTitleZh" name="title_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" />
             </div>
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan (Excerpt)</label>
-              <textarea id="blogExcerpt" name="excerpt" rows="2" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan / Excerpt (ID)</label>
+              <textarea id="blogExcerpt" name="excerpt" rows="2" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan / Excerpt (ZH)</label>
+              <textarea id="blogExcerptZh" name="excerpt_zh" rows="2" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none"></textarea>
             </div>
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
@@ -315,8 +340,10 @@ try {
               </div>
             </div>
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (Pisahkan paragraf dengan ENTER kosong / Double Enter)</label>
-              <textarea id="blogContent" name="content" rows="12" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ID)</label>
+              <textarea id="blogContent" name="content" rows="8" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ZH)</label>
+              <textarea id="blogContentZh" name="content_zh" rows="8" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed"></textarea>
             </div>
           </div>
           
@@ -366,12 +393,16 @@ try {
           
           <div class="grid gap-5">
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Berita</label>
-              <input id="newsTitle" name="title" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Berita (ID)</label>
+              <input id="newsTitle" name="title" type="text" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" required />
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Judul Berita (ZH)</label>
+              <input id="newsTitleZh" name="title_zh" type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" />
             </div>
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan (Excerpt)</label>
-              <textarea id="newsExcerpt" name="excerpt" rows="2" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan / Excerpt (ID)</label>
+              <textarea id="newsExcerpt" name="excerpt" rows="2" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Ringkasan / Excerpt (ZH)</label>
+              <textarea id="newsExcerptZh" name="excerpt_zh" rows="2" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-none"></textarea>
             </div>
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
@@ -384,8 +415,10 @@ try {
               </div>
             </div>
             <div>
-              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (Pisahkan paragraf dengan ENTER kosong / Double Enter)</label>
-              <textarea id="newsContent" name="content" rows="12" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ID)</label>
+              <textarea id="newsContent" name="content" rows="8" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ZH)</label>
+              <textarea id="newsContentZh" name="content_zh" rows="8" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed"></textarea>
             </div>
           </div>
           
@@ -453,21 +486,29 @@ try {
         {
           id: 'prodia-mojokerto',
           nama: fd.get('nama')?.toString() ?? '',
+          nama_zh: fd.get('nama_zh')?.toString() ?? '',
           klien: fd.get('klien')?.toString() ?? '',
+          klien_zh: fd.get('klien_zh')?.toString() ?? '',
           lokasi: fd.get('lokasi')?.toString() ?? '',
+          lokasi_zh: fd.get('lokasi_zh')?.toString() ?? '',
           foto: fd.get('foto')?.toString() ?? '/images/prodia.jpg',
           fotoAlt: fd.get('nama')?.toString() ?? 'Foto proyek',
           deskripsi: fd.get('deskripsi')?.toString() ?? '',
+          deskripsi_zh: fd.get('deskripsi_zh')?.toString() ?? '',
           capaian: [
             {
               kode: 'PBG',
               label: fd.get('pbg_label')?.toString() ?? 'Persetujuan Bangunan Gedung',
+              label_zh: fd.get('pbg_label_zh')?.toString() ?? '',
               desc: fd.get('pbg_desc')?.toString() ?? '',
+              desc_zh: fd.get('pbg_desc_zh')?.toString() ?? '',
             },
             {
               kode: 'SLF',
               label: fd.get('slf_label')?.toString() ?? 'Sertifikat Laik Fungsi',
+              label_zh: fd.get('slf_label_zh')?.toString() ?? '',
               desc: fd.get('slf_desc')?.toString() ?? '',
+              desc_zh: fd.get('slf_desc_zh')?.toString() ?? '',
             },
           ],
         },
@@ -599,10 +640,13 @@ try {
     (document.getElementById('blogIsNew') as HTMLInputElement).value = isNew ? '1' : '0';
     (document.getElementById('blogSlug') as HTMLInputElement).value = post?.slug || '';
     (document.getElementById('blogTitle') as HTMLInputElement).value = post?.title || '';
+    (document.getElementById('blogTitleZh') as HTMLInputElement).value = post?.title_zh || '';
     (document.getElementById('blogExcerpt') as HTMLTextAreaElement).value = post?.excerpt || '';
+    (document.getElementById('blogExcerptZh') as HTMLTextAreaElement).value = post?.excerpt_zh || '';
     (document.getElementById('blogDate') as HTMLInputElement).value = post?.date || new Date().toISOString().split('T')[0];
     (document.getElementById('blogReadTime') as HTMLInputElement).value = post?.readTime || '3 menit baca';
     (document.getElementById('blogContent') as HTMLTextAreaElement).value = post?.content?.join('\n\n') || '';
+    (document.getElementById('blogContentZh') as HTMLTextAreaElement).value = post?.content_zh?.join('\n\n') || '';
     
     if (isNew) {
       deleteBlogBtn.classList.add('hidden');
@@ -675,10 +719,13 @@ try {
     const newPost = {
       slug,
       title,
+      title_zh: (document.getElementById('blogTitleZh') as HTMLInputElement).value,
       excerpt: (document.getElementById('blogExcerpt') as HTMLTextAreaElement).value,
+      excerpt_zh: (document.getElementById('blogExcerptZh') as HTMLTextAreaElement).value,
       date: (document.getElementById('blogDate') as HTMLInputElement).value,
       readTime: (document.getElementById('blogReadTime') as HTMLInputElement).value,
-      content: (document.getElementById('blogContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter(p => p.trim() !== '')
+      content: (document.getElementById('blogContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter(p => p.trim() !== ''),
+      content_zh: (document.getElementById('blogContentZh') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter(p => p.trim() !== '')
     };
     
     let newBlogsData = [...blogsData];
@@ -730,10 +777,13 @@ try {
     (document.getElementById('newsIsNew') as HTMLInputElement).value = isNew ? '1' : '0';
     (document.getElementById('newsSlug') as HTMLInputElement).value = item?.slug || '';
     (document.getElementById('newsTitle') as HTMLInputElement).value = item?.title || '';
+    (document.getElementById('newsTitleZh') as HTMLInputElement).value = item?.title_zh || '';
     (document.getElementById('newsExcerpt') as HTMLTextAreaElement).value = item?.excerpt || '';
+    (document.getElementById('newsExcerptZh') as HTMLTextAreaElement).value = item?.excerpt_zh || '';
     (document.getElementById('newsDate') as HTMLInputElement).value = item?.date || new Date().toISOString().split('T')[0];
     (document.getElementById('newsReadTime') as HTMLInputElement).value = item?.readTime || '2 menit baca';
     (document.getElementById('newsContent') as HTMLTextAreaElement).value = item?.content?.join('\n\n') || '';
+    (document.getElementById('newsContentZh') as HTMLTextAreaElement).value = item?.content_zh?.join('\n\n') || '';
     if (isNew) { deleteNewsBtn.classList.add('hidden'); newsSelect.value = ''; }
     else { deleteNewsBtn.classList.remove('hidden'); }
   }
@@ -786,10 +836,13 @@ try {
     }
     const newItem = {
       slug, title,
+      title_zh: (document.getElementById('newsTitleZh') as HTMLInputElement).value,
       excerpt: (document.getElementById('newsExcerpt') as HTMLTextAreaElement).value,
+      excerpt_zh: (document.getElementById('newsExcerptZh') as HTMLTextAreaElement).value,
       date: (document.getElementById('newsDate') as HTMLInputElement).value,
       readTime: (document.getElementById('newsReadTime') as HTMLInputElement).value,
-      content: (document.getElementById('newsContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter((p: string) => p.trim() !== '')
+      content: (document.getElementById('newsContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter((p: string) => p.trim() !== ''),
+      content_zh: (document.getElementById('newsContentZh') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter((p: string) => p.trim() !== '')
     };
     let updated = [...newsData];
     if (isNew) { updated.unshift(newItem); }
