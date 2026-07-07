@@ -13,7 +13,7 @@ if (!token || !(await verifyToken(token))) {
 // Read current content from GitHub (always latest committed state)
 type Capaian = { kode: string; label: string; label_zh?: string; desc: string; desc_zh?: string; };
 type Proyek  = { id: string; nama: string; nama_zh?: string; klien: string; klien_zh?: string; lokasi: string; lokasi_zh?: string; foto: string; fotoAlt: string; deskripsi: string; deskripsi_zh?: string; suspended?: boolean; capaian: Capaian[] };
-type Alasan  = { angka: string; label: string };
+type Alasan  = { angka: string; label: string; label_zh?: string };
 type BlogPost = { slug: string; title: string; title_zh?: string; excerpt: string; excerpt_zh?: string; date: string; readTime: string; content: string[]; content_zh?: string[] };
 type NewsItem = { slug: string; title: string; title_zh?: string; excerpt: string; excerpt_zh?: string; date: string; readTime: string; content: string[]; content_zh?: string[] };
 
@@ -266,16 +266,21 @@ try {
         <form id="statsForm" novalidate>
           <div class="space-y-4">
             {alasan.map((a, i) => (
-              <div class="flex gap-4 rounded-sm border border-line p-4">
-                <div class="w-24 flex-shrink-0">
+              <div class="rounded-sm border border-line p-4 grid gap-4 sm:grid-cols-[5rem_1fr_1fr]">
+                <div>
                   <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Angka</label>
                   <input name={`angka_${i}`} type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint text-center font-display font-bold"
                     value={a.angka} placeholder="12+" />
                 </div>
-                <div class="flex-1">
-                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label / Keterangan</label>
+                <div>
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label (ID)</label>
                   <input name={`label_${i}`} type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
                     value={a.label} />
+                </div>
+                <div>
+                  <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Label (ZH 中文)</label>
+                  <input name={`label_zh_${i}`} type="text" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none transition-colors focus:border-blueprint"
+                    value={a.label_zh || ''} />
                 </div>
               </div>
             ))}
@@ -711,6 +716,7 @@ try {
       alasan.push({
         angka: fd.get(`angka_${i}`)?.toString() ?? '',
         label: fd.get(`label_${i}`)?.toString() ?? '',
+        label_zh: fd.get(`label_zh_${i}`)?.toString() ?? '',
       });
     }
 
