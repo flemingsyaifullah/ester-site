@@ -26,7 +26,7 @@ const sorted = [...news].sort((a, b) => (a.date < b.date ? 1 : -1));
     <div class="mx-auto max-w-4xl px-5 py-16">
       <div class="grid gap-6">
         {sorted.map((n) => (
-          <a href={`/berita/${n.slug}`} class="group block rounded-sm border border-line bg-paper-dim p-6 transition-colors hover:border-ink">
+          <a href={`/berita/${n.slug}`} class="group block rounded-sm border border-line bg-paper p-6 transition-colors hover:border-ink">
             <p class="font-mono text-xs uppercase tracking-wider text-slate">
               {new Date(n.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })} · {n.readTime}
             </p>
