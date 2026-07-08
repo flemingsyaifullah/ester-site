@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Stamp from "../../components/Stamp.astro";
+import { daftarKota } from "../../data/kota";
 import siteContent from "../../data/site-content.json";
 
 const waNumber = "6282230027878";
@@ -42,28 +42,25 @@ const alasan = siteContent.alasan;
     <div class="blueprint-grid absolute inset-0"></div>
     <div class="relative mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-16">
       <div>
-        <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-paper/80">
+        <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-paper/90">
           PBG & SLF 许可证顾问 — 总部位于泗水
         </p>
         <h1 class="text-balance font-display text-4xl font-bold leading-[1.08] sm:text-5xl md:text-[3.2rem]">
-          让您的建筑许可<br />
-          <span class="text-paper/70">快速合规</span>
+          专业代办 PBG & SLF，无需您亲跑政府部门
         </h1>
-        <p class="mt-6 max-w-lg font-body text-base leading-relaxed text-paper/90">
-          Ester Globalindo 是专业代办 <strong class="text-paper">PBG（建筑审批许可证）</strong> 和 <strong class="text-paper">SLF（建筑合格证书）</strong> 的许可证顾问，服务泗水及东爪哇地区，已拥有多年丰富经验。
+        <p class="mt-5 max-w-lg font-body text-base leading-relaxed text-paper/90 sm:text-lg">
+          我们负责准备文件、陪同 TPA/TPT 咨询，直至您的建筑许可证正式颁发——从首次提交到最终批准，全程陪同。
         </p>
-        <div class="mt-8 flex flex-wrap gap-4">
+        <div class="mt-8 flex flex-wrap gap-3">
           <a
             href={`https://wa.me/${waNumber}?text=${waMsg}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
+            target="_blank" rel="noopener noreferrer"
+            class="rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
           >
             免费咨询
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -79,35 +76,81 @@ const alasan = siteContent.alasan;
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="bg-paper">
-    <div class="mx-auto max-w-6xl px-5 py-20">
-      <p class="font-mono text-xs uppercase tracking-widest text-stamp">服务项目</p>
-      <h2 class="mt-2 font-display text-3xl font-bold text-ink">我们提供的服务</h2>
+  <!-- 为什么重要 -->
+  <section class="paper-grid bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">为什么这很重要</p>
+      <h2 class="mt-2 max-w-2xl text-balance font-display text-3xl font-bold text-ink sm:text-4xl">
+        无合规许可的建筑，不仅仅是行政问题。
+      </h2>
+      <p class="mt-4 max-w-2xl font-body text-slate">
+        PBG 是根据《就业创造法》取代原 IMB 的建筑许可证，同时也是建筑空间规划的管控工具——审查技术方案是否符合建筑功能、建筑规范（KDB & KLB）以及建筑技术可靠性标准。没有 PBG，SLF 及其他各类运营许可证的申请也将受阻。
+      </p>
+    </div>
+  </section>
+
+  <!-- 服务项目 -->
+  <section class="border-y border-line bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">我们的服务</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">两项许可，一个团队全程陪同</h2>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         {layanan.map((l) => (
-          <a href={l.href} class="group block rounded-sm border-2 border-line bg-paper p-8 transition-colors hover:border-ink">
-            <span class="inline-block rounded-sm bg-blueprint px-2.5 py-1 font-mono text-xs font-medium tracking-wider text-paper">{l.kode}</span>
-            <h3 class="mt-4 font-display text-xl font-bold text-ink">{l.nama}</h3>
-            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{l.desc}</p>
-            <p class="mt-4 font-mono text-xs uppercase tracking-wider text-stamp group-hover:underline">了解更多 &rarr;</p>
+          <a href={l.href} class="group block rounded-sm border-2 border-ink bg-paper p-8 transition-colors hover:bg-ink">
+            <span class="font-mono text-xs tracking-widest text-stamp">{l.kode}</span>
+            <h3 class="mt-3 font-display text-2xl font-bold text-ink group-hover:text-paper">{l.nama}</h3>
+            <p class="mt-3 font-body text-sm leading-relaxed text-slate group-hover:text-paper/90">{l.desc}</p>
+            <span class="mt-5 inline-block font-mono text-xs uppercase tracking-wider text-ink group-hover:text-paper">
+              查看详情 &rarr;
+            </span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="border-y border-line bg-paper">
-    <div class="mx-auto max-w-6xl px-5 py-20">
-      <p class="font-mono text-xs uppercase tracking-widest text-stamp">流程</p>
-      <h2 class="mt-2 font-display text-3xl font-bold text-ink">PBG 申请流程</h2>
+  <!-- 办理流程 -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">办理流程</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">我们的工作流程</h2>
+      <ol class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {proses.map((p, i) => (
+          <li class="flex gap-4 border-t border-line pt-4">
+            <span class="font-mono text-2xl font-medium text-line">0{i + 1}</span>
+            <p class="font-body text-sm leading-relaxed text-ink">{p}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 服务区域 -->
+  <section class="border-t border-line bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">服务区域</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">总部泗水，服务东爪哇全区</h2>
+      <p class="mt-3 max-w-xl font-body text-sm text-slate">
+        泗水是我们的重点服务城市——与技术部门的响应和协调速度最快。我们同时也服务周边城市。
+      </p>
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {proses.map((step, i) => (
-          <div class="flex gap-4 rounded-sm border border-line bg-paper p-5">
-            <span class="flex-shrink-0 font-mono text-2xl font-bold text-stamp">{String(i + 1).padStart(2, '0')}</span>
-            <p class="font-body text-sm leading-relaxed text-ink">{step}</p>
-          </div>
+        {daftarKota.map((k) => (
+          <a
+            href={`/zh-cn/area-layanan/${k.slug}`}
+            class={`relative rounded-sm border p-5 transition-colors ${
+              k.utama
+                ? "border-stamp bg-stamp/5 hover:bg-stamp/10"
+                : "border-line hover:border-ink hover:bg-paper"
+            }`}
+          >
+            {k.utama && (
+              <span class="absolute -top-3 left-5 rounded-sm bg-stamp px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-paper">
+                重点城市
+              </span>
+            )}
+            <h3 class="font-display text-lg font-bold text-ink">{k.nama}</h3>
+            <p class="mt-2 font-body text-xs leading-relaxed text-slate">{k.catatan_zh}</p>
+          </a>
         ))}
       </div>
     </div>
