@@ -26,8 +26,8 @@ const lainnya = news.filter((n) => n.slug !== item.slug).slice(0, 3);
     <div class="border-b border-line bg-[#5b7ec5] text-paper">
       <div class="blueprint-grid">
         <div class="mx-auto max-w-3xl px-5 py-14">
-          <a href="/zh-cn/berita" class="font-mono text-xs uppercase tracking-wider text-blueprint-light hover:text-white">&larr; 返回资讯列表</a>
-          <p class="mt-4 font-mono text-xs uppercase tracking-wider text-blueprint-light">
+          <a href="/zh-cn/berita" class="font-mono text-xs uppercase tracking-wider text-paper/90 hover:text-white">&larr; 返回资讯列表</a>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wider text-paper/90">
             {new Date(item.date).toLocaleDateString("zh-CN", { day: "numeric", month: "long", year: "numeric" })} · {item.readTime}
           </p>
           <h1 class="mt-2 text-balance font-display text-3xl font-bold leading-tight sm:text-4xl">{title}</h1>
