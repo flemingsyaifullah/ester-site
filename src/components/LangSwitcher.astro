@@ -11,36 +11,36 @@ const zhPath = translatePath(rawPath, 'zh-cn');
 const currentFlag = lang === 'zh-cn' ? 'cn' : 'id';
 ---
 
-<div class="fixed right-4 top-[72px] z-[60] md:top-5 md:right-5">
+
   <div class="relative inline-block text-left">
     <!-- Active Button -->
-    <button type="button" class="flex items-center gap-2 rounded-full border-2 border-line bg-paper/95 px-3 py-2 text-sm font-medium shadow-md backdrop-blur transition-all hover:border-ink hover:bg-paper focus:outline-none" id="lang-menu-button" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="flex items-center gap-1 rounded-full border border-ink bg-paper/95 px-1.5 py-0.5 text-sm font-medium shadow-sm backdrop-blur transition-all hover:bg-paper focus:outline-none" id="lang-menu-button" aria-haspopup="true" aria-expanded="false">
       {currentFlag === 'id' ? (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" class="h-3.5 w-5 rounded-[2px] shadow-sm ring-1 ring-black/10"><rect fill="#ce1126" width="9" height="3"/><rect fill="#fff" y="3" width="9" height="3"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice" class="h-4 w-4 rounded-full shadow-sm ring-1 ring-black/10"><rect fill="#ce1126" width="9" height="3"/><rect fill="#fff" y="3" width="9" height="3"/></svg>
       ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" class="h-3.5 w-5 rounded-[2px] shadow-sm ring-1 ring-black/10"><rect fill="#ee1c25" width="900" height="600"/><path fill="#ffef00" d="M140,18l35,108h114l-92,67 35,108-92-67-92,67 35-108-92-67h114z"/><path fill="#ffef00" d="M332,26l23,34-39,12 21-36-22-35 39,13zM404,103l13,38-36,17 28-31-13-39 36,18zM427,211l0,41-31,23 35-22 0-41-31,23zM375,306l-14,38-23,34 38-14-14-38 35,22z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" class="h-4 w-4 rounded-full shadow-sm ring-1 ring-black/10"><rect fill="#ee1c25" width="900" height="600"/><path fill="#ffef00" d="M140,18l35,108h114l-92,67 35,108-92-67-92,67 35-108-92-67h114z"/><path fill="#ffef00" d="M332,26l23,34-39,12 21-36-22-35 39,13zM404,103l13,38-36,17 28-31-13-39 36,18zM427,211l0,41-31,23 35-22 0-41-31,23zM375,306l-14,38-23,34 38-14-14-38 35,22z"/></svg>
       )}
-      <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">{lang === 'zh-cn' ? 'ZH' : 'ID'}</span>
-      <svg id="lang-menu-icon" class="h-4 w-4 text-slate transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <span class="font-mono text-[10px] font-medium text-ink uppercase tracking-normal">{lang === 'zh-cn' ? 'ZH' : 'ID'}</span>
+      <svg id="lang-menu-icon" class="h-3.5 w-3.5 text-slate transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
       </svg>
     </button>
 
     <!-- Dropdown menu -->
-    <div id="lang-dropdown-menu" class="pointer-events-none absolute right-0 mt-2 w-40 origin-top-right translate-y-2 scale-95 transform rounded-sm border-2 border-line bg-paper opacity-0 shadow-xl transition-all duration-200 ease-out">
+    <div id="lang-dropdown-menu" class="pointer-events-none absolute left-0 mt-2 w-36 origin-top-left translate-y-2 scale-95 transform rounded-sm border border-ink bg-paper opacity-0 shadow-xl transition-all duration-200 ease-out">
       <div class="py-1">
-        <a href={idPath} class={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-paper-dim ${lang === 'id' ? 'bg-paper-dim font-bold text-ink' : 'font-medium text-slate'}`}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" class="h-4 w-6 rounded-[2px] shadow-sm ring-1 ring-black/10"><rect fill="#ce1126" width="9" height="3"/><rect fill="#fff" y="3" width="9" height="3"/></svg>
+        <a href={idPath} class={`flex items-center gap-2.5 px-3 py-2.5 text-xs transition-colors hover:bg-paper-dim ${lang === 'id' ? 'bg-paper-dim font-medium text-ink' : 'font-normal text-slate'}`}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice" class="h-4 w-4 rounded-full shadow-sm ring-1 ring-black/10"><rect fill="#ce1126" width="9" height="3"/><rect fill="#fff" y="3" width="9" height="3"/></svg>
           Indonesia
         </a>
-        <a href={zhPath} class={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-paper-dim ${lang === 'zh-cn' ? 'bg-paper-dim font-bold text-ink' : 'font-medium text-slate'}`}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" class="h-4 w-6 rounded-[2px] shadow-sm ring-1 ring-black/10"><rect fill="#ee1c25" width="900" height="600"/><path fill="#ffef00" d="M140,18l35,108h114l-92,67 35,108-92-67-92,67 35-108-92-67h114z"/><path fill="#ffef00" d="M332,26l23,34-39,12 21-36-22-35 39,13zM404,103l13,38-36,17 28-31-13-39 36,18zM427,211l0,41-31,23 35-22 0-41-31,23zM375,306l-14,38-23,34 38-14-14-38 35,22z"/></svg>
+        <a href={zhPath} class={`flex items-center gap-2.5 px-3 py-2.5 text-xs transition-colors hover:bg-paper-dim ${lang === 'zh-cn' ? 'bg-paper-dim font-medium text-ink' : 'font-normal text-slate'}`}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" class="h-4 w-4 rounded-full shadow-sm ring-1 ring-black/10"><rect fill="#ee1c25" width="900" height="600"/><path fill="#ffef00" d="M140,18l35,108h114l-92,67 35,108-92-67-92,67 35-108-92-67h114z"/><path fill="#ffef00" d="M332,26l23,34-39,12 21-36-22-35 39,13zM404,103l13,38-36,17 28-31-13-39 36,18zM427,211l0,41-31,23 35-22 0-41-31,23zM375,306l-14,38-23,34 38-14-14-38 35,22z"/></svg>
           中文 (简体)
         </a>
       </div>
     </div>
   </div>
-</div>
+
 
 <script>
   // Script khusus untuk nanganin klik dropdown di HP dan Desktop
