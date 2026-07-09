@@ -51,7 +51,7 @@ const lainnya = news.filter((n) => n.slug !== item.slug).slice(0, 3);
         <p class="font-mono text-xs uppercase tracking-widest text-stamp">更多资讯</p>
         <div class="mt-6 grid gap-4">
           {lainnya.map((n) => (
-            <a href={`/zh-cn/berita/${n.slug}`} class="rounded-sm border border-line bg-paper px-5 py-4 hover:border-ink">
+            <a href={`/zh-cn/berita/${n.slug}`} class="rounded-sm border border-ink bg-paper px-5 py-4 transition-shadow hover:shadow-md">
               <h3 class="font-display font-bold text-ink">{(n as any).title_zh || n.title}</h3>
             </a>
           ))}

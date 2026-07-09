@@ -26,7 +26,7 @@ const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
     <div class="border-b border-line bg-[#5b7ec5] text-paper">
       <div class="blueprint-grid">
         <div class="mx-auto max-w-3xl px-5 py-14">
-          <a href="/zh-cn/blog" class="font-mono text-xs uppercase tracking-wider text-paper/90 hover:text-white">&larr; 返回博客列表</a>
+          <a href="/zh-cn/blog" class="font-mono text-xs uppercase tracking-wider text-paper/90 hover:text-white">&larr; 返回文章列表</a>
           <p class="mt-4 font-mono text-xs uppercase tracking-wider text-paper/90">
             {new Date(post.date).toLocaleDateString("zh-CN", { day: "numeric", month: "long", year: "numeric" })} · {post.readTime}
           </p>
@@ -50,7 +50,7 @@ const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
       <p class="font-mono text-xs uppercase tracking-widest text-stamp">更多文章</p>
       <div class="mt-6 grid gap-4">
         {lainnya.map((p) => (
-          <a href={`/zh-cn/blog/${p.slug}`} class="rounded-sm border border-line bg-paper px-5 py-4 hover:border-ink">
+          <a href={`/zh-cn/blog/${p.slug}`} class="rounded-sm border border-ink bg-paper px-5 py-4 transition-shadow hover:shadow-md">
             <h3 class="font-display font-bold text-ink">{(p as any).title_zh || p.title}</h3>
           </a>
         ))}
