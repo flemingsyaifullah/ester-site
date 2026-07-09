@@ -27,7 +27,7 @@ const currentFlag = lang === 'zh-cn' ? 'cn' : 'id';
     </button>
 
     <!-- Dropdown menu -->
-    <div id="lang-dropdown-menu" class="pointer-events-none absolute left-0 mt-2 w-36 origin-top-left translate-y-2 scale-95 transform rounded-sm border border-ink bg-paper opacity-0 shadow-xl transition-all duration-200 ease-out">
+    <div id="lang-dropdown-menu" class="pointer-events-none absolute right-0 mt-2 w-36 origin-top-right translate-y-2 scale-95 transform rounded-sm border border-ink bg-paper opacity-0 shadow-xl transition-all duration-200 ease-out">
       <div class="py-1">
         <a href={idPath} class={`flex items-center gap-2.5 px-3 py-2.5 text-xs transition-colors hover:bg-paper-dim ${lang === 'id' ? 'bg-paper-dim font-medium text-ink' : 'font-normal text-slate'}`}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice" class="h-4 w-4 rounded-full shadow-sm ring-1 ring-black/10"><rect fill="#ce1126" width="9" height="3"/><rect fill="#fff" y="3" width="9" height="3"/></svg>
