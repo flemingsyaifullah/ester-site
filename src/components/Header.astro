@@ -21,7 +21,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
 ---
 <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:py-4">
-    <div class="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-6">
+    <div class="order-2 flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-6 md:order-1 items-end">
       <a href={translatePath("/")} class="flex items-center gap-2">
         <span class="font-display text-lg font-bold tracking-tight text-ink">ESTER GLOBALINDO</span>
         <span class="rounded-sm bg-blueprint px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper uppercase">{t('badge.perizinan')}</span>
@@ -29,7 +29,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
       <LangSwitcher />
     </div>
 
-    <nav class="hidden items-center gap-7 md:flex">
+    <nav class="hidden md:order-2 items-center gap-7 md:flex">
       {nav.map((item) => (
         <a href={translatePath(item.href)} class="font-body text-sm text-slate transition-colors hover:text-ink">
           {item.label}
@@ -38,7 +38,7 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
     </nav>
 
 
-    <button id="menuBtn" class="md:hidden" aria-label="Buka menu" aria-expanded="false">
+    <button id="menuBtn" class="order-1 md:hidden" aria-label="Buka menu" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
       </svg>
