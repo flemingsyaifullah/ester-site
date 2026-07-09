@@ -24,6 +24,7 @@ export const ui = {
     'footer.legal': 'Legal',
     'footer.privacy': 'Kebijakan Privasi',
     'footer.terms': 'Syarat & Ketentuan',
+    'footer.back_home': 'Kembali ke Beranda',
   },
   'zh-cn': {
     'badge.perizinan': '许可证',
@@ -43,5 +44,6 @@ export const ui = {
     'footer.legal': '法律信息',
     'footer.privacy': '隐私政策',
     'footer.terms': '条款与条件',
+    'footer.back_home': '返回首页',
   },
 } as const;
