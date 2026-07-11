@@ -35,7 +35,11 @@ const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
     <div class="mx-auto max-w-3xl px-5 py-14">
       <div class="space-y-5">
         {post.content.map((para) => (
-          <p class="font-body text-base leading-relaxed text-ink">{para}</p>
+          para.startsWith('<') ? (
+            <div set:html={para} />
+          ) : (
+            <p class="font-body text-base leading-relaxed text-ink">{para}</p>
+          )
         ))}
       </div>
 
