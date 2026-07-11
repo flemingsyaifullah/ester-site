@@ -19,11 +19,6 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan pe
           <p class="max-w-sm font-body text-sm leading-relaxed text-blueprint-light">
             {t('footer.about')}
           </p>
-          <div class="mt-6">
-            <a href={translatePath("/")} class="inline-flex items-center gap-2 border border-blueprint-light/30 bg-blueprint-dark/50 px-4 py-2 font-mono text-xs uppercase tracking-wider text-white transition-colors hover:bg-blueprint hover:border-blueprint shadow-sm">
-              &larr; {t('footer.back_home')}
-            </a>
-          </div>
         </div>
 
         <div>
@@ -72,7 +67,13 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan pe
       </div>
     </div>
 
-    <div class="mx-auto mt-8 max-w-6xl border-t border-line/10 px-5 pt-6">
+    <div class="mx-auto mt-0 flex justify-center px-5">
+      <a href={translatePath("/")} class="inline-flex items-center gap-2 border border-blueprint-light/30 bg-blueprint-dark/50 px-4 py-2 font-mono text-xs uppercase tracking-wider text-white transition-colors hover:bg-blueprint hover:border-blueprint shadow-sm">
+        &larr; {t('footer.back_home')}
+      </a>
+    </div>
+
+    <div class="mx-auto mt-4 max-w-6xl border-t border-line/10 px-5 pt-6">
       <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <p class="font-body text-sm text-slate">
           &copy; {new Date().getFullYear()} Ester Globalindo
