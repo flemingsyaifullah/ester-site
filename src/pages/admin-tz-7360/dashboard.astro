@@ -756,14 +756,14 @@ try {
     fd.append('image', file);
 
     try {
-      const res = await fetch('/api/upload', {
+      const res = await fetch('/api/upload-image', {
         method: 'POST',
         body: fd
       });
       const data = await res.json();
-      if (res.ok && data.url) {
+      if (res.ok && (data.path || data.url)) {
         uploadStatus.textContent = '✓ Foto terupload! Jangan lupa Simpan Proyek.';
-        fotoPath.value = data.url;
+        fotoPath.value = data.path || data.url;
       } else {
         uploadStatus.textContent = `✗ Gagal upload: ${data.error}`;
       }
@@ -1135,10 +1135,10 @@ try {
     const fd = new FormData();
     fd.append('image', file);
     try {
-      const res = await fetch('/api/upload', { method: 'POST', body: fd });
+      const res = await fetch('/api/upload-image', { method: 'POST', body: fd });
       const data = await res.json();
-      if (res.ok && data.url) {
-        logo2PathInput.value = data.url;
+      if (res.ok && (data.path || data.url)) {
+        logo2PathInput.value = data.path || data.url;
         logo2UploadStatus.textContent = '✓ Terupload! Klik "+ Tambah Logo" untuk menyimpan.';
       } else {
         logo2UploadStatus.textContent = `✗ Gagal: ${data.error}`;
