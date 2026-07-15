@@ -16,11 +16,13 @@ type Proyek  = { id: string; nama: string; nama_zh?: string; klien: string; klie
 type Alasan  = { angka: string; label: string; label_zh?: string };
 type BlogPost = { slug: string; title: string; title_zh?: string; excerpt: string; excerpt_zh?: string; date: string; readTime: string; content: string[]; content_zh?: string[] };
 type NewsItem = { slug: string; title: string; title_zh?: string; excerpt: string; excerpt_zh?: string; date: string; readTime: string; content: string[]; content_zh?: string[] };
+type Logo2 = { id: string; nama: string; logo: string };
 
 let proyekList: Proyek[] = [];
 let alasan: Alasan[] = [];
 let blogs: BlogPost[] = [];
 let newsItems: NewsItem[] = [];
+let logo2List: Logo2[] = [];
 let loadError = '';
 
 try {
@@ -34,6 +36,8 @@ try {
     blogs = bc ?? [];
     const { data: nc } = await ghReadJson('src/data/news.json') as { data: NewsItem[]; sha: string };
     newsItems = nc ?? [];
+    const { data: l2 } = await ghReadJson('src/data/portfolio2.json') as { data: Logo2[]; sha: string };
+    logo2List = l2 ?? [];
   } else {
     loadError = 'GITHUB_TOKEN atau GITHUB_REPO belum diset di environment variables.';
   }
@@ -100,6 +104,10 @@ try {
       <button id="tab-berita" data-tab="berita"
         class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink whitespace-nowrap">
         Berita
+      </button>
+      <button id="tab-portofolio2" data-tab="portofolio2"
+        class="tab-btn rounded-t-sm px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors text-slate hover:text-ink whitespace-nowrap">
+        Portofolio 2
       </button>
     </div>
 
@@ -449,6 +457,72 @@ try {
             </div>
           </div>
         </form>
+      </div>
+    </section>
+
+    <!-- ===== PANEL: PORTOFOLIO 2 (Logo Grid) ===== -->
+    <section id="panel-portofolio2" class="tab-panel hidden">
+      <div class="rounded-sm border-2 border-line bg-paper p-8">
+        <div class="mb-6 flex items-center justify-between">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest text-stamp">Logo Klien</p>
+            <h2 class="mt-1 font-display text-xl font-bold text-ink">Portofolio 2 — Logo Klien</h2>
+            <p class="mt-1 font-body text-sm text-slate">Tambah atau hapus logo klien yang tampil di halaman Portofolio 2.</p>
+          </div>
+          <a href="/portofolio-2" target="_blank" class="font-mono text-xs text-slate underline underline-offset-2 hover:text-ink">
+            Lihat halaman &rarr;
+          </a>
+        </div>
+
+        <!-- Add New Logo Form -->
+        <div class="mb-8 rounded-sm border border-line p-5">
+          <p class="mb-4 font-mono text-xs uppercase tracking-widest text-slate">Tambah Logo Baru</p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Nama Klien</label>
+              <input id="logo2Nama" type="text" placeholder="PT. Contoh Indonesia"
+                class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint" />
+            </div>
+            <div>
+              <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Logo</label>
+              <div class="flex items-center gap-3">
+                <input id="logo2FileInput" type="file" accept="image/jpeg,image/png,image/webp,image/svg+xml" class="hidden" />
+                <label for="logo2FileInput" class="cursor-pointer rounded-sm border-2 border-line px-4 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+                  Pilih File
+                </label>
+                <span id="logo2FileName" class="font-body text-xs text-slate truncate">Belum dipilih</span>
+                <input id="logo2Path" type="hidden" value="" />
+              </div>
+              <p id="logo2UploadStatus" class="mt-1 font-mono text-xs text-slate"></p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <p id="logo2AddStatus" class="font-mono text-xs text-slate flex-1"></p>
+            <button id="logo2AddBtn" type="button"
+              class="rounded-sm bg-stamp px-6 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90 disabled:opacity-50">
+              + Tambah Logo
+            </button>
+          </div>
+        </div>
+
+        <!-- Existing Logos List -->
+        <div>
+          <p class="mb-4 font-mono text-xs uppercase tracking-widest text-slate">Logo Tersimpan</p>
+          <div id="logo2Grid" class="flex flex-wrap gap-4">
+            {logo2List.length === 0 ? (
+              <p class="font-body text-sm text-slate italic">Belum ada logo. Tambah menggunakan form di atas.</p>
+            ) : (
+              logo2List.map((item) => (
+                <div class="logo2-item relative flex w-36 flex-col items-center gap-2 rounded-sm border border-line p-3" data-id={item.id}>
+                  <img src={item.logo} alt={item.nama} class="h-16 w-full object-contain" loading="lazy" />
+                  <p class="text-center font-body text-xs text-slate leading-snug">{item.nama}</p>
+                  <button type="button" class="logo2-delete-btn absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-stamp text-paper font-mono text-xs leading-none hover:bg-red-600" title="Hapus">&#x2715;</button>
+                </div>
+              ))
+            )}
+          </div>
+          <p id="logo2SaveStatus" class="mt-4 font-mono text-xs text-slate"></p>
+        </div>
       </div>
     </section>
 
@@ -991,4 +1065,128 @@ try {
     newsForm.classList.add('hidden');
     newsSelect.value = '';
   });
+</script>
+
+<script id="logo2DataScript" type="application/json" set:html={JSON.stringify(logo2List)}></script>
+<script>
+  /* ---- Portfolio 2 JS ---- */
+  let logo2Data: any[] = [];
+  try {
+    logo2Data = JSON.parse(document.getElementById('logo2DataScript')?.textContent || '[]');
+  } catch(e) {}
+
+  const logo2Grid = document.getElementById('logo2Grid') as HTMLDivElement;
+  const logo2SaveStatus = document.getElementById('logo2SaveStatus') as HTMLParagraphElement;
+  const logo2AddStatus = document.getElementById('logo2AddStatus') as HTMLParagraphElement;
+  const logo2AddBtn = document.getElementById('logo2AddBtn') as HTMLButtonElement;
+  const logo2NamaInput = document.getElementById('logo2Nama') as HTMLInputElement;
+  const logo2PathInput = document.getElementById('logo2Path') as HTMLInputElement;
+  const logo2FileInput = document.getElementById('logo2FileInput') as HTMLInputElement;
+  const logo2FileNameSpan = document.getElementById('logo2FileName') as HTMLSpanElement;
+  const logo2UploadStatus = document.getElementById('logo2UploadStatus') as HTMLParagraphElement;
+
+  function slugifyLogo(text: string) {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w\-]+/g, '')
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '') + '-' + Date.now();
+  }
+
+  function renderLogo2Card(item: any) {
+    const div = document.createElement('div');
+    div.className = 'logo2-item relative flex w-36 flex-col items-center gap-2 rounded-sm border border-line p-3';
+    div.dataset.id = item.id;
+    div.innerHTML = `
+      <img src="${item.logo}" alt="${item.nama}" class="h-16 w-full object-contain" loading="lazy" />
+      <p class="text-center font-body text-xs text-slate leading-snug">${item.nama}</p>
+      <button type="button" class="logo2-delete-btn absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-stamp text-paper font-mono text-xs leading-none hover:bg-red-600" title="Hapus">&#x2715;</button>
+    `;
+    return div;
+  }
+
+  async function saveLogo2Data(data: any[]) {
+    logo2SaveStatus.textContent = 'Menyimpan...';
+    try {
+      const res = await fetch('/api/save-portfolio2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      if (res.ok && result.ok) {
+        logo2SaveStatus.textContent = '✓ Tersimpan! Website akan diperbarui dalam ~1–2 menit.';
+        logo2Data = data;
+      } else {
+        logo2SaveStatus.textContent = `✗ Gagal: ${result.error}`;
+      }
+    } catch(err) {
+      logo2SaveStatus.textContent = `✗ Error: ${err}`;
+    }
+  }
+
+  // Handle file upload for logo
+  logo2FileInput?.addEventListener('change', async () => {
+    const file = logo2FileInput.files?.[0];
+    if (!file) return;
+    logo2FileNameSpan.textContent = file.name;
+    logo2UploadStatus.textContent = 'Mengupload...';
+    const fd = new FormData();
+    fd.append('image', file);
+    try {
+      const res = await fetch('/api/upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        logo2PathInput.value = data.url;
+        logo2UploadStatus.textContent = '✓ Terupload! Klik "+ Tambah Logo" untuk menyimpan.';
+      } else {
+        logo2UploadStatus.textContent = `✗ Gagal: ${data.error}`;
+      }
+    } catch(e) {
+      logo2UploadStatus.textContent = '✗ Terjadi kesalahan.';
+    }
+  });
+
+  // Add new logo
+  logo2AddBtn?.addEventListener('click', async () => {
+    const nama = logo2NamaInput.value.trim();
+    const logoPath = logo2PathInput.value.trim();
+    if (!nama) { logo2AddStatus.textContent = '✗ Nama klien harus diisi.'; return; }
+    if (!logoPath) { logo2AddStatus.textContent = '✗ Logo harus diupload terlebih dahulu.'; return; }
+
+    const newItem = { id: slugifyLogo(nama), nama, logo: logoPath };
+    const updated = [...logo2Data, newItem];
+
+    // Render optimistically
+    const noDataMsg = logo2Grid?.querySelector('p');
+    if (noDataMsg) noDataMsg.remove();
+    const card = renderLogo2Card(newItem);
+    logo2Grid?.appendChild(card);
+    attachDeleteBtn(card);
+
+    // Clear form
+    logo2NamaInput.value = '';
+    logo2PathInput.value = '';
+    logo2FileInput.value = '';
+    logo2FileNameSpan.textContent = 'Belum dipilih';
+    logo2UploadStatus.textContent = '';
+    logo2AddStatus.textContent = '';
+
+    await saveLogo2Data(updated);
+  });
+
+  // Delete logo handler
+  function attachDeleteBtn(card: HTMLElement) {
+    card.querySelector('.logo2-delete-btn')?.addEventListener('click', async () => {
+      const id = card.dataset.id;
+      if (!confirm('Hapus logo ini?')) return;
+      card.remove();
+      const updated = logo2Data.filter((i: any) => i.id !== id);
+      await saveLogo2Data(updated);
+    });
+  }
+
+  // Attach delete to server-rendered cards
+  document.querySelectorAll<HTMLElement>('.logo2-item').forEach(card => attachDeleteBtn(card));
 </script>
