@@ -26,21 +26,16 @@ import logos from "../data/portfolio2.json";
   <!-- LOGO GRID -->
   <section class="bg-paper">
     <div class="mx-auto max-w-6xl px-5 py-16">
-      {logos.length === 0 ? (
-        <p class="font-body text-sm text-slate text-center py-20">Belum ada data klien.</p>
-      ) : (
-        <div class="flex flex-wrap justify-center gap-8">
+      {logos.length > 0 && (
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {logos.map((item: any) => (
-            <div class="group flex w-36 flex-col items-center gap-3 sm:w-44">
-              <div class="flex h-24 w-full items-center justify-center overflow-hidden rounded-sm border border-line bg-paper p-3 shadow-sm transition-shadow group-hover:shadow-md">
-                <img
-                  src={item.logo}
-                  alt={item.nama}
-                  class="max-h-full max-w-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <p class="text-center font-body text-xs text-slate leading-snug">{item.nama}</p>
+            <div class="flex w-32 items-center justify-center sm:w-40">
+              <img
+                src={item.logo}
+                alt={item.nama}
+                class="max-h-24 max-w-full object-contain"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
