@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import "../styles/global.css";
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
 
 
 export interface Props {
@@ -20,6 +20,11 @@ const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan perizinan");
 
 const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const rawPath = path.replace(/^\/zh-cn/, '') || '/';
+const idUrl = new URL(rawPath, siteUrl).toString();
+const zhUrl = new URL(translatePath(rawPath, 'zh-cn'), siteUrl).toString();
+const ogLocale = lang === 'zh-cn' ? 'zh_CN' : 'id_ID';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -36,7 +41,11 @@ const lang = getLangFromUrl(Astro.url);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content="id_ID" />
+    <meta property="og:locale" content={ogLocale} />
+    
+    <link rel="alternate" hreflang="id" href={idUrl} />
+    <link rel="alternate" hreflang="zh-cn" href={zhUrl} />
+    <link rel="alternate" hreflang="x-default" href={idUrl} />
     <meta name="twitter:card" content="summary" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +58,9 @@ const lang = getLangFromUrl(Astro.url);
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://www.ester-globalindo.com",
       "name": "Ester Globalindo",
+      "image": "https://www.ester-globalindo.com/favicon.svg",
       "description": "Jasa pengurusan Persetujuan Bangunan Gedung (PBG) dan Sertifikat Laik Fungsi (SLF), berbasis di Surabaya.",
       "areaServed": ["Surabaya", "Sidoarjo", "Gresik", "Pasuruan", "Mojokerto", "Malang"],
       "address": {
