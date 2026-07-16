@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
-const rawPath = Astro.url.pathname.replace(/^\/zh-cn/, '') || '/';
+const rawPath = Astro.url.pathname.replace(/^\/zh-cn/, '').replace(/\/$/, "") || '/';
 const idPath = rawPath;
 const zhPath = translatePath(rawPath, 'zh-cn');
 
