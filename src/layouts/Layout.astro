@@ -12,7 +12,8 @@ export interface Props {
   path?: string;
 }
 
-const { title, description, path = Astro.url.pathname } = Astro.props;
+let { title, description, path = Astro.url.pathname } = Astro.props;
+path = path.replace(/\/$/, "") || "/";
 const siteUrl = "https://www.ester-globalindo.com";
 const canonical = new URL(path, siteUrl).toString();
 const waNumber = "6282230027878";
