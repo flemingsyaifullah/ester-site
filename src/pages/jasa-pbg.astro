@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 const waNumber = "6282230027878";
-const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG.");
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan perizinan");
 
 const syarat = [
   "Dokumen Kepemilikan Tanah",
@@ -60,14 +60,14 @@ const proses = [
   description="Jasa pengurusan PBG lengkap: penyiapan dokumen tanah, data teknis arsitektur, struktur, dan MEP, pendampingan konsultasi TPA/TPT, sampai penerbitan dokumen PBG."
   path="/jasa-pbg"
 >
-  <section class="border-b border-line bg-blueprint-dark text-paper">
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
     <div class="blueprint-grid">
-      <div class="mx-auto max-w-4xl px-5 py-16">
-        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Layanan · PBG</p>
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">Layanan · PBG</p>
         <h1 class="mt-2 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
           Persetujuan Bangunan Gedung
         </h1>
-        <p class="mt-5 max-w-xl font-body text-blueprint-light">
+        <p class="mt-5 max-w-xl font-body text-paper/90">
           PBG adalah perizinan yang diberikan kepada pemilik bangunan gedung untuk membangun baru,
           mengubah, memperluas, mengurangi, dan/atau merawat bangunan gedung sesuai standar teknis
           yang berlaku. PBG menggantikan sistem IMB sejak berlakunya UU Cipta Kerja, dan wajib
@@ -76,9 +76,9 @@ const proses = [
         <a
           href={`https://wa.me/${waNumber}?text=${waMsg}`}
           target="_blank" rel="noopener noreferrer"
-          class="mt-7 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper"
+          class="mt-7 inline-block rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
         >
-          Konsultasi Dokumen Anda
+          Konsultasi Pengurusan PBG
         </a>
       </div>
     </div>
@@ -103,7 +103,7 @@ const proses = [
   </section>
 
   <!-- SYARAT DOKUMEN -->
-  <section class="border-y border-line bg-paper-dim">
+  <section class="border-y border-line bg-paper">
     <div class="mx-auto max-w-4xl px-5 py-16">
       <p class="font-mono text-xs uppercase tracking-widest text-stamp">Persyaratan dokumen</p>
       <h2 class="mt-2 font-display text-3xl font-bold text-ink">Yang Perlu Disiapkan</h2>
@@ -139,35 +139,19 @@ const proses = [
   </section>
 
   <!-- PROSES -->
-  <section class="border-t border-line bg-blueprint-dark text-paper">
-    <div class="blueprint-grid">
-      <div class="mx-auto max-w-4xl px-5 py-16">
-        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">Tahap pengurusan</p>
-        <h2 class="mt-2 font-display text-3xl font-bold">9 Langkah Menuju PBG Terbit</h2>
-        <ol class="mt-8 space-y-4">
-          {proses.map((p, i) => (
-            <li class="flex gap-4 border-b border-white/10 pb-4">
-              <span class="font-mono text-sm text-stamp">{String(i + 1).padStart(2, "0")}</span>
-              <p class="font-body text-sm leading-relaxed">{p}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
+  <section class="border-t border-line bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">Tahap pengurusan</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">9 Langkah Menuju PBG Terbit</h2>
+      <ol class="mt-8 space-y-4">
+        {proses.map((p, i) => (
+          <li class="flex gap-4 border-b border-line pb-4">
+            <span class="font-mono text-sm text-stamp">{String(i + 1).padStart(2, "0")}</span>
+            <p class="font-body text-sm leading-relaxed text-ink">{p}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
-  <section class="bg-paper text-center">
-    <div class="mx-auto max-w-2xl px-5 py-16">
-      <h2 class="text-balance font-display text-3xl font-bold text-ink">
-        Serahkan urusan dokumen PBG pada kami, fokus Anda pada proyeknya.
-      </h2>
-      <a
-        href={`https://wa.me/${waNumber}?text=${waMsg}`}
-        target="_blank" rel="noopener noreferrer"
-        class="mt-7 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper"
-      >
-        Mulai Konsultasi
-      </a>
-    </div>
-  </section>
 </Layout>

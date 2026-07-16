@@ -2,101 +2,153 @@
 import Layout from "../../layouts/Layout.astro";
 
 const waNumber = "6282230027878";
-const waMsg = encodeURIComponent("您好，我想咨询 PBG 建筑审批许可证办理业务。");
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan perizinan");
 
-const langkah = [
-  { no: "01", judul: "文件准备", desc: "准备土地证明（SHM/HGB）、PKKPR/KRK 文件及建筑技术图纸。" },
-  { no: "02", judul: "SIMBG 系统注册", desc: "通过建筑信息管理系统（SIMBG）上传所有申请文件。" },
-  { no: "03", judul: "技术部门核查", desc: "技术部门对文件进行行政验证和技术审核。" },
-  { no: "04", judul: "TPA/TPT 咨询", desc: "与技术评估团队（TPA/TPT）进行咨询，确认文件合规性。" },
-  { no: "05", judul: "修订与再确认", desc: "根据评估意见修订文件，直至获得批准。" },
-  { no: "06", judul: "PBG 证书颁发", desc: "缴纳相关税费后，PBG 证书正式颁发。" },
+const syarat = [
+  "土地所有权文件",
+  "土地调查文件",
+  "身份证（KTP）、企业注册号（NIB）及公司成立证书",
+  "空间规划许可（PKKPR）及建筑位置规划（KRK）",
+  "环境文件",
+  "场地规划批准文件",
+  "灾害防控局推荐函（BPBD）",
+  "洪水警戒线推荐函",
+  "与建筑技术审查机构的合作协议（建筑、结构、MEP 技术资质）",
 ];
 
-const dokumen = [
-  "土地所有权证明（SHM/HGB）",
-  "业主身份证（KTP）",
-  "PKKPR/KRK 空间规划文件",
-  "建筑设计方案图（Arsitek）",
-  "结构计算书（Struktur）",
-  "机电设备图纸（MEP）",
-  "UKL-UPL / SPPL 环评文件",
+const dataTeknis = [
+  {
+    kategori: "建筑",
+    items: [
+      "平面图、立面图、剖面图、门窗详图",
+      "楼层平面、天花板、屋架、卫生间详图",
+      "建筑材料规格说明",
+    ],
+  },
+  {
+    kategori: "结构",
+    items: [
+      "地基、基础梁、柱、梁、楼板平面图",
+      "楼梯、电梯或自动扶梯详图",
+      "材料规格及结构计算书",
+    ],
+  },
+  {
+    kategori: "MEP",
+    items: [
+      "电气、避雷、给排水、雨水、排水图纸",
+      "消防系统、疏散路线、车辆动线",
+      "垃圾处理、材料规格及 MEP 计算书",
+    ],
+  },
+];
+
+const proses = [
+  "准备土地文件、PKKPR & KRK 及环境文件",
+  "在 SIMBG 系统注册、提交申请并上传文件",
+  "技术部门文件验证",
+  "与 TPA/TPT 进行文件咨询",
+  "根据 TPA/TPT 建议修订文件",
+  "重复咨询直至获得 TPA/TPT 批准",
+  "上传最终文件、计算税费并由技术部门验证",
+  "通过银行或移动银行缴纳税费",
+  "PBG 证书正式颁发",
 ];
 ---
 <Layout
   title="PBG 建筑审批许可证代办服务 | Ester Globalindo"
-  description="专业代办印度尼西亚 PBG（建筑审批许可证）申请服务，取代原 IMB。服务泗水及东爪哇地区。"
+  description="专业代办印度尼西亚 PBG（建筑审批许可证）申请服务，包含土地文件、建筑/结构/MEP 技术资料准备、TPA/TPT 咨询陪同，直至 PBG 证书颁发。服务泗水及东爪哇地区。"
   path="/zh-cn/jasa-pbg"
 >
-  <!-- HERO -->
-  <section class="border-b border-line bg-blueprint-dark text-paper">
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
     <div class="blueprint-grid">
-      <div class="mx-auto max-w-6xl px-5 py-16 md:py-24">
-        <span class="inline-block rounded-sm bg-blueprint px-3 py-1 font-mono text-xs font-medium tracking-wider text-paper">PBG</span>
-        <h1 class="mt-4 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
-          建筑审批许可证<br />代办服务
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">服务 · PBG</p>
+        <h1 class="mt-2 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+          建筑审批许可证
         </h1>
-        <p class="mt-5 max-w-2xl font-body text-base leading-relaxed text-blueprint-light">
-          PBG（Persetujuan Bangunan Gedung）是根据《就业创造法》取代原 IMB 的新建筑许可证，是在印度尼西亚进行任何建设施工的必备法定文件。
+        <p class="mt-5 max-w-xl font-body text-paper/90">
+          PBG 是根据《就业创造法》取代原 IMB 的新建筑许可证，授权建筑物业主进行新建、改建、扩建、缩建和/或维护，并须符合现行技术标准。PBG 须在施工开始前完成申请。
         </p>
         <a
           href={`https://wa.me/${waNumber}?text=${waMsg}`}
           target="_blank" rel="noopener noreferrer"
-          class="mt-8 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
+          class="mt-7 inline-block rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
         >
-          免费咨询 PBG 申请
+          咨询 PBG 申请
         </a>
       </div>
     </div>
   </section>
 
-  <!-- STEPS -->
+  <!-- 主要功能 -->
   <section class="bg-paper">
-    <div class="mx-auto max-w-6xl px-5 py-20">
-      <p class="font-mono text-xs uppercase tracking-widest text-stamp">申请流程</p>
-      <h2 class="mt-2 font-display text-3xl font-bold text-ink">PBG 申请步骤</h2>
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {langkah.map((l) => (
-          <div class="rounded-sm border-2 border-line bg-paper-dim p-6">
-            <p class="font-mono text-3xl font-bold text-blueprint">{l.no}</p>
-            <h3 class="mt-3 font-display text-lg font-bold text-ink">{l.judul}</h3>
-            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{l.desc}</p>
-          </div>
-        ))}
+    <div class="mx-auto grid max-w-4xl gap-8 px-5 py-14 sm:grid-cols-3">
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">主要功能</h3>
+        <p class="mt-2 font-body text-sm text-slate">施工执行许可证及建筑空间规划管控工具。</p>
+      </div>
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">审查重点</h3>
+        <p class="mt-2 font-body text-sm text-slate">建筑功能合规性、建筑规范（KDB & KLB）及技术可靠性标准。</p>
+      </div>
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">有效期限</h3>
+        <p class="mt-2 font-body text-sm text-slate">一次性颁发，在结构或功能无重大变更的情况下长期有效。</p>
       </div>
     </div>
   </section>
 
-  <!-- DOCUMENTS -->
-  <section class="border-y border-line bg-paper-dim">
-    <div class="mx-auto max-w-6xl px-5 py-20">
+  <!-- 所需文件 -->
+  <section class="border-y border-line bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
       <p class="font-mono text-xs uppercase tracking-widest text-stamp">所需文件</p>
-      <h2 class="mt-2 font-display text-3xl font-bold text-ink">申请所需主要文件</h2>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">需要准备的材料</h2>
       <ul class="mt-8 grid gap-3 sm:grid-cols-2">
-        {dokumen.map((d) => (
-          <li class="flex items-start gap-3 rounded-sm border border-line bg-paper p-4">
-            <span class="mt-0.5 flex-shrink-0 text-blueprint">✓</span>
-            <span class="font-body text-sm text-ink">{d}</span>
+        {syarat.map((s) => (
+          <li class="flex items-start gap-3 rounded-sm border border-line bg-paper px-4 py-3">
+            <span class="mt-0.5 font-mono text-xs text-stamp">✓</span>
+            <span class="font-body text-sm text-ink">{s}</span>
           </li>
         ))}
       </ul>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 技术资料 -->
   <section class="bg-paper">
-    <div class="mx-auto max-w-3xl px-5 py-20 text-center">
-      <h2 class="font-display text-3xl font-bold text-ink">准备好开始申请 PBG 了吗？</h2>
-      <p class="mt-4 font-body leading-relaxed text-slate">
-        立即联系 Ester Globalindo 团队，我们将全程陪伴您完成整个申请流程。
-      </p>
-      <a
-        href={`https://wa.me/${waNumber}?text=${waMsg}`}
-        target="_blank" rel="noopener noreferrer"
-        class="mt-8 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
-      >
-        WhatsApp 免费咨询
-      </a>
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">技术资料</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">我们负责处理的三大技术领域</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {dataTeknis.map((d) => (
+          <div class="rounded-sm border-2 border-ink p-6">
+            <h3 class="font-display text-lg font-bold text-ink">{d.kategori}</h3>
+            <ul class="mt-4 space-y-2">
+              {d.items.map((item) => (
+                <li class="font-body text-sm leading-relaxed text-slate">— {item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
+
+  <!-- 办理流程 -->
+  <section class="border-t border-line bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">办理步骤</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">9 个步骤，直至 PBG 证书颁发</h2>
+      <ol class="mt-8 space-y-4">
+        {proses.map((p, i) => (
+          <li class="flex gap-4 border-b border-line pb-4">
+            <span class="font-mono text-sm text-stamp">{String(i + 1).padStart(2, "0")}</span>
+            <p class="font-body text-sm leading-relaxed text-ink">{p}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
 </Layout>

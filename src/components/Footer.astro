@@ -6,16 +6,15 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const waNumber = "6282230027878";
-const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan perizinan");
 ---
-<footer class="border-t border-line bg-blueprint-dark text-paper pt-16 pb-8">
+<footer class="border-t border-line bg-blueprint-dark text-paper pt-10 pb-6">
   <div class="blueprint-grid">
-    <div class="mx-auto max-w-6xl px-5 py-14">
+    <div class="mx-auto max-w-6xl px-5 py-8">
       <div class="grid gap-10 md:grid-cols-4">
         <div class="md:col-span-2">
           <div class="mb-3 flex items-center gap-2">
-            <span class="font-display text-lg font-bold text-paper">ESTER GLOBALINDO</span>
-            <span class="rounded-sm bg-stamp px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper">PERIZINAN</span>
+            <a href={translatePath("/")} class="font-display text-lg font-bold text-paper hover:text-white transition-colors">ESTER GLOBALINDO</a>
           </div>
           <p class="max-w-sm font-body text-sm leading-relaxed text-blueprint-light">
             {t('footer.about')}
@@ -27,10 +26,13 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
           <ul class="space-y-2 font-body text-sm">
             <li><a href={translatePath("/jasa-pbg")} class="hover:text-white">{t('nav.pbg')}</a></li>
             <li><a href={translatePath("/jasa-slf")} class="hover:text-white">{t('nav.slf')}</a></li>
+            <li><span>{t('nav.other_services')}</span></li>
+            <li><a href={translatePath("/area-layanan/surabaya")} class="hover:text-white">{t('nav.area')}</a></li>
             <li><a href={translatePath("/blog")} class="hover:text-white">{t('nav.blog')}</a></li>
             <li><a href={translatePath("/berita")} class="hover:text-white">{t('nav.news')}</a></li>
-            <li><a href={translatePath("/portofolio")} class="hover:text-white">{t('nav.portfolio')}</a></li>
+            <li><a href={translatePath("/portofolio-2")} class="hover:text-white">{t('nav.portfolio')}</a></li>
             <li><a href={translatePath("/brosur")} class="hover:text-white">{t('nav.brochure')}</a></li>
+            <li><a href={translatePath("/tentang-kami")} class="hover:text-white">{t('nav.about')}</a></li>
           </ul>
         </div>
 
@@ -43,21 +45,40 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
             <li>
               <a href="tel:+6282230027878" class="hover:text-white">+62 822-3002-7878</a>
             </li>
-            <li class="pt-2">
-              Surabaya, Jawa Timur<br/>
-              Indonesia
+            <li class="pt-2 leading-relaxed">
+              {lang === 'id' ? (
+                <>
+                  Jl. Lebak Jaya 3A Utara No. 32<br/>
+                  Kel. Gading, Kec. Tambaksari<br/>
+                  Surabaya, Jawa Timur 60134<br/>
+                  Indonesia
+                </>
+              ) : (
+                <>
+                  印尼东爪哇省泗水市<br/>
+                  Tambaksari 区 Gading 街道<br/>
+                  Lebak Jaya 3A Utara 街 32 号<br/>
+                  邮编 60134
+                </>
+              )}
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="mx-auto mt-12 max-w-6xl border-t border-line/10 px-5 pt-8">
+    <div class="mx-auto mt-0 flex justify-center px-5">
+      <a href={translatePath("/")} class="inline-flex items-center gap-2 border border-blueprint-light/30 bg-blueprint-dark/50 px-4 py-2 font-mono text-xs uppercase tracking-wider text-white transition-colors hover:bg-blueprint hover:border-blueprint shadow-sm">
+        &larr; {t('footer.back_home')}
+      </a>
+    </div>
+
+    <div class="mx-auto mt-4 max-w-6xl border-t border-line/10 px-5 pt-6">
       <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-        <p class="font-mono text-xs text-slate">
-          &copy; {new Date().getFullYear()} Ester Globalindo.
+        <p class="font-body text-sm text-slate">
+          &copy; {new Date().getFullYear()} Ester Globalindo
         </p>
-        <div class="flex gap-4 font-mono text-xs text-slate">
+        <div class="flex gap-4 font-body text-sm text-slate">
           <a href="#" class="hover:text-white">{t('footer.privacy')}</a>
           <a href="#" class="hover:text-white">{t('footer.terms')}</a>
         </div>

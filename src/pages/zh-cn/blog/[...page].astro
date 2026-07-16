@@ -1,0 +1,78 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import posts from "../../../data/blog.json";
+
+export async function getStaticPaths({ paginate }) {
+  const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+  return paginate(sorted, { pageSize: 15 });
+}
+
+const { page } = Astro.props;
+const isFirst = page.currentPage === 1;
+const isLast = page.currentPage === page.lastPage;
+const firstUrl = "/zh-cn/blog";
+const lastUrl = page.lastPage === 1 ? "/zh-cn/blog" : `/zh-cn/blog/${page.lastPage}`;
+---
+<Layout
+  title="建筑许可证 PBG & SLF 指南与文章 | Ester Globalindo"
+  description="关于印度尼西亚建筑许可证 PBG、SLF 和建筑审批流程的权威指南文章合集。"
+  path="/zh-cn/blog"
+>
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">指南</p>
+        <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">建筑许可证文章</h1>
+        <p class="mt-5 max-w-xl font-body text-paper/90">
+          关于 PBG、SLF 及建筑许可证申请流程的文章合集——帮助您在咨询我们之前了解每个步骤。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <div class="grid gap-6">
+        {page.data.map((p) => (
+          <a href={`/zh-cn/blog/${p.slug}`} class="group block rounded-sm border border-ink bg-paper p-6 transition-shadow hover:shadow-md">
+            <p class="font-mono text-xs uppercase tracking-wider text-slate">
+              {new Date(p.date).toLocaleDateString("zh-CN", { day: "numeric", month: "long", year: "numeric" })} · {p.readTime}
+            </p>
+            <h2 class="mt-2 font-display text-xl font-bold text-ink group-hover:underline">{(p as any).title_zh || p.title}</h2>
+            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{(p as any).excerpt_zh || p.excerpt}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-2 font-mono text-xs uppercase tracking-wider">
+        {isFirst ? (
+          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">|&lt; First</span>
+        ) : (
+          <a href={firstUrl} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">|&lt; First</a>
+        )}
+
+        {page.url.prev ? (
+          <a href={page.url.prev} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">&larr; Prev</a>
+        ) : (
+          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">&larr; Prev</span>
+        )}
+
+        <span class="border border-blueprint bg-blueprint/10 px-4 py-2 text-ink">
+          Page {page.currentPage} of {Math.max(1, page.lastPage)}
+        </span>
+
+        {page.url.next ? (
+          <a href={page.url.next} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">Next &rarr;</a>
+        ) : (
+          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">Next &rarr;</span>
+        )}
+
+        {isLast ? (
+          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">Last &gt;|</span>
+        ) : (
+          <a href={lastUrl} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">Last &gt;|</a>
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -2,72 +2,163 @@
 import Layout from "../../layouts/Layout.astro";
 
 const waNumber = "6282230027878";
-const waMsg = encodeURIComponent("您好，我想咨询 SLF 建筑合格证书办理业务。");
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan perizinan");
 
-const poin = [
-  { judul: "使用前必备", desc: "在建筑物正式运营或出租前，必须先取得 SLF 证书。" },
-  { judul: "有效期限制", desc: "住宅建筑有效期 20 年，非住宅建筑有效期 5 年，到期须续期。" },
-  { judul: "法律合规要求", desc: "根据《就业创造法》及 PP 16/2021 条例，SLF 是法律强制要求的证件。" },
-  { judul: "银行融资条件", desc: "大多数商业银行要求企业贷款申请人持有有效的 SLF 证书。" },
+const syarat = [
+  "土地所有权文件",
+  "身份证（KTP）、企业注册号（NIB）及公司成立证书",
+  "空间规划许可（PKKPR）及建筑位置规划（KRK）",
+  "环境文件",
+  "场地规划批准文件",
+  "灾害防控局推荐函（BPBD）",
+  "电气合格证（SLO）",
+  "与建筑技术审查机构的合作协议（建筑、结构、MEP 技术资质）",
+];
+
+const dataTeknis = [
+  {
+    kategori: "建筑",
+    items: [
+      "平面图、立面图、剖面图、门窗详图",
+      "楼层平面、天花板、屋架、卫生间详图",
+      "建筑材料规格说明",
+    ],
+  },
+  {
+    kategori: "结构",
+    items: [
+      "地基、基础梁、柱、梁、楼板平面图",
+      "楼梯、电梯或自动扶梯详图",
+      "材料规格及结构计算书",
+    ],
+  },
+  {
+    kategori: "MEP",
+    items: [
+      "电气、避雷、给排水、雨水、排水图纸",
+      "消防系统、疏散路线、车辆动线",
+      "垃圾处理、材料规格及 MEP 计算书",
+    ],
+  },
+  {
+    kategori: "建筑技术评估",
+    items: [
+      "建筑合规性检查报告及定期检查报告",
+      "竣工图（As Built Drawing）",
+      "竣工结构与 MEP 计算书及技术评估员资料",
+    ],
+  },
+];
+
+const proses = [
+  "准备土地文件、PKKPR & KRK 及环境文件",
+  "在 SIMBG 系统注册、提交申请并上传文件",
+  "技术部门文件验证",
+  "与 TPA/TPT 进行文件咨询",
+  "根据 TPA/TPT 建议修订文件",
+  "重复咨询直至获得 TPA/TPT 批准",
+  "上传最终文件、计算税费并由技术部门验证",
+  "通过银行或移动银行缴纳税费",
+  "SLF 证书正式颁发，如尚未持有 PBG 则同步颁发",
 ];
 ---
 <Layout
   title="SLF 建筑合格证书代办服务 | Ester Globalindo"
-  description="专业代办印度尼西亚 SLF（建筑合格证书）申请服务，确保建筑合法合规运营。服务泗水及东爪哇地区。"
+  description="专业代办印度尼西亚 SLF（建筑合格证书）申请服务，包含建筑/结构/MEP 技术资料及建筑技术评估准备、TPA/TPT 咨询陪同，直至 SLF 证书颁发。服务泗水及东爪哇地区。"
   path="/zh-cn/jasa-slf"
 >
-  <!-- HERO -->
-  <section class="border-b border-line bg-blueprint-dark text-paper">
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
     <div class="blueprint-grid">
-      <div class="mx-auto max-w-6xl px-5 py-16 md:py-24">
-        <span class="inline-block rounded-sm bg-blueprint px-3 py-1 font-mono text-xs font-medium tracking-wider text-paper">SLF</span>
-        <h1 class="mt-4 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
-          建筑合格证书<br />代办服务
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">服务 · SLF</p>
+        <h1 class="mt-2 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+          建筑合格证书
         </h1>
-        <p class="mt-5 max-w-2xl font-body text-base leading-relaxed text-blueprint-light">
-          SLF（Sertifikat Laik Fungsi）是证明已竣工建筑真正适合且安全用于运营或居住的法定证书，是建筑物正式交付使用前的必备文件。
+        <p class="mt-5 max-w-xl font-body text-paper/90">
+          SLF 是由地方政府颁发的证书，用于证明建筑物在投入使用前具备合规的安全性与可靠性。须在施工完成后、建筑正式入住或运营前完成申请。
         </p>
         <a
           href={`https://wa.me/${waNumber}?text=${waMsg}`}
           target="_blank" rel="noopener noreferrer"
-          class="mt-8 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
+          class="mt-7 inline-block rounded-sm border-2 border-paper px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-colors hover:bg-white/10"
         >
-          免费咨询 SLF 申请
+          咨询 SLF 申请
         </a>
       </div>
     </div>
   </section>
 
-  <!-- WHY SLF -->
+  <!-- 主要功能 -->
   <section class="bg-paper">
-    <div class="mx-auto max-w-6xl px-5 py-20">
-      <p class="font-mono text-xs uppercase tracking-widest text-stamp">为何重要</p>
-      <h2 class="mt-2 font-display text-3xl font-bold text-ink">为什么 SLF 不可缺少？</h2>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        {poin.map((p) => (
-          <div class="rounded-sm border-2 border-line bg-paper-dim p-6">
-            <h3 class="font-display text-lg font-bold text-ink">{p.judul}</h3>
-            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{p.desc}</p>
+    <div class="mx-auto grid max-w-4xl gap-8 px-5 py-14 sm:grid-cols-3">
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">主要功能</h3>
+        <p class="mt-2 font-body text-sm text-slate">确保建筑物对使用者的安全性、健康性、舒适性与便利性。</p>
+      </div>
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">审查重点</h3>
+        <p class="mt-2 font-body text-sm text-slate">实际施工成果与 PBG 文件的一致性，以及电气、消防和卫生设施的测试验收。</p>
+      </div>
+      <div class="border-l-2 border-stamp pl-4">
+        <h3 class="font-display font-bold text-ink">有效期限</h3>
+        <p class="mt-2 font-body text-sm text-slate">一般建筑有效期 5 年，住宅建筑有效期 20 年，须定期续期。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 所需文件 -->
+  <section class="border-y border-line bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">所需文件</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">需要准备的材料</h2>
+      <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+        {syarat.map((s) => (
+          <li class="flex items-start gap-3 rounded-sm border border-line bg-paper px-4 py-3">
+            <span class="mt-0.5 font-mono text-xs text-stamp">✓</span>
+            <span class="font-body text-sm text-ink">{s}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 技术资料 -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">技术资料与评估</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">我们负责处理的四大技术领域</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {dataTeknis.map((d) => (
+          <div class="rounded-sm border-2 border-ink p-6">
+            <h3 class="font-display text-lg font-bold text-ink">{d.kategori}</h3>
+            <ul class="mt-4 space-y-2">
+              {d.items.map((item) => (
+                <li class="font-body text-sm leading-relaxed text-slate">— {item}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="border-t border-line bg-paper-dim">
-    <div class="mx-auto max-w-3xl px-5 py-20 text-center">
-      <h2 class="font-display text-3xl font-bold text-ink">需要办理 SLF 证书？</h2>
-      <p class="mt-4 font-body leading-relaxed text-slate">
-        Ester Globalindo 团队将全程协助您完成 SLF 申请，确保建筑物合法合规运营。
+  <!-- 办理流程 -->
+  <section class="border-t border-line bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">办理步骤</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">9 个步骤，直至 SLF 证书颁发</h2>
+      <ol class="mt-8 space-y-4">
+        {proses.map((p, i) => (
+          <li class="flex gap-4 border-b border-line pb-4">
+            <span class="font-mono text-sm text-stamp">{String(i + 1).padStart(2, "0")}</span>
+            <p class="font-body text-sm leading-relaxed text-ink">{p}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-6 font-body text-sm text-slate">
+        如果您的建筑尚未持有 PBG，PBG 证书将在本流程最后阶段与 SLF 同步颁发。
       </p>
-      <a
-        href={`https://wa.me/${waNumber}?text=${waMsg}`}
-        target="_blank" rel="noopener noreferrer"
-        class="mt-8 inline-block rounded-sm bg-stamp px-8 py-4 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
-      >
-        WhatsApp 免费咨询
-      </a>
     </div>
   </section>
+
 </Layout>

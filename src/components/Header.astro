@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+import LangSwitcher from './LangSwitcher.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,21 +12,24 @@ const nav = [
   { href: "/area-layanan/surabaya", label: t('nav.area') },
   { href: "/blog", label: t('nav.blog') },
   { href: "/berita", label: t('nav.news') },
-  { href: "/portofolio", label: t('nav.portfolio') },
+  { href: "/portofolio-2", label: t('nav.portfolio') },
   { href: "/brosur", label: t('nav.brochure') },
   { href: "/tentang-kami", label: t('nav.about') },
 ];
 const waNumber = "6282230027878";
-const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PBG/SLF.");
+const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan perizinan");
 ---
 <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-    <a href={translatePath("/")} class="flex items-center gap-2">
-      <span class="font-display text-lg font-bold tracking-tight text-ink">ESTER GLOBALINDO</span>
-      <span class="rounded-sm bg-blueprint px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper">PERIZINAN</span>
-    </a>
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:py-4">
+    <div class="order-2 flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-6 md:order-1 items-end">
+      <a href={translatePath("/")} class="flex items-center gap-2">
+        <span class="font-display text-lg font-bold tracking-tight text-ink">ESTER GLOBALINDO</span>
+        <span class="rounded-sm bg-blueprint px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-paper uppercase">{t('badge.perizinan')}</span>
+      </a>
+      <LangSwitcher />
+    </div>
 
-    <nav class="hidden items-center gap-7 md:flex">
+    <nav class="hidden md:order-2 items-center gap-7 md:flex">
       {nav.map((item) => (
         <a href={translatePath(item.href)} class="font-body text-sm text-slate transition-colors hover:text-ink">
           {item.label}
@@ -33,16 +37,8 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
       ))}
     </nav>
 
-    <a
-      href={`https://wa.me/${waNumber}?text=${waMsg}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="hidden rounded-sm border-2 border-ink px-4 py-2 font-mono text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-block"
-    >
-      {t('nav.consult')}
-    </a>
 
-    <button id="menuBtn" class="md:hidden" aria-label="Buka menu" aria-expanded="false">
+    <button id="menuBtn" class="order-1 md:hidden" aria-label="Buka menu" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
       </svg>
@@ -55,14 +51,6 @@ const waMsg = encodeURIComponent("Halo, saya ingin konsultasi soal pengurusan PB
         {item.label}
       </a>
     ))}
-    <a
-      href={`https://wa.me/${waNumber}?text=${waMsg}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-2 rounded-sm bg-ink px-4 py-2 text-center font-mono text-xs font-medium uppercase tracking-wider text-paper"
-    >
-      {t('nav.consult.wa')}
-    </a>
   </nav>
 </header>
 

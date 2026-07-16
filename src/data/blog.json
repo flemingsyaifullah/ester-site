@@ -1,10 +1,94 @@
 [
   {
+    "slug": "panduan-taktis-regulasi-amdal-amdalnet-dlh",
+    "title": "Panduan Taktis Memahami Regulasi AMDAL: Menyelaraskan Bisnis dengan Sistem Amdalnet dan Proses DLH",
+    "title_zh": "战术指南：了解 AMDAL 法规并使业务与 Amdalnet 系统及 DLH 流程保持一致",
+    "excerpt": "Bagi Anda yang sedang mempersiapkan proyek, mari bedah alur resmi pengurusan AMDAL secara jernih dan taktis agar operasional selaras regulasi.",
+    "excerpt_zh": "对于正在筹备项目的您，让我们清晰、战术性地剖析 AMDAL 官方办理流程，确保业务运营符合法规。",
+    "date": "2026-07-11",
+    "readTime": "6 menit baca",
+    "content": [
+      "Bagi sebagian besar pelaku usaha, merencanakan investasi skala besar sering kali diiringi dengan kekhawatiran terkait pengurusan dokumen lingkungan. Bayangan akan proses administrasi yang panjang, dokumen yang tebal, hingga proses diskusi ilmiah di hadapan para ahli lingkungan terkadang membuat rencana eksekusi proyek terasa berat.",
+      "Namun, sejak diterapkannya reformasi birokrasi pasca-UU Cipta Kerja, pemerintah sebenarnya telah memberikan kemudahan melalui digitalisasi sistem. Kini, seluruh alur penapisan, penyusunan, hingga penilaian dokumen AMDAL dilakukan secara transparan melalui sistem Amdalnet yang dikelola oleh KLHK dan terintegrasi langsung dengan portal OSS RBA (Online Single Submission Risk-Based Approach).",
+      "Bagi Anda yang sedang mempersiapkan proyek di wilayah Jawa Timur atau Kota Surabaya, mari kita bedah alur resmi ini secara jernih dan taktis, agar operasional bisnis Anda dapat berjalan selaras dengan regulasi pemerintah tanpa ada waktu yang terbuang percuma.",
+      "<h3 class=\"font-display text-2xl font-bold text-ink mt-10 mb-4\">Memahami Alur Kerja Digital Pengurusan AMDAL yang Benar</h3>",
+      "Sistem baru saat ini dirancang untuk kepastian waktu (Service Level Agreement). Semua prosesnya terdokumentasi secara digital dengan tahapan utama sebagai berikut:",
+      "<div class=\"relative border-l-2 border-blueprint/30 pl-8 my-10 ml-4 space-y-8\">  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">1</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">OSS RBA</h4>    <p class=\"font-body text-base text-slate\">Pengisian Data Usaha & Penentuan Skala Risiko</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">2</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">Amdalnet</h4>    <p class=\"font-body text-base text-slate\">Penapisan Otomatis & Sesi Pengumuman Publik</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">3</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">Penyusunan Dokumen</h4>    <p class=\"font-body text-base text-slate\">Penyusunan KA, ANDAL, RKL-RPL sesuai Standar Ilmiah & Uji Lab</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">4</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">Sidang DLH</h4>    <p class=\"font-body text-base text-slate\">Diskusi Teknis & Penilaian Kelayakan oleh Tim Ahli</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">5</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">Persetujuan Akhir</h4>    <p class=\"font-body text-base text-slate\">Penerbitan SKKLH yang Mengaktifkan NIB di OSS</p>  </div></div>",
+      "<ul class=\"list-disc pl-5 space-y-3 font-body text-base text-ink mb-6\"><li><b>Penapisan Otomatis di OSS RBA:</b> Saat Anda memasukkan kode KBLI dan parameter skala usaha, sistem akan otomatis menentukan dokumen lingkungan apa yang wajib dipenuhi (AMDAL, UKL-UPL, atau SPPL) berdasarkan Peraturan Menteri LHK No. 4 Tahun 2021.</li><li><b>Pengumuman Publik & Konsultasi Masyarakat:</b> Ini adalah tahapan yang sangat mulia dan krusial. Anda diwajibkan mengumumkan rencana usaha untuk menyerap aspirasi warga sekitar. Langkah ini penting untuk membangun keharmonisan hubungan antara perusahaan dan masyarakat lokal sejak awal.</li><li><b>Penyusunan Dokumen Ilmiah:</b> Tim menyusun dokumen dokumen KA, ANDAL, serta RKL-RPL berdasarkan rona lingkungan nyata di lapangan, dibantu dengan pengujian sampel air, udara, atau tanah di laboratorium yang terakreditasi KAN.</li><li><b>Sidang Penilaian di Dinas Lingkungan Hidup (DLH):</b> Dokumen yang diunggah ke Amdalnet akan ditelaah oleh Tim Uji Kelayakan (TUK) Lingkungan Hidup, baik di tingkat Provinsi Jawa Timur maupun Kota Surabaya, untuk memastikan operasional bisnis Anda nantinya tidak merugikan ekosistem.</li></ul>",
+      "<h3 class=\"font-display text-2xl font-bold text-ink mt-10 mb-4\">3 Kunci Utama Kelancaran Proses Dokumen di DLH Jawa Timur & Surabaya</h3>",
+      "Proses penilaian di DLH bukanlah sebuah ujian untuk mencari kesalahan, melainkan ruang diskusi ilmiah demi kebaikan bersama. Agar proses evaluasi dokumen Anda berjalan lancar dan minim revisi, perhatikan tiga aspek penting ini:",
+      "<ul class=\"list-disc pl-5 space-y-3 font-body text-base text-ink mb-6\"><li><b>Kejujuran Data Lapangan (Rona Lingkungan Awal):</b> Sajikan data fisik, kimia, dan sosiologi masyarakat apa adanya. Transparansi data membuat tim penguji di DLH Jatim lebih mudah memberikan rekomendasi yang tepat bagi bisnis Anda.</li><li><b>Rencana Pengelolaan (RKL-RPL) yang Logis:</b> Tim penilai sangat mengapresiasi pelaku usaha yang menawarkan solusi pengelolaan lingkungan yang realistis, aplikatif, dan didukung oleh komitmen anggaran yang masuk akal untuk jangka panjang.</li><li><b>Kepatuhan Terhadap Tata Ruang Daerah:</b> Khusus di wilayah Surabaya, pastikan rencana proyek Anda sudah sejalan dengan Rencana Tata Ruang Wilayah (RTRW) dan memiliki Surat Keterangan Rencana Kota (SKRK). Kesesuaian ruang adalah fondasi awal sebelum melangkah ke perizinan lingkungan.</li></ul>",
+      "<h3 class=\"font-display text-2xl font-bold text-ink mt-10 mb-4\">Mengapa Bermitra dengan Konsultan Profesional Adalah Langkah yang Bijak?</h3>",
+      "Mengingat penyusunan AMDAL membutuhkan keahlian multidisiplin ilmu (mulai dari teknik lingkungan, biologi, hingga sosiologi), undang-undang mengamanatkan bahwa dokumen ini wajib disusun oleh personel yang memegang Sertifikat Kompetensi Penyusun AMDAL (KTPA dan ATPA) resmi.",
+      "Bermitra dengan Jasa Konsultan Perizinan AMDAL Profesional bukanlah tentang mencari \"jalan pintas\", melainkan tentang efisiensi dan kepatuhan yang tepat:",
+      "<ul class=\"list-disc pl-5 space-y-3 font-body text-base text-ink mb-6\"><li><b>Penyusunan Dokumen yang Presisi:</b> Konsultan berpengalaman tahu persis standar kualitas dokumen yang diinginkan oleh sistem Amdalnet dan DLH, sehingga risiko penolakan atau revisi berulang kali bisa diminimalisir.</li><li><b>Manajemen Pengujian yang Terintegrasi:</b> Anda tidak perlu pusing mencari laboratorium KAN atau mengumpulkan para ahli secara terpisah. Konsultan menyediakan solusi satu pintu untuk semua kebutuhan pemetaan ilmiah.</li><li><b>Mitigasi Risiko Operasional Jangka Panjang:</b> Konsultan yang baik akan membimbing tim internal Anda tentang cara mengimplementasikan RKL-RPL dan melaporkannya setiap 6 bulan sekali, sehingga bisnis Anda selalu dalam status aman dan patuh hukum saat ada pengawasan berkala.</li></ul>",
+      "Melangkah Bersama Kami: Memastikan legalitas lingkungan tidak harus menjadi beban yang membingungkan. Percayakan penyusunan AMDAL, UKL-UPL, atau Persetujuan Teknis Anda di wilayah Jawa Timur kepada tim kami yang kompeten, legal, dan berjalan sesuai koridor hukum. Mari bangun bisnis yang maju, berkah, dan tetap menjaga kelestarian lingkungan!"
+    ],
+    "content_zh": [
+      "对于大多数企业主来说，规划大规模投资往往伴随着对办理环境文件的担忧。冗长的行政流程、厚重的文件，以及在环境专家面前进行科学讨论的预期，有时会让项目执行计划显得举步维艰。",
+      "然而，自《就业创造法》实施官僚改革以来，政府实际上已经通过系统数字化提供了便利。如今，AMDAL 文件的筛选、编制和评估的整个流程都在 KLHK 管理的 Amdalnet 系统中透明地进行，并直接与 OSS RBA（基于风险的在线单窗提交）门户集成。",
+      "对于正在东爪哇或泗水市筹备项目的您，让我们清晰且战术性地剖析这一官方流程，以确保您的业务运营能够与政府法规保持一致，而不会浪费任何时间。",
+      "<h3 class=\"font-display text-2xl font-bold text-ink mt-10 mb-4\">了解 AMDAL 的正确数字工作流程</h3>",
+      "目前的新系统是为时间确定性（服务级别协议）而设计的。所有过程均以数字方式记录，主要阶段如下：",
+      "<div class=\"relative border-l-2 border-blueprint/30 pl-8 my-10 ml-4 space-y-8\">  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">1</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">OSS RBA 系统</h4>    <p class=\"font-body text-base text-slate\">填写业务数据并确定风险等级</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">2</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">Amdalnet 系统</h4>    <p class=\"font-body text-base text-slate\">自动筛选与公众公告环节</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">3</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">文件编制</h4>    <p class=\"font-body text-base text-slate\">根据科学标准和实验室测试编制 KA、ANDAL、RKL-RPL</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">4</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">DLH 听证会</h4>    <p class=\"font-body text-base text-slate\">专家团队的技术讨论与可行性评估</p>  </div>  <div class=\"relative\">    <div class=\"absolute -left-[49px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-blueprint text-white font-bold font-mono text-sm ring-4 ring-paper shadow-sm\">5</div>    <h4 class=\"font-display font-bold text-lg text-ink mb-1\">最终批准</h4>    <p class=\"font-body text-base text-slate\">颁发激活 OSS 中 NIB 的 SKKLH 证书</p>  </div></div>",
+      "<ul class=\"list-disc pl-5 space-y-3 font-body text-base text-ink mb-6\"><li><b>OSS RBA 中的自动筛选：</b> 当您输入 KBLI 代码和业务规模参数时，系统将根据 2021 年第 4 号 LHK 部长条例自动确定必须满足的环境文件（AMDAL、UKL-UPL 或 SPPL）。</li><li><b>公众公告与社区咨询：</b> 这是一个非常高尚且至关重要的阶段。您必须公布业务计划以吸收周围居民的意见。这一步骤对于从一开始就建立公司与当地社区之间的和谐关系非常重要。</li><li><b>科学文件编制：</b> 团队根据现场真实的自然环境编制 KA、ANDAL 和 RKL-RPL 文件，并在 KAN 认可的实验室进行水、空气或土壤样本测试的辅助下完成。</li><li><b>环境局 (DLH) 的评估听证会：</b> 上传至 Amdalnet 的文件将由东爪哇省或泗水市级别的环境可行性测试团队 (TUK) 进行审查，以确保您未来的业务运营不会损害生态系统。</li></ul>",
+      "<h3 class=\"font-display text-2xl font-bold text-ink mt-10 mb-4\">确保东爪哇及泗水 DLH 文件流程顺利的 3 大关键</h3>",
+      "DLH 的评估过程不是为了找错的考试，而是为了共同利益进行科学讨论的空间。为确保您的文件评估过程顺利且修改最少，请注意以下三个重要方面：",
+      "<ul class=\"list-disc pl-5 space-y-3 font-body text-base text-ink mb-6\"><li><b>现场数据的真实性（初始环境基线）：</b> 如实呈现物理、化学和社区社会学数据。数据透明使得东爪哇 DLH 的审查团队更容易为您的业务提供恰当的建议。</li><li><b>合理的管理计划 (RKL-RPL)：</b> 评估团队非常赞赏那些提供切实可行、适用，并有长期合理预算承诺支持的环境管理解决方案的企业主。</li><li><b>遵守区域空间规划：</b> 特别是在泗水地区，确保您的项目计划符合区域空间规划 (RTRW)，并持有城市规划说明书 (SKRK)。空间适用性是迈向环境许可之前的初始基础。</li></ul>",
+      "<h3 class=\"font-display text-2xl font-bold text-ink mt-10 mb-4\">为什么与专业顾问合作是明智之举？</h3>",
+      "考虑到 AMDAL 的编制需要多学科的专业知识（从环境工程、生物学到社会学），法律强制规定该文件必须由持有官方 AMDAL 编制员能力证书（KTPA 和 ATPA）的人员编写。",
+      "与专业的 AMDAL 许可咨询服务合作不是为了寻找“捷径”，而是关乎效率和正确的合规性：",
+      "<ul class=\"list-disc pl-5 space-y-3 font-body text-base text-ink mb-6\"><li><b>精确的文件编制：</b> 经验丰富的顾问确切了解 Amdalnet 系统和 DLH 期望的文件质量标准，从而最大限度地降低被拒或反复修改的风险。</li><li><b>集成的测试管理：</b> 您无需费心寻找 KAN 实验室或分别召集专家。顾问为所有科学测绘需求提供一站式解决方案。</li><li><b>减轻长期运营风险：</b> 优秀的顾问将指导您的内部团队如何实施 RKL-RPL 并每 6 个月报告一次，确保在定期检查时，您的业务始终处于安全和合法合规的状态。</li></ul>",
+      "与我们携手共进：确保环境合法性不必成为令人困惑的负担。请将您在东爪哇地区的 AMDAL、UKL-UPL 或技术批准的编制工作托付给我们这支胜任、合法且遵循法律框架运作的团队。让我们共同建设一个进步、充满祝福，同时维护环境可持续发展的企业！"
+    ]
+  },
+  {
+    "slug": "pentingnya-amdal-ukl-upl-sppl-pasca-uu-cipta-kerja",
+    "title": "Menyelaraskan Langkah Bisnis: Memahami Perbedaan AMDAL, UKL-UPL, dan SPPL Pasca-UU Cipta Kerja",
+    "title_zh": "协调业务步伐：了解《就业创造法》后 AMDAL、UKL-UPL 和 SPPL 的区别",
+    "excerpt": "Dokumen lingkungan bukan sekadar administrasi, melainkan roadmap agar operasional berjalan harmonis dengan alam. Kenali perbedaan AMDAL, UKL-UPL, dan SPPL.",
+    "excerpt_zh": "环境文件不仅是行政手续，更是确保运营与自然和谐共处的路线图。了解 AMDAL、UKL-UPL 和 SPPL 的区别。",
+    "date": "2026-07-11",
+    "readTime": "5 menit baca",
+    "content": [
+      "Bagi para pelaku usaha di Jawa Timur, khususnya yang bergerak di kawasan industri strategis seperti Surabaya, SIER, hingga Gresik, memahami regulasi lingkungan adalah fondasi awal yang sangat krusial. Dokumen lingkungan bukan sekadar pemenuhan aspek administrasi, melainkan sebuah peta jalan (roadmap) agar operasional perusahaan dapat berjalan berdampingan secara harmonis dengan alam dan masyarakat sekitar.",
+      "Sejak diterbitkannya UU Cipta Kerja yang diturunkan melalui PP No. 22 Tahun 2021 tentang Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup, konsep perizinan lingkungan di Indonesia mengalami transformasi yang mendasar. Izin Lingkungan kini diintegrasikan langsung sebagai Persetujuan Lingkungan (Pertek/Skkl). Persetujuan ini menjadi salah satu prasyarat penting agar Nomor Induk Berusaha (NIB) Anda di portal OSS RBA dapat berstatus efektif dan operasional perusahaan memiliki kepastian hukum yang kuat.",
+      "Pemerintah secara bijak membagi kewajiban dokumen lingkungan ini berdasarkan tingkat risiko dan skala dampak dari rencana kegiatan usaha. Hal ini bertujuan agar pelaku usaha dapat menerapkan instrumen pengelolaan yang tepat sasaran, efektif, dan efisien sesuai dengan porsi bisnisnya.",
+      "<h3 class=\"font-display text-xl font-bold text-ink mt-8 mb-4\">Tiga Kategori Dokumen Lingkungan: Di Mana Posisi Bisnis Anda?</h3>",
+      "Untuk menentukan jenis dokumen yang wajib dipenuhi oleh sebuah perusahaan, Kementerian Lingkungan Hidup dan Kehutanan (KLHK) bersama Dinas Lingkungan Hidup (DLH) menggunakan parameter yang diatur secara detail dalam Peraturan Menteri LHK No. 4 Tahun 2021. Berikut adalah klasifikasinya untuk mempermudah perencanaan Anda:",
+      "<div class=\"overflow-x-auto my-6\"><table class=\"w-full text-left font-body text-sm text-ink border-collapse\"><thead><tr><th class=\"border-b border-line pb-3 font-bold min-w-[200px]\">Jenis Dokumen</th><th class=\"border-b border-line pb-3 font-bold min-w-[250px]\">Skala Risiko & Dampak</th><th class=\"border-b border-line pb-3 font-bold min-w-[250px]\">Target Jenis Usaha / Kegiatan</th><th class=\"border-b border-line pb-3 font-bold min-w-[200px]\">Output Resmi yang Diterbitkan Pemerintah</th></tr></thead><tbody><tr><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>AMDAL</b><br/><i>(Analisis Mengenai Dampak Lingkungan)</i></td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>Tinggi</b><br/>(Kegiatan yang secara ilmiah memerlukan kajian dampak mendalam terhadap struktur ekologi dan sosial).</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">Industri manufaktur skala besar, pembangunan area komersial/apartemen luas, galangan kapal, rumah sakit tipe A.</td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>SKKLH</b><br/><i>(Surat Keputusan Kelayakan Lingkungan Hidup)</i></td></tr><tr><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>UKL-UPL</b><br/><i>(Upaya Pengelolaan & Pemantauan)</i></td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>Sedang</b><br/>(Dampak lingkungan ada, namun sudah memiliki standar baku teknologi mitigasi yang siap diterapkan).</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">Kompleks pergudangan, hotel skala menengah, klinik utama, industri perakitan non-polutif.</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">Persetujuan Pernyataan Kesanggupan UKL-UPL</td></tr><tr><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>SPPL</b><br/><i>(Surat Pernyataan Kesanggupan Pengelolaan)</i></td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>Rendah</b><br/>(Dampak lingkungan mikro/minim, umumnya otomatis terbit sebagai komitmen pelaku usaha).</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">UMKM, ruko perdagangan, jasa konsultan, industri kerajinan rumahan.</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">Nomor Registrasi SPPL</td></tr></tbody></table></div>",
+      "<h3 class=\"font-display text-xl font-bold text-ink mt-8 mb-4\">Catatan Penting Bagi Pelaku Usaha di Surabaya:</h3>",
+      "Jika rencana kegiatan usaha Anda berlokasi di Kota Surabaya, koordinasi dokumen lingkungan dilakukan secara terintegrasi melalui sistem SSW (Surabaya Single Window). Proses ini menyelaraskan pemenuhan Persetujuan Lingkungan dengan SKRK (Surat Keterangan Rencana Kota) serta rekomendasi teknis lainnya dari dinas terkait, seperti pengelolaan drainase persil.",
+      "<h3 class=\"font-display text-xl font-bold text-ink mt-8 mb-4\">Mengapa Proses Penyusunan AMDAL Memerlukan Ketelitian dan Kompetensi Khusus?</h3>",
+      "Menyusun dokumen AMDAL adalah sebuah kerja ilmiah multidisiplin yang komprehensif. Dokumen ini terdiri dari 3 kesatuan kajian yang saling berkaitan:",
+      "<ul class=\"list-disc pl-5 space-y-2 font-body text-base text-ink mb-4\"><li><b>KA (Kerangka Acuan):</b> Penapisan awal untuk memetakan parameter lingkungan apa saja yang relevan dan penting untuk diteliti di lapangan.</li><li><b>ANDAL (Analisis Dampak Lingkungan):</b> Kajian mendalam mengenai kondisi rona lingkungan awal, mulai dari kualitas air, udara, keanekaragaman hayati, hingga dinamika sosial-ekonomi masyarakat lokal.</li><li><b>RKL-RPL (Rencana Pengelolaan & Pemantauan Lingkungan):</b> Dokumen panduan operasional bagi manajemen perusahaan dalam menjalankan mitigasi lingkungan secara berkelanjutan.</li></ul>",
+      "Proses ini melibatkan berbagai tahapan yang membutuhkan ketelitian tinggi, seperti pengujian sampel di laboratorium yang terakreditasi KAN, hingga pelaksanaan Konsultasi Publik. Tahap konsultasi ini merupakan ruang dialog yang sangat baik untuk menyerap aspirasi warga terdampak, sehingga keberadaan investasi Anda mendapatkan dukungan sosial yang positif dari lingkungan sekitar.",
+      "Mengingat kompleksitas teknis tersebut, regulasi pemerintah mensyaratkan bahwa penyusunan dokumen AMDAL harus dilakukan oleh tim yang memiliki sertifikasi kompetensi resmi, yaitu KTPA (Ketua Tim Penyusun Amdal) dan ATPA (Anggota Tim Penyusun Amdal) yang teregistrasi di KLHK.",
+      "Membangun kemitraan dengan Jasa Konsultan AMDAL Profesional adalah langkah strategis untuk memastikan setiap parameter ilmiah tersusun dengan presisi, sesuai dengan koridor hukum yang berlaku, sehingga perusahaan Anda dapat melangkah maju dengan penuh percaya diri dan kepastian regulasi."
+    ],
+    "content_zh": [
+      "对于东爪哇的企业主来说，特别是在泗水、SIER 甚至锦石（Gresik）等战略工业区运营的企业，了解环境法规是非常关键的初始基础。环境文件不仅仅是为了满足行政要求，它更像是一份路线图（roadmap），确保公司的运营能够与自然和周围社区和谐共存。",
+      "自颁布了《就业创造法》及其衍生的 2021 年第 22 号关于环境保护与管理的政府条例以来，印尼的环境许可理念经历了根本性的转变。环境许可现在直接整合为环境批准（Pertek/Skkl）。这项批准已成为确保您在 OSS RBA 门户中的企业注册号（NIB）生效以及公司运营获得强大法律保障的重要前提之一。",
+      "政府明智地根据计划业务活动的风险水平和影响规模来划分环境文件的义务。这旨在确保企业主能够根据其业务规模实施目标明确、有效且高效的管理工具。",
+      "<h3 class=\"font-display text-xl font-bold text-ink mt-8 mb-4\">三类环境文件：您的企业处于哪个位置？</h3>",
+      "为了确定公司必须满足的文件类型，环境和林业部（KLHK）及环境局（DLH）使用了 2021 年第 4 号 LHK 部长条例中详细规定的参数。以下是分类以简化您的规划：",
+      "<div class=\"overflow-x-auto my-6\"><table class=\"w-full text-left font-body text-sm text-ink border-collapse\"><thead><tr><th class=\"border-b border-line pb-3 font-bold min-w-[200px]\">文件类型</th><th class=\"border-b border-line pb-3 font-bold min-w-[250px]\">风险与影响规模</th><th class=\"border-b border-line pb-3 font-bold min-w-[250px]\">目标业务 / 活动类型</th><th class=\"border-b border-line pb-3 font-bold min-w-[200px]\">政府颁发的官方输出</th></tr></thead><tbody><tr><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>AMDAL</b><br/><i>（环境影响分析）</i></td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>高</b><br/>（科学上需要对生态和社会结构进行深入影响研究的活动）。</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">大型制造业、大面积商业区/公寓建设、造船厂、A 类医院。</td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>SKKLH</b><br/><i>（环境适宜性决定书）</i></td></tr><tr><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>UKL-UPL</b><br/><i>（管理与监测工作）</i></td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>中</b><br/>（存在环境影响，但已有随时可用的标准缓解技术）。</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">仓储综合体、中型酒店、主要诊所、无污染装配工业。</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">UKL-UPL 承诺声明批准</td></tr><tr><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>SPPL</b><br/><i>（管理承诺声明书）</i></td><td class=\"border-b border-line/50 py-4 align-top pr-4\"><b>低</b><br/>（微小/最小的环境影响，通常作为企业主的承诺自动颁发）。</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">中小微企业（UMKM）、商业店铺、咨询服务、家庭手工业。</td><td class=\"border-b border-line/50 py-4 align-top pr-4\">SPPL 注册号</td></tr></tbody></table></div>",
+      "<h3 class=\"font-display text-xl font-bold text-ink mt-8 mb-4\">给泗水企业主的重要提示：</h3>",
+      "如果您的商业活动计划位于泗水市，环境文件的协调将通过 SSW（泗水单窗）系统以综合方式进行。这一过程将环境批准的履行与 SKRK（城市规划说明书）以及相关机构的其他技术建议（例如地块排水管理）相结合。",
+      "<h3 class=\"font-display text-xl font-bold text-ink mt-8 mb-4\">为什么 AMDAL 的编制过程需要特殊的精确度和能力？</h3>",
+      "编制 AMDAL 文件是一项全面的多学科科学工作。该文件由 3 个相互关联的研究部分组成：",
+      "<ul class=\"list-disc pl-5 space-y-2 font-body text-base text-ink mb-4\"><li><b>KA（职权范围）：</b> 初步筛选，以描绘哪些环境参数具有相关性并需要在现场进行重要研究。</li><li><b>ANDAL（环境影响分析）：</b> 对初始环境状况的深入研究，从水、空气质量、生物多样性，到当地社区的社会经济动态。</li><li><b>RKL-RPL（环境管理与监测计划）：</b> 为公司管理层提供持续实施环境缓解的指导性操作文件。</li></ul>",
+      "这一过程涉及需要高度精确的各个阶段，例如在 KAN 认可的实验室进行样本测试，甚至实施公众咨询。这个咨询阶段是一个非常好的对话空间，可以吸收受影响居民的期望，从而使您的投资能够获得周围环境的积极社会支持。",
+      "考虑到这种技术复杂性，政府法规要求 AMDAL 文件的编制必须由持有官方能力证书的团队进行，即在 KLHK 注册的 KTPA（Amdal 编制团队负责人）和 ATPA（Amdal 编制团队成员）。",
+      "与专业的 AMDAL 咨询服务机构建立合作关系是一项战略步骤，以确保每一个科学参数都能根据适用的法律框架精确编制，从而使您的公司能够充满信心和拥有法规确定性地向前迈进。"
+    ]
+  },
+  {
     "slug": "apa-itu-pbg-beda-imb",
     "title": "Apa Itu PBG dan Bedanya dengan IMB?",
-    "title_zh": "[ZH] Apa Itu PBG dan Bedanya dengan IMB?",
+    "title_zh": "什么是 PBG？它与 IMB 有何不同？",
     "excerpt": "Sejak UU Cipta Kerja berlaku, IMB resmi digantikan PBG. Ini yang berubah dan yang perlu disiapkan pemilik bangunan.",
-    "excerpt_zh": "[ZH] Sejak UU Cipta Kerja berlaku, IMB resmi digantikan PBG. Ini yang berubah dan yang perlu disiapkan pemilik bangunan.",
+    "excerpt_zh": "自《就业创造法》生效以来，IMB 正式被 PBG 取代。以下是主要变化及业主需准备的事项。",
     "date": "2026-01-12",
     "readTime": "4 menit baca",
     "content": [
@@ -14,18 +98,18 @@
       "Buat pemilik bangunan, ini artinya dokumen teknis yang harus disiapkan jauh lebih detail dibanding era IMB: mulai dari data teknis arsitektur, struktur, sampai MEP (mekanikal, elektrikal, plumbing). Kalau dokumen ini tidak lengkap sejak awal, proses bisa berulang kali bolak-balik revisi."
     ],
     "content_zh": [
-      "[ZH] Persetujuan Bangunan Gedung, atau PBG, adalah izin yang wajib dimiliki sebelum seseorang membangun baru, mengubah, memperluas, mengurangi, atau merawat bangunan gedung. PBG menggantikan Izin Mendirikan Bangunan (IMB) sejak Undang-Undang Cipta Kerja berlaku.",
-      "[ZH] Perbedaan paling mendasar bukan cuma nama. Kalau dulu IMB lebih menitikberatkan pada perizinan administratif sebelum konstruksi dimulai, PBG dirancang sebagai instrumen pengendalian tata ruang yang memeriksa kesesuaian rencana teknis dengan fungsi bangunan, ketentuan tata bangunan seperti KDB dan KLB, sampai standar keandalan bangunan itu sendiri.",
-      "[ZH] Prosesnya juga sekarang terpusat lewat sistem SIMBG, mulai dari pendaftaran, verifikasi dokumen oleh Dinas Teknis, konsultasi dengan Tim Profesi Ahli (TPA) dan Tim Penilai Teknis (TPT), sampai penerbitan dokumen akhir. PBG berlaku sekali, selama bangunan tidak mengalami perubahan struktur atau fungsi yang signifikan.",
-      "[ZH] Buat pemilik bangunan, ini artinya dokumen teknis yang harus disiapkan jauh lebih detail dibanding era IMB: mulai dari data teknis arsitektur, struktur, sampai MEP (mekanikal, elektrikal, plumbing). Kalau dokumen ini tidak lengkap sejak awal, proses bisa berulang kali bolak-balik revisi."
+      "建筑审批许可证（PBG）是任何人在新建、改建、扩建、缩建或维护建筑前必须持有的许可证。自《就业创造法》生效以来，PBG 已正式取代了原有的建筑许可证（IMB）。",
+      "最根本的区别不仅在于名称。以前的 IMB 更侧重于施工前的行政许可，而 PBG 则被设计为空间规划的控制工具，用于审查技术方案是否符合建筑功能、建筑规范（如 KDB 和 KLB），以及建筑本身的可靠性标准。",
+      "现在，整个流程也通过 SIMBG 系统集中办理，从注册、技术部门文件验证、与专家委员会（TPA）及技术评估团队（TPT）咨询，直到最终文件的颁发。PBG 办理一次即可长期有效，只要建筑未发生重大的结构或功能变更。",
+      "对于建筑业主而言，这意味着与 IMB 时代相比，需要准备的技术文件要详细得多：从建筑、结构到机电（MEP）技术数据。如果这些文件从一开始就不齐全，整个流程可能会面临反复的修改。"
     ]
   },
   {
     "slug": "syarat-lengkap-pbg",
     "title": "Syarat Lengkap Mengurus PBG untuk Bangunan Komersial dan Industri",
-    "title_zh": "[ZH] Syarat Lengkap Mengurus PBG untuk Bangunan Komersial dan Industri",
+    "title_zh": "商业与工业建筑办理 PBG 的完整条件",
     "excerpt": "Dari dokumen tanah sampai perhitungan struktur — ini daftar lengkap yang perlu disiapkan sebelum mendaftar PBG.",
-    "excerpt_zh": "[ZH] Dari dokumen tanah sampai perhitungan struktur — ini daftar lengkap yang perlu disiapkan sebelum mendaftar PBG.",
+    "excerpt_zh": "从土地文件到结构计算——这是在申请 PBG 前需要准备的完整清单。",
     "date": "2026-02-03",
     "readTime": "5 menit baca",
     "content": [
@@ -36,19 +120,19 @@
       "Karena banyaknya dokumen lintas bidang ini, sebagian besar pemilik bangunan memilih menggunakan jasa konsultan perizinan supaya seluruh berkas disiapkan sesuai standar sejak awal, dan tidak bolak-balik direvisi saat konsultasi dengan TPA/TPT."
     ],
     "content_zh": [
-      "[ZH] Sebelum mendaftar PBG lewat SIMBG, ada belasan dokumen yang perlu disiapkan lebih dulu. Secara garis besar, dokumennya terbagi jadi tiga kelompok: legalitas, teknis, dan rekomendasi instansi.",
-      "[ZH] Kelompok legalitas mencakup dokumen kepemilikan tanah, dokumen penyelidikan tanah, KTP, NIB, dan akta pendirian perusahaan, ditambah PKKPR (Persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang) dan KRK (Ketetapan Rencana Kota). Di kelompok ini juga ada dokumen lingkungan dan pengesahan site plan.",
-      "[ZH] Kelompok rekomendasi instansi berisi rekomendasi dari BPBD dan rekomendasi peil banjir, yang biasanya jadi salah satu tahap paling memakan waktu kalau lokasi bangunan berada di kawasan rawan genangan.",
-      "[ZH] Kelompok teknis adalah yang paling tebal: gambar dan spesifikasi arsitektur (denah, tampak, potongan, detail pintu-jendela, rangka atap), data teknis struktur (pondasi, sloof, kolom, balok, plat lantai, perhitungan struktur), dan data teknis MEP (kelistrikan, penangkal petir, air bersih dan kotor, drainase, proteksi kebakaran, jalur evakuasi). Semua dokumen teknis ini harus dikerjakan oleh badan usaha pengkaji teknis yang memiliki SKK Arsitektur, SKK Struktur, dan SKK MEP.",
-      "[ZH] Karena banyaknya dokumen lintas bidang ini, sebagian besar pemilik bangunan memilih menggunakan jasa konsultan perizinan supaya seluruh berkas disiapkan sesuai standar sejak awal, dan tidak bolak-balik direvisi saat konsultasi dengan TPA/TPT."
+      "在通过 SIMBG 系统申请 PBG 之前，有十几份文件需要提前准备。总体而言，这些文件分为三大类：合法性文件、技术文件和机构推荐函。",
+      "合法性文件包括土地所有权证明、土地调查文件、身份证（KTP）、企业注册号（NIB）和公司成立证书，外加空间规划许可（PKKPR）和建筑位置规划（KRK）。此类别还包括环境文件和场地规划批准。",
+      "机构推荐函类别包含来自灾害防控局（BPBD）的推荐函和防洪标高推荐函，如果建筑位于易涝区，这通常是最耗时的阶段之一。",
+      "技术文件类别最为繁杂：建筑图纸与规格（平面图、立面图、剖面图、门窗详图、屋架）、结构技术数据（地基、基础梁、柱、梁、楼板、结构计算），以及 MEP 技术数据（电气、避雷、给排水、排水、消防、疏散路线）。所有技术文件必须由持有建筑、结构和 MEP 专业资质（SKK）的技术审查机构完成。",
+      "由于涉及跨领域的众多文件，大多数建筑业主选择聘请许可办理顾问，以确保所有文件从一开始就符合标准，从而避免在与 TPA/TPT 咨询时反复修改。"
     ]
   },
   {
     "slug": "slf-wajib-sebelum-beroperasi",
     "title": "SLF Wajib Dimiliki Sebelum Bangunan Beroperasi, Ini Alasannya",
-    "title_zh": "[ZH] SLF Wajib Dimiliki Sebelum Bangunan Beroperasi, Ini Alasannya",
+    "title_zh": "建筑投入使用前为何必须持有 SLF？",
     "excerpt": "PBG mengizinkan pembangunan, tapi SLF yang membuktikan bangunan itu benar-benar laik dan aman digunakan.",
-    "excerpt_zh": "[ZH] PBG mengizinkan pembangunan, tapi SLF yang membuktikan bangunan itu benar-benar laik dan aman digunakan.",
+    "excerpt_zh": "PBG 允许您进行建设，但只有 SLF 能证明该建筑真正适合并安全投入使用。",
     "date": "2026-02-20",
     "readTime": "3 menit baca",
     "content": [
@@ -58,18 +142,18 @@
       "Karena pemeriksaannya dilakukan setelah bangunan berdiri, dokumentasi as-built drawing dan kesesuaiannya dengan dokumen PBG yang sudah disetujui menjadi kunci supaya proses SLF berjalan lancar tanpa banyak temuan di lapangan."
     ],
     "content_zh": [
-      "[ZH] Banyak pemilik bangunan mengira proses perizinan selesai begitu PBG terbit. Padahal, PBG hanya izin untuk melaksanakan konstruksi. Setelah bangunan selesai dibangun, pemilik masih perlu mengurus Sertifikat Laik Fungsi (SLF) sebelum bangunan itu boleh dioperasikan atau dihuni.",
-      "[ZH] SLF adalah bukti bahwa bangunan yang sudah jadi telah diperiksa dan dinyatakan memenuhi standar keandalan yang dipersyaratkan sejak tahap PBG — mencakup keselamatan struktur, sistem proteksi kebakaran, jalur evakuasi, sampai kelayakan sistem MEP secara keseluruhan.",
-      "[ZH] Tanpa SLF, sebuah gedung komersial, pabrik, atau gedung publik secara teknis belum boleh dioperasikan meskipun konstruksinya sudah rampung 100%. Ini yang sering luput dari perhatian pengembang yang terlalu fokus mengejar PBG di awal proyek tapi lupa menyiapkan proses SLF menjelang bangunan selesai.",
-      "[ZH] Karena pemeriksaannya dilakukan setelah bangunan berdiri, dokumentasi as-built drawing dan kesesuaiannya dengan dokumen PBG yang sudah disetujui menjadi kunci supaya proses SLF berjalan lancar tanpa banyak temuan di lapangan."
+      "许多建筑业主误以为 PBG 颁发后，许可流程就结束了。事实上，PBG 仅仅是施工许可。在建筑竣工后，业主仍需办理建筑合格证书（SLF），之后建筑才允许投入运营或居住。",
+      "SLF 是证明已建成的建筑经过检查，并满足自 PBG 阶段起所要求的各项可靠性标准的凭证——这包括结构安全、消防系统、疏散路线，以及整体 MEP 系统的合规性。",
+      "如果没有 SLF，商业大厦、工厂或公共建筑在技术上是不允许运营的，即使施工已 100% 完成。这往往是被许多开发商忽视的一点，他们过于专注于项目初期的 PBG 申请，却忘记了在建筑完工前准备 SLF 流程。",
+      "由于 SLF 的检查是在建筑建成后进行的，竣工图（as-built drawing）的编制及其与已获批 PBG 文件的一致性，成为确保 SLF 流程顺利进行、减少现场问题的关键。"
     ]
   },
   {
     "slug": "berapa-lama-proses-pbg",
     "title": "Berapa Lama Proses PBG? Ini Tahapannya dari Awal sampai Terbit",
-    "title_zh": "[ZH] Berapa Lama Proses PBG? Ini Tahapannya dari Awal sampai Terbit",
+    "title_zh": "PBG 办理需要多长时间？从申请到颁发的全流程解析",
     "excerpt": "Sembilan tahap resmi pengurusan PBG lewat SIMBG, dari persiapan dokumen sampai retribusi dan penerbitan.",
-    "excerpt_zh": "[ZH] Sembilan tahap resmi pengurusan PBG lewat SIMBG, dari persiapan dokumen sampai retribusi dan penerbitan.",
+    "excerpt_zh": "通过 SIMBG 系统办理 PBG 的九个官方步骤，涵盖从文件准备到税费缴纳及证书颁发。",
     "date": "2026-03-05",
     "readTime": "4 menit baca",
     "content": [
@@ -79,18 +163,18 @@
       "Setelah disetujui, berkas final diunggah beserta perhitungan retribusi, divalidasi oleh Dinas Teknis, dan retribusi dibayarkan melalui bank atau mobile banking. Barulah dokumen PBG diterbitkan. Lama keseluruhan proses sangat bergantung pada kelengkapan dokumen di awal — semakin lengkap dan sesuai standar sejak pengajuan pertama, semakin sedikit putaran revisi yang dibutuhkan."
     ],
     "content_zh": [
-      "[ZH] Proses pengurusan PBG mengikuti alur yang cukup terstruktur lewat sistem SIMBG. Tahap pertama adalah menyiapkan dokumen tanah, PKKPR, KRK, dan dokumen lingkungan — fondasi yang harus beres sebelum mendaftar.",
-      "[ZH] Setelah itu pemohon mendaftar dan mengunggah seluruh dokumen ke SIMBG, yang kemudian diverifikasi oleh Dinas Teknis. Bila dokumen dinyatakan lengkap, tahap berikutnya adalah konsultasi bersama Tim Profesi Ahli (TPA) dan Tim Penilai Teknis (TPT).",
-      "[ZH] Di tahap konsultasi inilah biasanya muncul catatan revisi. Pemohon perlu memperbaiki dokumen sesuai rekomendasi, lalu melakukan konsultasi ulang sampai mendapat persetujuan dari TPA/TPT — proses yang bisa berlangsung beberapa putaran tergantung kompleksitas bangunan.",
-      "[ZH] Setelah disetujui, berkas final diunggah beserta perhitungan retribusi, divalidasi oleh Dinas Teknis, dan retribusi dibayarkan melalui bank atau mobile banking. Barulah dokumen PBG diterbitkan. Lama keseluruhan proses sangat bergantung pada kelengkapan dokumen di awal — semakin lengkap dan sesuai standar sejak pengajuan pertama, semakin sedikit putaran revisi yang dibutuhkan."
+      "PBG 的办理流程通过 SIMBG 系统遵循一套相当结构化的步骤。第一阶段是准备土地文件、PKKPR、KRK 和环境文件——这些是注册前必须夯实的基础。",
+      "随后，申请人进行注册并将所有文件上传至 SIMBG，由技术部门进行验证。如果文件被确认齐全，下一阶段就是与专家委员会（TPA）和技术评估团队（TPT）进行咨询。",
+      "正是在咨询阶段，通常会产生修改意见。申请人需要根据建议修改文件，然后再次进行咨询，直到获得 TPA/TPT 的批准——根据建筑的复杂程度，这一过程可能需要多轮反复。",
+      "获得批准后，上传最终文件和税费计算，经技术部门验证后，通过银行或手机银行缴纳税费。最后才会颁发 PBG 文件。整个流程的耗时很大程度上取决于初始文件的完整性——首次提交时越完整、越符合标准，所需的修改轮数就越少。"
     ]
   },
   {
     "slug": "risiko-bangunan-tanpa-pbg",
     "title": "Risiko Bangunan Tanpa PBG yang Perlu Diketahui Pemilik Usaha",
-    "title_zh": "[ZH] Risiko Bangunan Tanpa PBG yang Perlu Diketahui Pemilik Usaha",
+    "title_zh": "企业主须知：无 PBG 建筑的潜在风险",
     "excerpt": "Bangunan tanpa PBG bukan cuma soal administrasi — ada risiko operasional dan hukum yang mengikuti.",
-    "excerpt_zh": "[ZH] Bangunan tanpa PBG bukan cuma soal administrasi — ada risiko operasional dan hukum yang mengikuti.",
+    "excerpt_zh": "没有 PBG 的建筑不仅是行政违规——随之而来的还有运营和法律风险。",
     "date": "2026-03-18",
     "readTime": "3 menit baca",
     "content": [
@@ -100,18 +184,18 @@
       "Karena itu, menyiapkan PBG sejak tahap perencanaan, bukan setelah bangunan berdiri, tetap jadi langkah yang paling efisien dari segi waktu maupun biaya."
     ],
     "content_zh": [
-      "[ZH] PBG bukan sekadar formalitas administratif. Karena fungsinya sebagai instrumen pengendalian tata ruang, bangunan yang berdiri tanpa PBG berarti belum pernah diperiksa kesesuaiannya dengan ketentuan tata bangunan seperti KDB dan KLB, maupun standar keandalan struktur dan keselamatannya.",
-      "[ZH] Dalam praktiknya, ketiadaan PBG dapat menghambat proses lain yang justru dibutuhkan pemilik usaha: pengajuan SLF tidak bisa diproses tanpa PBG yang sah, sementara sejumlah izin operasional dan proses perbankan (misalnya pengajuan kredit dengan agunan bangunan) juga umumnya mensyaratkan dokumen ini.",
-      "[ZH] Ada juga risiko yang sifatnya lebih teknis: tanpa proses pemeriksaan PBG, potensi masalah pada struktur, sistem proteksi kebakaran, atau jalur evakuasi mungkin baru terlihat setelah bangunan digunakan — saat perbaikannya jauh lebih mahal dan mengganggu operasional dibanding memperbaikinya di tahap desain.",
-      "[ZH] Karena itu, menyiapkan PBG sejak tahap perencanaan, bukan setelah bangunan berdiri, tetap jadi langkah yang paling efisien dari segi waktu maupun biaya."
+      "PBG 不仅仅是一项行政手续。作为空间规划的控制工具，没有 PBG 的建筑意味着其未经过建筑规范（如 KDB 和 KLB）以及结构可靠性和安全标准的合规性检查。",
+      "在实际操作中，缺乏 PBG 会阻碍企业主急需的其他流程：没有合法的 PBG 就无法办理 SLF，同时许多运营许可和银行手续（例如以房产作为抵押申请贷款）通常也要求提供此文件。",
+      "此外，还存在更具技术性的风险：如果没有经过 PBG 的审查流程，结构、消防系统或疏散路线方面的潜在问题可能只有在建筑投入使用后才会暴露出来——届时进行整改不仅成本高昂，且比在设计阶段解决更严重地干扰业务运营。",
+      "因此，在规划阶段就开始准备 PBG，而不是等建筑建好后再补办，无论从时间还是成本角度来看，始终是最有效的做法。"
     ]
   },
   {
     "slug": "dasar-hukum-pbg-slf",
     "title": "Dasar Hukum PBG dan SLF yang Perlu Diketahui Pemilik Bangunan",
-    "title_zh": "[ZH] Dasar Hukum PBG dan SLF yang Perlu Diketahui Pemilik Bangunan",
+    "title_zh": "建筑业主需了解的 PBG 和 SLF 法律依据",
     "excerpt": "Dari UU Bangunan Gedung sampai Peraturan Menteri PUPR — ini payung hukum yang membuat PBG dan SLF wajib dimiliki.",
-    "excerpt_zh": "[ZH] Dari UU Bangunan Gedung sampai Peraturan Menteri PUPR — ini payung hukum yang membuat PBG dan SLF wajib dimiliki.",
+    "excerpt_zh": "从《建筑法》到公共工程和住房部部长条例——这些法律框架确立了 PBG 和 SLF 的强制性。",
     "date": "2026-04-02",
     "readTime": "3 menit baca",
     "content": [
@@ -121,18 +205,18 @@
       "Bagi pemilik bangunan, memahami dasar hukum ini penting bukan sekadar untuk kepatuhan administratif, tapi juga karena setiap tahap dalam proses SIMBG — dari verifikasi dokumen sampai konsultasi dengan TPA/TPT — merujuk langsung pada standar teknis yang ditetapkan di peraturan-peraturan tersebut."
     ],
     "content_zh": [
-      "[ZH] Kewajiban memiliki PBG dan SLF bukan aturan baru yang muncul tiba-tiba. Payung hukumnya bertingkat, mulai dari Undang-Undang Nomor 28 Tahun 2002 tentang Bangunan Gedung sebagai landasan utama, yang kemudian diperbarui lewat Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja.",
-      "[ZH] Aturan pelaksanaannya dijabarkan lebih rinci dalam Peraturan Pemerintah Nomor 16 Tahun 2021, yang menggantikan sistem Izin Mendirikan Bangunan (IMB) dengan Persetujuan Bangunan Gedung (PBG) sekaligus mengatur mekanisme penerbitan Sertifikat Laik Fungsi (SLF) secara terintegrasi lewat sistem SIMBG.",
-      "[ZH] Untuk SLF secara spesifik, ketentuan detailnya diatur dalam Peraturan Menteri PUPR Nomor 27/PRT/M/2018 yang kemudian diubah dengan Peraturan Menteri PUPR Nomor 3 Tahun 2020 — dua aturan ini yang menjadi acuan soal prosedur penerbitan, klasifikasi bangunan, dan masa berlaku SLF.",
-      "[ZH] Bagi pemilik bangunan, memahami dasar hukum ini penting bukan sekadar untuk kepatuhan administratif, tapi juga karena setiap tahap dalam proses SIMBG — dari verifikasi dokumen sampai konsultasi dengan TPA/TPT — merujuk langsung pada standar teknis yang ditetapkan di peraturan-peraturan tersebut."
+      "持有 PBG 和 SLF 的义务并非突然出台的新规。其法律框架是分层次的，首先以 2002 年第 28 号关于建筑的法律作为主要基础，随后通过 2020 年第 11 号《就业创造法》进行了更新。",
+      "实施细则在 2021 年第 16 号政府条例中得到了更详细的阐述，该条例用建筑审批许可证（PBG）取代了原有的建筑许可证（IMB）制度，同时规定了通过 SIMBG 系统整合颁发建筑合格证书（SLF）的机制。",
+      "针对 SLF 的具体规定则由 2018 年第 27/PRT/M 号公共工程和住房部部长条例予以明确，该条例随后被 2020 年第 3 号部长条例修订——这两项法规是有关签发程序、建筑分类和 SLF 有效期的核心参考。",
+      "对于建筑业主而言，了解这些法律依据不仅是为了符合行政合规要求，更是因为 SIMBG 流程中的每一个步骤——从文件验证到与 TPA/TPT 咨询——都直接参照了这些法规中设定的技术标准。"
     ]
   },
   {
     "slug": "slf-bangunan-lama-tanpa-pbg",
     "title": "Bangunan Lama Belum Punya PBG? Begini Cara Mengurus SLF-nya",
-    "title_zh": "[ZH] Bangunan Lama Belum Punya PBG? Begini Cara Mengurus SLF-nya",
+    "title_zh": "老旧建筑没有 PBG？教您如何办理 SLF",
     "excerpt": "Bangunan yang sudah berdiri lama, bahkan sebelum era PBG, tetap bisa diproses menuju SLF lewat jalur kajian teknis bangunan eksisting.",
-    "excerpt_zh": "[ZH] Bangunan yang sudah berdiri lama, bahkan sebelum era PBG, tetap bisa diproses menuju SLF lewat jalur kajian teknis bangunan eksisting.",
+    "excerpt_zh": "即使是建于 PBG 时代之前的老旧建筑，依然可以通过现有建筑的技术评估途径申请 SLF。",
     "date": "2026-04-18",
     "readTime": "3 menit baca",
     "content": [
@@ -142,18 +226,18 @@
       "Jika hasil kajian menunjukkan bangunan memenuhi standar keandalan, PBG dan SLF dapat diterbitkan sekaligus di tahap akhir proses, tanpa pemilik harus mengulang dari nol seolah-olah bangunan belum pernah dibangun."
     ],
     "content_zh": [
-      "[ZH] Banyak pemilik bangunan lama, terutama yang berdiri sebelum sistem PBG diberlakukan, ragu untuk mengurus SLF karena merasa dokumen dasarnya sudah tidak lengkap. Padahal, ada jalur khusus untuk kondisi ini yang disebut kajian teknis bangunan gedung terbangun.",
-      "[ZH] Alih-alih menyerahkan dokumen rencana seperti bangunan baru, pemilik bangunan eksisting perlu menyiapkan laporan pemeriksaan kelaikan, laporan pemeriksaan berkala, gambar as-built (kondisi bangunan sesuai kenyataan di lapangan), serta perhitungan struktur dan MEP dari kondisi bangunan yang sudah terbangun.",
-      "[ZH] Proses ini tetap melibatkan Badan Usaha Pengkaji Teknis yang sama seperti pengajuan PBG baru — mencakup tenaga ahli dengan SKK Arsitektur, Struktur, dan MEP — namun fokus pemeriksaannya bergeser dari rencana di atas kertas menjadi kondisi fisik aktual bangunan.",
-      "[ZH] Jika hasil kajian menunjukkan bangunan memenuhi standar keandalan, PBG dan SLF dapat diterbitkan sekaligus di tahap akhir proses, tanpa pemilik harus mengulang dari nol seolah-olah bangunan belum pernah dibangun."
+      "许多老旧建筑的业主，尤其是那些在 PBG 制度实施前就已建成的建筑业主，对于办理 SLF 感到犹豫，因为他们觉得基础文件已经不全了。然而，针对这种情况，有一条特殊的途径，被称为“已建成建筑的技术评估”。",
+      "与新建筑提交规划文件不同，现有建筑的业主需要准备合规性检查报告、定期检查报告、竣工图（反映现场实际情况的图纸），以及基于已建成建筑现状的结构和 MEP 计算书。",
+      "这一流程同样需要与申请新 PBG 时相同的技术审查机构参与——包括持有建筑、结构和 MEP 专业资质（SKK）的专家——但审查的重点从图纸上的规划转移到了建筑的实际物理现状。",
+      "如果评估结果表明该建筑符合可靠性标准，则可以在流程的最后阶段同时颁发 PBG 和 SLF，业主无需像建筑从未建过一样从零开始。"
     ]
   },
   {
     "slug": "perbedaan-detail-pbg-slf",
     "title": "PBG vs SLF: Dua Dokumen yang Sering Tertukar Padahal Beda Fungsi",
-    "title_zh": "[ZH] PBG vs SLF: Dua Dokumen yang Sering Tertukar Padahal Beda Fungsi",
+    "title_zh": "PBG 与 SLF：经常被混淆的两份文件及其功能差异",
     "excerpt": "PBG menjawab 'boleh dibangun atau tidak', sedangkan SLF menjawab 'boleh dipakai atau tidak' — ini rincian perbedaannya.",
-    "excerpt_zh": "[ZH] PBG menjawab 'boleh dibangun atau tidak', sedangkan SLF menjawab 'boleh dipakai atau tidak' — ini rincian perbedaannya.",
+    "excerpt_zh": "PBG 回答的是“能否建造”，而 SLF 回答的是“能否使用”——以下是它们的详细区别。",
     "date": "2026-05-10",
     "readTime": "3 menit baca",
     "content": [
@@ -163,10 +247,10 @@
       "Karena keduanya saling terhubung dalam satu alur — PBG lebih dulu, baru SLF menyusul setelah bangunan berdiri — mengelola kedua dokumen ini dengan satu pendamping yang sama biasanya membuat data teknis lebih konsisten antara tahap perencanaan dan tahap pemeriksaan akhir."
     ],
     "content_zh": [
-      "[ZH] Cara paling sederhana untuk membedakan PBG dan SLF adalah dengan melihat pertanyaan yang masing-masing jawab. PBG menjawab pertanyaan 'apakah rencana bangunan ini boleh dibangun?', sementara SLF menjawab 'apakah bangunan yang sudah jadi ini boleh dipakai?'.",
-      "[ZH] Dari sisi waktu pengajuan, PBG diproses sebelum konstruksi dimulai, berdasarkan gambar rencana dan perhitungan di atas kertas. SLF baru diproses setelah bangunan selesai dibangun, dan pemeriksaannya membandingkan kondisi fisik aktual dengan dokumen PBG yang sudah disetujui sebelumnya.",
-      "[ZH] Masa berlakunya juga berbeda jauh. PBG pada dasarnya berlaku selama bangunan tidak mengalami perubahan struktur atau fungsi yang signifikan. SLF punya masa berlaku terbatas — umumnya 5 tahun untuk bangunan umum seperti kantor atau pabrik, dan 20 tahun untuk bangunan tempat tinggal — sehingga wajib diperpanjang secara berkala melalui pemeriksaan ulang.",
-      "[ZH] Karena keduanya saling terhubung dalam satu alur — PBG lebih dulu, baru SLF menyusul setelah bangunan berdiri — mengelola kedua dokumen ini dengan satu pendamping yang sama biasanya membuat data teknis lebih konsisten antara tahap perencanaan dan tahap pemeriksaan akhir."
+      "区分 PBG 和 SLF 最简单的方法是看它们各自回答的问题。PBG 回答的是“这个建筑规划可以建造吗？”，而 SLF 回答的是“这座已经建好的建筑可以使用吗？”。",
+      "从申请时间来看，PBG 是在施工开始前，基于图纸规划和书面计算进行办理的。而 SLF 只有在建筑完工后才办理，其检查过程是将实际的物理状况与之前已获批的 PBG 文件进行对比。",
+      "两者的有效期也有着显著区别。原则上，只要建筑未发生重大的结构或功能变更，PBG 长期有效。而 SLF 的有效期则是有限的——通常办公楼或工厂等公共建筑为 5 年，住宅建筑为 20 年——因此必须通过重新检查来定期续期。",
+      "由于这两者在同一流程中紧密相连——先办理 PBG，建筑建成后再办理 SLF——将这两份文件交由同一家顾问机构处理，通常能确保规划阶段与最终验收阶段的技术数据保持更高的一致性。"
     ]
   }
 ]

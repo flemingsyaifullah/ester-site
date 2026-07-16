@@ -19,23 +19,16 @@ const kotaLain = daftarKota.filter((k) => k.slug !== kota.slug);
   description={`${kota.nama} PBG 和 SLF 办理专业顾问。我们全程陪同，从准备文件到与 ${kota.dinas} 协调。`}
   path={`/zh-cn/area-layanan/${kota.slug}`}
 >
-  <section class="border-b border-line bg-blueprint-dark text-paper">
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
     <div class="blueprint-grid">
-      <div class="mx-auto max-w-4xl px-5 py-16">
-        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">服务区域</p>
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">服务区域</p>
         <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">
-          {kota.nama} PBG &amp; SLF 办理
+          {kota.nama} 及东爪哇 PBG &amp; SLF 办理
         </h1>
-        <p class="mt-5 max-w-xl font-body text-blueprint-light">
-          我们协助办理 {kota.nama} 地区的 PBG 和 SLF 流程，包括文件协调和与 {kota.dinas} 的技术咨询。
+        <p class="mt-5 max-w-xl font-body text-paper/90">
+          我们协助办理 {kota.nama} 及东爪哇的 PBG 和 SLF 流程，包括文件协调和与 {kota.dinas} 的技术咨询。
         </p>
-        <a
-          href={`https://wa.me/${waNumber}?text=${waMsg}`}
-          target="_blank" rel="noopener noreferrer"
-          class="mt-7 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper"
-        >
-          咨询 {kota.nama} 服务
-        </a>
       </div>
     </div>
   </section>
@@ -44,7 +37,7 @@ const kotaLain = daftarKota.filter((k) => k.slug !== kota.slug);
     <div class="mx-auto max-w-4xl px-5 py-16">
       <p class="font-mono text-xs uppercase tracking-widest text-stamp">现场注意事项</p>
       <h2 class="mt-2 font-display text-2xl font-bold text-ink">在 {kota.nama} 办理需注意的事项</h2>
-      <p class="mt-4 max-w-2xl font-body text-slate leading-relaxed">{kota.catatan} (我们在当地的丰富经验确保顺利处理各项要求。)</p>
+      <p class="mt-4 max-w-2xl font-body text-slate leading-relaxed">{kota.catatan_zh} (我们在当地的丰富经验确保顺利处理各项要求。)</p>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2">
         <a href="/zh-cn/jasa-pbg" class="rounded-sm border-2 border-ink p-6 hover:bg-ink hover:text-paper">
@@ -57,7 +50,7 @@ const kotaLain = daftarKota.filter((k) => k.slug !== kota.slug);
     </div>
   </section>
 
-  <section class="border-t border-line bg-paper-dim">
+  <section class="border-t border-line bg-paper">
     <div class="mx-auto max-w-4xl px-5 py-14">
       <p class="font-mono text-xs uppercase tracking-widest text-stamp">我们服务的其他城市</p>
       <div class="mt-6 flex flex-wrap gap-3">

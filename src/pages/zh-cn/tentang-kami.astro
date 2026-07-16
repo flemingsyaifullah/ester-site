@@ -1,54 +1,53 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Stamp from "../../components/Stamp.astro";
 
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent("您好，我想进一步了解 Ester Globalindo 的业务。");
+
+const nilai = [
+  { title: "透明公开", desc: "我们定期汇报每个流程阶段及文件状态，不使用令人困惑的专业术语。" },
+  { title: "由持证专家操刀", desc: "建筑、结构及 MEP 技术资料均由持有相应领域专业资质（SKK）的团队负责处理。" },
+  { title: "从一开始就注重完整性", desc: "大多数 PBG/SLF 流程延误，源于首次提交时文件不齐全——这正是我们从一开始就重点预防的问题。" },
+];
 ---
 <Layout
   title="关于我们 | Ester Globalindo"
-  description="Ester Globalindo 是专业代办建筑许可证 PBG 和 SLF 的顾问公司，总部位于泗水，服务东爪哇全区。"
+  description="Ester Globalindo 是专业代办建筑许可证 PBG 和 SLF 的顾问公司，总部位于泗水，服务东爪哇全区，全程陪同业主从技术文件准备到许可证颁发。"
   path="/zh-cn/tentang-kami"
 >
-  <section class="border-b border-line bg-blueprint-dark text-paper">
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
     <div class="blueprint-grid">
-      <div class="mx-auto max-w-4xl px-5 py-16">
-        <p class="font-mono text-xs uppercase tracking-widest text-blueprint-light">关于我们</p>
-        <h1 class="mt-2 font-display text-4xl font-bold sm:text-5xl">Ester Globalindo</h1>
-        <p class="mt-5 max-w-2xl font-body text-blueprint-light leading-relaxed">
-          我们是专注于建筑许可证代办的专业顾问公司，主要服务项目包括 PBG（建筑审批许可证）和 SLF（建筑合格证书），服务对象涵盖商业、工业及住宅建筑业主。
-        </p>
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-10 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-paper/90">关于我们</p>
+          <h1 class="mt-2 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+            您的建筑许可证全程陪同顾问
+          </h1>
+          <p class="mt-5 max-w-lg font-body text-paper/90 leading-relaxed">
+            总部位于<span class="text-paper font-medium">泗水</span>，服务东爪哇全区，Ester Globalindo 协助商业、工业及住宅建筑业主准备并申办 PBG 和 SLF 许可证——从技术文件准备、陪同 TPA/TPT 咨询，直至许可证正式颁发。
+          </p>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <Stamp size={160} />
+        </div>
       </div>
     </div>
   </section>
 
   <section class="bg-paper">
-    <div class="mx-auto max-w-4xl px-5 py-16 space-y-8">
-      <div>
-        <h2 class="font-display text-2xl font-bold text-ink">我们的使命</h2>
-        <p class="mt-3 font-body leading-relaxed text-slate">
-          让每一位业主都能轻松、合规、高效地完成建筑许可证申请，不再为繁琐的行政流程而烦恼。
-        </p>
-      </div>
-      <div>
-        <h2 class="font-display text-2xl font-bold text-ink">服务区域</h2>
-        <p class="mt-3 font-body leading-relaxed text-slate">
-          总部位于泗水（Surabaya），服务东爪哇全区，包括：泗水、泗水县、格雷西、玛琅、莫佐克托、巴苏鲁安等地。
-        </p>
-      </div>
-      <div>
-        <h2 class="font-display text-2xl font-bold text-ink">联系我们</h2>
-        <p class="mt-3 font-body leading-relaxed text-slate">
-          如需咨询，请通过 WhatsApp 与我们联系：<strong class="text-ink">+62 822-3002-7878</strong><br />
-          邮箱：<a href="mailto:ester.globalindo@gmail.com" class="text-blueprint underline">ester.globalindo@gmail.com</a>
-        </p>
-        <a
-          href={`https://wa.me/${waNumber}?text=${waMsg}`}
-          target="_blank" rel="noopener noreferrer"
-          class="mt-6 inline-block rounded-sm bg-stamp px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider text-paper transition-opacity hover:opacity-90"
-        >
-          WhatsApp 免费咨询
-        </a>
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <p class="font-mono text-xs uppercase tracking-widest text-stamp">我们的工作方式</p>
+      <h2 class="mt-2 font-display text-3xl font-bold text-ink">我们的工作原则</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {nilai.map((n) => (
+          <div class="border-t-2 border-stamp pt-4">
+            <h3 class="font-display font-bold text-ink">{n.title}</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{n.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
+
 </Layout>

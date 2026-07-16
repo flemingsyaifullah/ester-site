@@ -7,10 +7,12 @@ export const defaultLang = 'id';
 
 export const ui = {
   id: {
+    'badge.perizinan': 'PERIZINAN',
     'nav.pbg': 'Jasa PBG',
     'nav.slf': 'Jasa SLF',
+    'nav.other_services': 'Jasa Perizinan Lainnya',
     'nav.area': 'Area Layanan',
-    'nav.blog': 'Blog',
+    'nav.blog': 'Artikel',
     'nav.news': 'Berita',
     'nav.portfolio': 'Portofolio',
     'nav.brochure': 'Brosur',
@@ -23,12 +25,15 @@ export const ui = {
     'footer.legal': 'Legal',
     'footer.privacy': 'Kebijakan Privasi',
     'footer.terms': 'Syarat & Ketentuan',
+    'footer.back_home': 'Kembali ke Beranda',
   },
   'zh-cn': {
+    'badge.perizinan': '许可证',
     'nav.pbg': 'PBG 服务',
     'nav.slf': 'SLF 服务',
+    'nav.other_services': '其他相关许可服务',
     'nav.area': '服务范围',
-    'nav.blog': '博客',
+    'nav.blog': '文章',
     'nav.news': '新闻',
     'nav.portfolio': '项目案例',
     'nav.brochure': '下载手册',
@@ -41,5 +46,6 @@ export const ui = {
     'footer.legal': '法律信息',
     'footer.privacy': '隐私政策',
     'footer.terms': '条款与条件',
+    'footer.back_home': '返回首页',
   },
 } as const;

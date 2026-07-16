@@ -16,11 +16,11 @@ const { size = 128, label = "DISETUJUI", sub = "PBG · SLF", class: klass = "" }
   role="img"
   aria-label={`Stempel ${label}`}
 >
-  <circle cx="100" cy="100" r="92" fill="none" stroke="var(--color-stamp)" stroke-width="4" opacity="0.9" />
+  <circle cx="100" cy="100" r="92" fill="none" stroke="var(--color-stamp)" stroke-width="2" opacity="0.9" />
   <circle cx="100" cy="100" r="78" fill="none" stroke="var(--color-stamp)" stroke-width="2.5" opacity="0.7" />
-  <path id="stampCircleTop" d="M 100 22 A 78 78 0 0 1 178 100" fill="none" />
-  <text font-family="var(--font-mono)" font-size="12" fill="var(--color-stamp)" letter-spacing="3">
-    <textPath href="#stampCircleTop" startOffset="2%">JASA PERIZINAN BANGUNAN</textPath>
+  <path id="stampCircleTop" d="M 18 100 A 82 82 0 0 1 182 100" fill="none" />
+  <text font-family="var(--font-mono)" font-size="9" fill="var(--color-stamp)" letter-spacing="2">
+    <textPath href="#stampCircleTop" startOffset="17%">JASA PERIZINAN BANGUNAN</textPath>
   </text>
   <text x="100" y="93" text-anchor="middle" font-family="var(--font-display)" font-weight="700" font-size="26" fill="var(--color-stamp)">
     {label}
