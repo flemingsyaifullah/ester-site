@@ -12,6 +12,8 @@ const isFirst = page.currentPage === 1;
 const isLast = page.currentPage === page.lastPage;
 const firstUrl = "/blog";
 const lastUrl = page.lastPage === 1 ? "/blog" : `/blog/${page.lastPage}`;
+
+const allPosts = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 ---
 <Layout
   title="Panduan & Artikel PBG, SLF, dan Perizinan Bangunan | Ester Globalindo"
@@ -33,47 +35,125 @@ const lastUrl = page.lastPage === 1 ? "/blog" : `/blog/${page.lastPage}`;
 
   <section class="bg-paper">
     <div class="mx-auto max-w-4xl px-5 py-16">
-      <div class="grid gap-6">
-        {page.data.map((p) => (
-          <a href={`/blog/${p.slug}`} class="group block rounded-sm border border-ink bg-paper p-6 transition-shadow hover:shadow-md">
-            <p class="font-mono text-xs uppercase tracking-wider text-slate">
-              {new Date(p.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })} · {p.readTime}
-            </p>
-            <h2 class="mt-2 font-display text-xl font-bold text-ink group-hover:underline">{p.title}</h2>
-            <p class="mt-2 font-body text-sm leading-relaxed text-slate">{p.excerpt}</p>
-          </a>
-        ))}
+
+      <!-- Search Box -->
+      <div class="mb-10">
+        <div class="relative">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input
+            id="blog-search"
+            type="text"
+            placeholder="Cari artikel, misal: AMDAL, PBG, SLF..."
+            class="w-full rounded-sm border border-ink bg-paper py-3 pl-11 pr-4 font-body text-sm text-ink placeholder:text-slate/60 focus:outline-none focus:ring-2 focus:ring-blueprint"
+          />
+        </div>
+        <p id="search-count" class="mt-2 font-mono text-xs text-slate hidden"></p>
       </div>
 
-      <div class="mt-12 flex flex-wrap items-center justify-center gap-2 font-mono text-xs uppercase tracking-wider">
-        {isFirst ? (
-          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">|&lt; First</span>
-        ) : (
-          <a href={firstUrl} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">|&lt; First</a>
-        )}
+      <!-- Paginated list (default) -->
+      <div id="paginated-list">
+        <div class="grid gap-6">
+          {page.data.map((p) => (
+            <a href={`/blog/${p.slug}`} class="group block rounded-sm border border-ink bg-paper p-6 transition-shadow hover:shadow-md">
+              <p class="font-mono text-xs uppercase tracking-wider text-slate">
+                {new Date(p.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })} · {p.readTime}
+              </p>
+              <h2 class="mt-2 font-display text-xl font-bold text-ink group-hover:underline">{p.title}</h2>
+              <p class="mt-2 font-body text-sm leading-relaxed text-slate">{p.excerpt}</p>
+            </a>
+          ))}
+        </div>
 
-        {page.url.prev ? (
-          <a href={page.url.prev} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">&larr; Prev</a>
-        ) : (
-          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">&larr; Prev</span>
-        )}
+        <div class="mt-12 flex flex-wrap items-center justify-center gap-2 font-mono text-xs uppercase tracking-wider">
+          {isFirst ? (
+            <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">|&lt; First</span>
+          ) : (
+            <a href={firstUrl} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">|&lt; First</a>
+          )}
 
-        <span class="border border-blueprint bg-blueprint/10 px-4 py-2 text-ink">
-          Page {page.currentPage} of {Math.max(1, page.lastPage)}
-        </span>
+          {page.url.prev ? (
+            <a href={page.url.prev} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">&larr; Prev</a>
+          ) : (
+            <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">&larr; Prev</span>
+          )}
 
-        {page.url.next ? (
-          <a href={page.url.next} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">Next &rarr;</a>
-        ) : (
-          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">Next &rarr;</span>
-        )}
+          <span class="border border-blueprint bg-blueprint/10 px-4 py-2 text-ink">
+            Page {page.currentPage} of {Math.max(1, page.lastPage)}
+          </span>
 
-        {isLast ? (
-          <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">Last &gt;|</span>
-        ) : (
-          <a href={lastUrl} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">Last &gt;|</a>
-        )}
+          {page.url.next ? (
+            <a href={page.url.next} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">Next &rarr;</a>
+          ) : (
+            <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">Next &rarr;</span>
+          )}
+
+          {isLast ? (
+            <span class="border border-line/20 px-3 py-2 text-ink/30 pointer-events-none">Last &gt;|</span>
+          ) : (
+            <a href={lastUrl} class="border border-line/50 px-3 py-2 text-ink transition-colors hover:bg-blueprint hover:border-blueprint hover:text-white">Last &gt;|</a>
+          )}
+        </div>
       </div>
+
+      <!-- Search results (shown when searching) -->
+      <div id="search-results" class="hidden">
+        <div id="search-results-list" class="grid gap-6"></div>
+        <p id="search-empty" class="hidden py-16 text-center font-body text-slate">Tidak ada artikel yang cocok dengan pencarian Anda.</p>
+      </div>
+
     </div>
   </section>
 </Layout>
+
+<script define:vars={{ allPosts }}>
+  const input = document.getElementById('blog-search');
+  const paginatedList = document.getElementById('paginated-list');
+  const searchResults = document.getElementById('search-results');
+  const searchResultsList = document.getElementById('search-results-list');
+  const searchEmpty = document.getElementById('search-empty');
+  const searchCount = document.getElementById('search-count');
+
+  function formatDate(dateStr) {
+    return new Date(dateStr).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function renderCard(p) {
+    return `<a href="/blog/${p.slug}" class="group block rounded-sm border border-ink bg-paper p-6 transition-shadow hover:shadow-md">
+      <p class="font-mono text-xs uppercase tracking-wider text-slate">${formatDate(p.date)} · ${p.readTime}</p>
+      <h2 class="mt-2 font-display text-xl font-bold text-ink group-hover:underline">${p.title}</h2>
+      <p class="mt-2 font-body text-sm leading-relaxed text-slate">${p.excerpt}</p>
+    </a>`;
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+
+    if (q.length === 0) {
+      paginatedList.classList.remove('hidden');
+      searchResults.classList.add('hidden');
+      searchCount.classList.add('hidden');
+      return;
+    }
+
+    paginatedList.classList.add('hidden');
+    searchResults.classList.remove('hidden');
+
+    const filtered = allPosts.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.excerpt.toLowerCase().includes(q)
+    );
+
+    searchCount.textContent = `${filtered.length} artikel ditemukan`;
+    searchCount.classList.remove('hidden');
+
+    if (filtered.length === 0) {
+      searchResultsList.innerHTML = '';
+      searchEmpty.classList.remove('hidden');
+    } else {
+      searchEmpty.classList.add('hidden');
+      searchResultsList.innerHTML = filtered.map(renderCard).join('');
+    }
+  });
+</script>
