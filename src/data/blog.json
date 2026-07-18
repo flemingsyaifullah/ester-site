@@ -1,5 +1,26 @@
 [
   {
+    "slug": "mengenal-pbg-dan-standar-teknis-yang-wajib-dipenuhi",
+    "title": "Mengenal PBG dan Standar Teknis yang Wajib Dipenuhi",
+    "title_zh": "认识建筑许可（PBG）及通过SIMBG系统须满足的技术标准",
+    "excerpt": "Persetujuan Bangunan Gedung (PBG) adalah perizinan yang diberikan kepada pemilik bangunan untuk membangun baru, mengubah, memperluas, mengurangi, dan/atau merawat bangunan gedung sesuai standar teknis bangunan gedung.",
+    "excerpt_zh": "建筑许可（PBG）是发放给建筑物业主的许可，用于新建、改建、扩建、缩减和／或维护建筑物，须符合建筑技术标准。自《2021年第16号政府条例——2002年第28号建筑物法实施条例》颁布以来，PBG取代了原有的建筑营造许可（IMB）。",
+    "date": "2026-07-18",
+    "readTime": "3 menit baca",
+    "content": [
+      "Persetujuan Bangunan Gedung (PBG) adalah perizinan yang diberikan kepada pemilik bangunan untuk membangun baru, mengubah, memperluas, mengurangi, dan/atau merawat bangunan gedung sesuai standar teknis bangunan gedung. PBG menggantikan Izin Mendirikan Bangunan (IMB) sejak terbitnya Peraturan Pemerintah Nomor 16 Tahun 2021 tentang Peraturan Pelaksanaan UU Nomor 28 Tahun 2002 tentang Bangunan Gedung. Perbedaan mendasarnya terletak pada waktu: IMB dulu berfokus pada izin mendirikan, sedangkan PBG diperoleh sebelum konstruksi dimulai untuk membuktikan bahwa rencana teknis bangunan telah memenuhi standar yang berlaku. IMB yang terbit sebelum PP 16/2021 tetap berlaku dan tidak perlu dikonversi — kewajiban PBG berlaku bagi bangunan baru atau bangunan yang mengalami perubahan.",
+      "Seluruh permohonan diajukan secara daring melalui Sistem Informasi Manajemen Bangunan Gedung (SIMBG) di simbg.pu.go.id, tidak lagi secara manual. SIMBG merupakan sistem elektronik berbasis web yang terintegrasi dengan Online Single Submission (OSS), disediakan Kementerian Pekerjaan Umum untuk digunakan pemerintah daerah dalam melayani urusan bangunan gedung. Permohonan kemudian diproses oleh dinas teknis yang membidangi bangunan gedung bersama dinas perizinan di kabupaten/kota tempat bangunan berada. Untuk perumahan atau real estat, pengajuannya dilakukan secara kolektif per tipe rumah.",
+      "Persyaratannya terbagi dalam dua kelompok besar. Persyaratan administratif mencakup identitas pemilik atau pemohon, bukti hak atas tanah, bukti pelunasan PBB, dokumen KRK/KKPR, dokumen lingkungan sesuai ketentuan (AMDAL, UKL-UPL, atau SPPL), Penyelidikan tanah, Rekom Pemadam Kebakaran, SIPA, Rekomendasi Peil Banjir. Untuk persyaratan administratif disesuikan dengan peraturan daerah setempat dan tetap mengacu ke SIMBG. Persyaratan teknis mencakup dokumen rencana teknis yang terdiri atas tiga bidang: arsitektur, struktur, serta mekanikal-elektrikal-plumbing (MEP). Di dalamnya termasuk data kondisi tanah, gambar rencana sistem sanitasi (air bersih, air limbah, air hujan, drainase, dan persampahan), gambar rencana sistem jaringan listrik, hingga perhitungan dan gambar detail sistem proteksi petir untuk bangunan lebih dari satu lantai. Kelengkapan dokumen menyesuaikan fungsi dan tingkat kompleksitas bangunan.",
+      "Alurnya berjalan bertahap: pendaftaran melalui SIMBG, pemeriksaan dokumen, konsultasi perencanaan, penetapan retribusi dan rekomendasi teknis, konfirmasi pembayaran, hingga penerbitan PBG. Konsultasi perencanaan dilakukan oleh Tim Penilai Teknis untuk rumah tinggal dan Tim Profesi Ahli untuk bangunan lainnya, dan diselenggarakan tanpa dipungut biaya. Satu hal yang perlu diantisipasi: banyak pengajuan tertunda bukan karena masalah substansi, melainkan karena dokumen tidak lengkap, format gambar tidak sesuai standar, atau data yang tidak sinkron antara dokumen dan isian sistem — kesalahan yang membuat berkas dikembalikan dan memperpanjang waktu proses."
+    ],
+    "content_zh": [
+      "建筑许可（PBG）是发放给建筑物业主的许可，用于新建、改建、扩建、缩减和／或维护建筑物，须符合建筑技术标准。自《2021年第16号政府条例——2002年第28号建筑物法实施条例》颁布以来，PBG取代了原有的建筑营造许可（IMB）。两者的根本差别在于时点：IMB侧重营造许可本身，而PBG须在施工开始前取得，用以证明建筑技术方案已符合现行标准。在该条例施行前已核发的IMB继续有效，无需转换——PBG义务适用于新建建筑或发生变更的建筑。",
+      "所有申请均通过建筑物管理信息系统（SIMBG）在 simbg.pu.go.id 线上提交，不再受理人工申办。SIMBG是与在线单一提交系统（OSS）相整合的网页式电子系统，由公共工程部提供，供地方政府办理建筑物相关事务。申请随后由建筑物主管技术部门会同建筑所在县／市的许可部门审理。住宅小区或房地产项目则按房型进行集体申请。",
+      "技术要求分为两大类。行政要件包括业主或申请人身份证明、土地权属证明、土地与建筑税完税凭证、城市规划说明书（KRK）或空间利用适宜性文件（KKPR）、依规定出具的环境文件（环境影响评价、环境管理与监测方案，或环境管理声明书），以及建设规划服务提供方资料，含持证建筑师信息。技术要件则涵盖三个专业领域的技术方案文件：建筑、结构，以及机电与给排水（MEP）。其中包括土壤状况数据、卫生系统规划图（清水、废水、雨水、排水及固废处理）、供电系统规划图，以及一层以上建筑所需的防雷系统计算书与详图。文件清单依建筑功能与复杂程度而有所不同。",
+      "流程分步推进：通过SIMBG注册申请、文件审查、规划咨询、核定规费与技术建议、缴款确认，直至核发PBG。规划咨询由技术评审组（针对住宅）或专业专家组（针对其他建筑）负责，且不收取费用。有一点值得预先留意：许多申请延误并非因实质问题，而是文件不齐、图纸格式不符标准，或文件内容与系统填报数据不一致——这类疏漏会导致材料被退回补正，延长办理周期。"
+    ]
+  },
+  {
     "slug": "panduan-taktis-regulasi-amdal-amdalnet-dlh",
     "title": "Panduan Taktis Memahami Regulasi AMDAL: Menyelaraskan Bisnis dengan Sistem Amdalnet dan Proses DLH",
     "title_zh": "战术指南：了解 AMDAL 法规并使业务与 Amdalnet 系统及 DLH 流程保持一致",
