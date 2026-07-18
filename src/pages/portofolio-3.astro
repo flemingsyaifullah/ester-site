@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import portfolio3Data from "../data/portfolio3.json";
+
+const items = (portfolio3Data as any[]).filter((p) => !p.suspended);
+---
+<Layout
+  title="Portofolio Proyek | Ester Globalindo"
+  description="Portofolio case study proyek pengurusan PBG dan SLF oleh Ester Globalindo di Jawa Timur."
+  path="/portofolio-3"
+>
+  <!-- HERO -->
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">Portofolio</p>
+        <h1 class="mt-2 max-w-2xl text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+          Proyek yang Telah Kami Tangani
+        </h1>
+        <p class="mt-4 max-w-xl font-body text-paper/90 leading-relaxed">
+          Kepercayaan klien adalah pencapaian terbaik kami. Berikut sebagian proyek pengurusan PBG
+          dan SLF yang telah berhasil kami selesaikan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIST -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      <div class="space-y-8">
+        {items.map((p: any) => (
+          <article class="rounded-sm border border-ink p-6">
+            {p.foto && (
+              <div class="mb-6 overflow-hidden rounded-sm border border-line">
+                <img
+                  src={p.foto}
+                  alt={p.fotoAlt || p.jenis}
+                  class="h-64 w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h2 class="font-body text-base font-bold text-ink">{p.jenis}</h2>
+              {p.luas && (
+                <span class="font-body text-sm text-slate">· {p.luas}</span>
+              )}
+            </div>
+            <p class="mt-1 font-body text-sm text-slate">
+              {p.lokasi}{p.tahun ? ` · ${p.tahun}` : ''}
+            </p>
+            {p.narasi && (
+              <p class="mt-4 font-body text-sm leading-relaxed text-slate">{p.narasi}</p>
+            )}
+            {p.hasil && (
+              <p class="mt-4 font-body text-sm font-bold text-ink">→ {p.hasil}</p>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
