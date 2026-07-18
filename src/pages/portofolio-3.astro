@@ -47,14 +47,14 @@ const items = (portfolio3Data as any[]).filter((p) => !p.suspended);
                 <span class="font-body text-sm text-slate">· {p.luas}</span>
               )}
             </div>
-            <p class="mt-1 font-mono text-xs uppercase tracking-wider text-slate">
+            <p class="mt-1 font-body text-sm text-slate">
               {p.lokasi}{p.tahun ? ` · ${p.tahun}` : ''}
             </p>
             {p.narasi && (
               <p class="mt-4 font-body text-sm leading-relaxed text-slate">{p.narasi}</p>
             )}
             {p.hasil && (
-              <p class="mt-4 font-body text-sm text-ink">{p.hasil}</p>
+              <p class="mt-4 font-body text-sm font-bold text-ink">→ {p.hasil}</p>
             )}
           </article>
         ))}
