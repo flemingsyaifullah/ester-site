@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "klinik-1784417452829",
+    "suspended": false,
+    "jenis": "Klinik",
+    "jenis_zh": "Hotel",
+    "luas": "3100 m2",
+    "tahun": "2025",
+    "lokasi": "Mojokerto, Jawa Timur",
+    "lokasi_zh": "Mojokerto, Jawa Timur",
+    "narasi": "pengurusan perizinan dari pembangunan awal sampai operasional jalan",
+    "narasi_zh": "从项目开工到运营的全程审批手续办理",
+    "hasil": "SLF terbit, berlaku 5 tahun",
+    "hasil_zh": "SLF已颁发，有效期为5年"
+  }
+]
