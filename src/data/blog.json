@@ -1,5 +1,38 @@
 [
   {
+    "slug": "apa-bedanya-pbg-dan-slf",
+    "title": "Apa bedanya PBG dan SLF?",
+    "title_zh": "常见问题：泗水的建筑许可（PBG）与适用性证书（SLF）",
+    "excerpt": "PBG adalah izin sebelum membangun — memastikan rancangan sudah memenuhi standar teknis. SLF adalah sertifikat setelah bangunan berdiri — memastikan bangunannya benar-benar laik digunakan. Keduanya bukan pilihan, melainkan dua tahap berurutan.",
+    "excerpt_zh": "建筑许可是动工前的许可——确认设计方案符合技术标准。适用性证书是建筑落成后的证书——确认建筑确实适合使用。两者并非二选一，而是先后衔接的两个阶段。",
+    "date": "2026-07-18",
+    "readTime": "3 menit baca",
+    "content": [
+      "PBG adalah izin sebelum membangun — memastikan rancangan sudah memenuhi standar teknis. SLF adalah sertifikat setelah bangunan berdiri — memastikan bangunannya benar-benar laik digunakan. Keduanya bukan pilihan, melainkan dua tahap berurutan.",
+      "<b>Saya sudah punya IMB, apakah wajib ganti PBG?<b>\nTidak. IMB yang terbit sebelum PP 16/2021 tetap berlaku dan tidak perlu dikonversi. PBG diperlukan untuk bangunan baru, atau bila ada perubahan seperti penambahan lantai, perluasan, atau perubahan struktur.",
+      "<b>Renovasi rumah perlu PBG tidak?<b>\nTergantung jenis renovasinya. Perubahan struktur atau penambahan luas memerlukan PBG perubahan. Pemeliharaan ringan seperti pengecatan, perbaikan atap bocor, atau ganti keramik tanpa mengubah struktur umumnya tidak.",
+      "<b>Urus PBG Surabaya lewat SSW atau SIMBG?<b>\nPBG dan SLF diterbitkan melalui SIMBG — sistem nasional yang diwajibkan PP 16/2021. SSW berperan menyediakan syarat-syaratnya: pemeriksaan pelunasan PBB lewat NOP, keterangan rencana kota, dan dokumen kesesuaian pemanfaatan ruang.",
+      "<b>Berapa lama masa berlaku SLF?<b>\n20 tahun untuk rumah tinggal tunggal dan deret; 5 tahun untuk bangunan lainnya — ruko, kantor, gudang, pabrik, hotel, sekolah, rumah sakit. Perpanjangan selalu didahului pemeriksaan kelaikan fungsi ulang, bukan sekadar pembaruan dokumen.",
+      "<b>Berapa biaya retribusi PBG?<b>\nDihitung berdasarkan luas bangunan, indeks fungsi, dan harga satuan yang ditetapkan perda masing-masing daerah, lalu dihitung otomatis oleh sistem dan disetor ke kas daerah. Karena mengacu perda, angkanya berbeda antar kota — untuk Surabaya sebaiknya dicek langsung melalui simulasi di SIMBG.",
+      "<b>Apa sanksinya kalau tidak punya PBG atau SLF?<b>\nPP 16/2021 mengatur sanksi administratif bertingkat: peringatan tertulis, denda, pembatasan kegiatan pemanfaatan, penghentian sementara atau tetap pemanfaatan, hingga pembongkaran bangunan.",
+      "<b>Sudah terlanjur bangun tanpa izin, masih bisa diurus?<b>\nBisa, selama peruntukan lahannya sesuai rencana tata ruang. Yang tidak bisa dilegalkan adalah bangunan yang berdiri di zona yang memang tidak diperuntukkan untuk fungsi tersebut.",
+      "<b>Kenapa berkas saya berkali-kali dikembalikan?<b>\nPenyebab tersering bukan kesalahan input, melainkan rancangan yang melanggar ketentuan tata ruang — KDB, KLB, KDH, atau garis sempadan menurut KRK/KKPR. Selain itu, dokumen tidak lengkap dan data yang tidak sinkron antara berkas dengan isian sistem.",
+      "<b>As-built drawing beda dengan kondisi lapangan, bagaimana?<b>\nIni kasus paling umum pada bangunan yang pernah direnovasi tanpa dokumentasi. Solusinya survei ulang dan penyusunan as-built drawing baru, sebelum pemeriksaan kelaikan fungsi dijalankan."
+    ],
+    "content_zh": [
+      "建筑许可是动工前的许可——确认设计方案符合技术标准。适用性证书是建筑落成后的证书——确认建筑确实适合使用。两者并非二选一，而是先后衔接的两个阶段。\n我已持有旧版营造许可（IMB），是否必须换成建筑许可？\n不必。在《2021年第16号政府条例》施行前核发的营造许可继续有效，无需转换。建筑许可适用于新建建筑，或发生加层、扩建、结构变更等情形时。",
+      "房屋翻修需要办建筑许可吗？\n视翻修性质而定。改变结构或增加建筑面积须申请变更建筑许可。粉刷、修补漏雨屋顶、更换瓷砖等不涉及结构的轻度维护，通常无需办理。",
+      "泗水办建筑许可，走SSW还是SIMBG？\n建筑许可与适用性证书经SIMBG核发——这是《2021年第16号政府条例》规定的全国性系统。SSW负责提供前置条件：通过税务对象编号核验土地与建筑税是否结清、城市规划说明书，以及空间利用适宜性文件。",
+      "适用性证书的有效期是多久？\n独栋住宅及联排住宅为20年；其他建筑为5年——商铺、办公楼、仓库、厂房、酒店、学校、医院皆属此类。延期前必须重新进行适用性检验，并非单纯更新文件。",
+      "办理适用性证书要多少钱？\n证书本身的核发不收取费用。需要付费的是持证技术评估人员执行适用性检验的服务，费用取决于建筑面积、功能与复杂程度。",
+      "建筑许可的规费是多少？\n按建筑面积、功能指数及各地方条例规定的单价计算，由系统自动核定后缴入地方公库。由于依据地方条例，各城市数额不同——泗水的具体金额建议通过SIMBG的模拟功能直接查询。",
+      "没有建筑许可或适用性证书会有什么处罚？\n《2021年第16号政府条例》规定了分级行政处罚：书面警告、罚款、限制使用活动、暂时或永久停止使用，直至拆除建筑物。",
+      "已经先建好了，还能补办吗？\n可以，前提是用地性质符合空间规划。无法合法化的是建在本就不允许该用途的分区内的建筑。",
+      "为什么我的材料被反复退回？\n最常见的原因并非填报失误，而是设计方案违反空间规划规定——城市规划说明书或空间适宜性文件所定的建筑密度、容积率、绿地率或退线要求。其次是文件不齐，以及材料内容与系统填报数据不一致。",
+      "竣工图与现场情况不符，怎么办？\n这是翻修未留存记录的建筑最常见的情形。解决办法是重新测绘、编制新的竣工图，之后再进行适用性检验。"
+    ]
+  },
+  {
     "slug": "slf-dan-standar-teknis-yang-wajib-dipenuhi",
     "title": "SLF dan Standar Teknis yang Wajib Dipenuhi",
     "title_zh": "适用性证书（SLF）及须满足的技术标准",
