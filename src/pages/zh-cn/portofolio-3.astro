@@ -1,0 +1,67 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import portfolio3Data from "../../data/portfolio3.json";
+
+const items = (portfolio3Data as any[]).filter((p) => !p.suspended);
+---
+<Layout
+  title="项目案例 | Ester Globalindo"
+  description="Ester Globalindo 在东爪哇处理的 PBG 和 SLF 建筑许可证项目案例。"
+  path="/zh-cn/portofolio-3"
+>
+  <!-- HERO -->
+  <section class="border-b border-line bg-[#5b7ec5] text-paper">
+    <div class="blueprint-grid">
+      <div class="mx-auto max-w-6xl px-5 py-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/90">项目案例</p>
+        <h1 class="mt-2 max-w-2xl text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
+          我们已完成的项目
+        </h1>
+        <p class="mt-4 max-w-xl font-body text-paper/90 leading-relaxed">
+          客户的信任是我们最大的成就。以下是我们已成功完成的部分 PBG 和 SLF 许可证办理项目。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIST -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-4xl px-5 py-16">
+      {items.length === 0 ? (
+        <p class="text-center font-body text-slate py-20">暂无项目展示。</p>
+      ) : (
+        <div class="space-y-10">
+          {items.map((p: any) => (
+            <article class="border-b border-line pb-10 last:border-b-0 last:pb-0">
+              {p.foto && (
+                <div class="mb-6 overflow-hidden rounded-sm border-2 border-line">
+                  <img
+                    src={p.foto}
+                    alt={p.fotoAlt || p.jenis_zh || p.jenis}
+                    class="h-64 w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h2 class="font-display text-2xl font-bold text-ink">{p.jenis_zh || p.jenis}</h2>
+                {p.luas && (
+                  <span class="font-mono text-sm text-slate">· {p.luas}</span>
+                )}
+              </div>
+              <p class="mt-1 font-mono text-xs uppercase tracking-wider text-slate">
+                {p.lokasi_zh || p.lokasi}{p.tahun ? ` · ${p.tahun}` : ''}
+              </p>
+              {(p.narasi_zh || p.narasi) && (
+                <p class="mt-4 font-body text-sm leading-relaxed text-slate">{p.narasi_zh || p.narasi}</p>
+              )}
+              {(p.hasil_zh || p.hasil) && (
+                <p class="mt-4 font-body text-sm font-bold text-ink">→ {p.hasil_zh || p.hasil}</p>
+              )}
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
