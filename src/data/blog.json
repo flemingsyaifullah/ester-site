@@ -1,5 +1,26 @@
 [
   {
+    "slug": "slf-dan-standar-teknis-yang-wajib-dipenuhi",
+    "title": "SLF dan Standar Teknis yang Wajib Dipenuhi",
+    "title_zh": "适用性证书（SLF）及须满足的技术标准",
+    "excerpt": "Sertifikat Laik Fungsi Bangunan Gedung (SLF) adalah sertifikat yang diterbitkan pemerintah daerah untuk menyatakan kelaikan fungsi bangunan gedung sebelum dapat dimanfaatkan, sebagaimana diatur dalam Pasal 1 angka 18 PP Nomor 16 Tahun 2021. ",
+    "excerpt_zh": "建筑物适用性证书（SLF）是由地方政府核发的证书，用以确认建筑物在投入使用前已达到适用标准，其定义载于《2021年第16号政府条例》第1条第18项。",
+    "date": "2026-07-18",
+    "readTime": "3 menit baca",
+    "content": [
+      "Sertifikat Laik Fungsi Bangunan Gedung (SLF) adalah sertifikat yang diterbitkan pemerintah daerah untuk menyatakan kelaikan fungsi bangunan gedung sebelum dapat dimanfaatkan, sebagaimana diatur dalam Pasal 1 angka 18 PP Nomor 16 Tahun 2021. Jika PBG adalah izin di tahap perencanaan — memastikan rancangan sudah memenuhi standar sebelum konstruksi dimulai — maka SLF adalah pemeriksaan di ujung proses: memastikan bangunan yang benar-benar berdiri sudah aman dan layak digunakan. Keduanya bukan pengganti satu sama lain, melainkan dua tahap dalam satu rangkaian.",
+      "Pemeriksaan kelaikan fungsi mencakup empat aspek yang sama dengan standar teknis bangunan gedung: keselamatan, kesehatan, kenyamanan, dan kemudahan. Dalam praktik audit, hal ini diterjemahkan menjadi pemeriksaan kelaikan struktur, instalasi listrik, sistem pencegahan kebakaran, hingga ketersediaan aksesibilitas. Untuk bangunan yang sudah berdiri, pemeriksaan dilakukan oleh pengkaji teknis bersertifikat — bisa berupa penyedia jasa, atau tenaga internal pemilik yang bersertifikat pengkajian teknis. Dokumen kuncinya adalah gambar bangunan terbangun (as-built drawing) yang sesuai kondisi lapangan, disertai laporan pengkajian teknis di bidang struktur, arsitektur, dan MEP.",
+      "Hasil pemeriksaan berupa surat pernyataan kelaikan fungsi yang ditandatangani penanggung jawab pengkajian teknis, dan/atau rekomendasi apabila bangunan dinyatakan belum laik fungsi. Seluruh proses diajukan melalui SIMBG, dan penerbitan SLF dilaksanakan paling lama tiga hari kerja sejak surat pernyataan kelaikan fungsi diunggah. Satu hal yang kerap tidak diketahui pemilik bangunan: SLF diterbitkan tanpa dipungut biaya — yang berbiaya adalah jasa pengkaji teknisnya, bukan sertifikatnya.",
+      "SLF juga punya masa berlaku dan wajib diperpanjang: 20 tahun untuk rumah tinggal tunggal dan deret, serta 5 tahun untuk bangunan gedung lainnya seperti ruko, kantor, pabrik, hotel, sekolah, dan rumah sakit. Perpanjangan selalu didahului pemeriksaan kelaikan fungsi ulang, sehingga bukan sekadar pembaruan dokumen melainkan mekanisme pengawasan berkala. Konsekuensi mengabaikannya nyata: PP 16/2021 mengatur sanksi administratif berupa peringatan tertulis, denda, pembatasan kegiatan pemanfaatan, penghentian sementara atau tetap pemanfaatan, hingga pembongkaran bangunan gedung."
+    ],
+    "content_zh": [
+      "建筑物适用性证书（SLF）是由地方政府核发的证书，用以确认建筑物在投入使用前已达到适用标准，其定义载于《2021年第16号政府条例》第1条第18项。如果说建筑许可（PBG）是规划阶段的许可——确保设计方案在动工前已符合标准——那么SLF就是流程末端的查验：确认实际建成的建筑安全且适合使用。两者并非互相替代，而是同一链条上的两个阶段。",
+      "适用性检验涵盖与建筑技术标准相同的四个方面：安全、健康、舒适、便利。落实到审核实务中，这体现为对结构适用性、电气装置、消防系统直至无障碍设施的逐项查验。对已建成的建筑，检验由持证技术评估人员执行——可以是外部服务提供方，也可以是业主自有的持证技术评估人员。核心文件是与现场情况相符的竣工图，并附结构、建筑及机电给排水三个专业的技术评估报告。",
+      "检验结果表现为由技术评估负责人签署的适用性声明书；若建筑被判定尚未达到适用标准，则出具整改建议。全部流程通过SIMBG系统提交，证书须在适用性声明书上传后最长三个工作日内核发。有一点许多业主并不知晓：SLF的核发不收取任何费用——需要付费的是技术评估服务，而非证书本身。",
+      "SLF设有有效期并须办理延期：独栋住宅及联排住宅为20年，商铺、办公楼、厂房、酒店、学校、医院等其他建筑为5年。延期前必须重新进行适用性检验，因此这并非单纯的文件更新，而是一项周期性监管机制。忽视的后果十分具体：该条例规定了行政处罚，包括书面警告、罚款、限制使用活动、暂时或永久停止使用，直至拆除建筑物。"
+    ]
+  },
+  {
     "slug": "mengenal-pbg-dan-standar-teknis-yang-wajib-dipenuhi",
     "title": "Mengenal PBG dan Standar Teknis yang Wajib Dipenuhi",
     "title_zh": "认识建筑许可（PBG）及通过SIMBG系统须满足的技术标准",
