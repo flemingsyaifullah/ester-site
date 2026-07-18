@@ -27,41 +27,37 @@ const items = (portfolio3Data as any[]).filter((p) => !p.suspended);
   <!-- LIST -->
   <section class="bg-paper">
     <div class="mx-auto max-w-4xl px-5 py-16">
-      {items.length === 0 ? (
-        <p class="text-center font-body text-slate py-20">暂无项目展示。</p>
-      ) : (
-        <div class="space-y-10">
-          {items.map((p: any) => (
-            <article class="border-b border-line pb-10 last:border-b-0 last:pb-0">
-              {p.foto && (
-                <div class="mb-6 overflow-hidden rounded-sm border-2 border-line">
-                  <img
-                    src={p.foto}
-                    alt={p.fotoAlt || p.jenis_zh || p.jenis}
-                    class="h-64 w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h2 class="font-display text-2xl font-bold text-ink">{p.jenis_zh || p.jenis}</h2>
-                {p.luas && (
-                  <span class="font-mono text-sm text-slate">· {p.luas}</span>
-                )}
+      <div class="space-y-8">
+        {items.map((p: any) => (
+          <article class="rounded-sm border border-ink p-6">
+            {p.foto && (
+              <div class="mb-6 overflow-hidden rounded-sm border border-line">
+                <img
+                  src={p.foto}
+                  alt={p.fotoAlt || p.jenis_zh || p.jenis}
+                  class="h-64 w-full object-cover"
+                  loading="lazy"
+                />
               </div>
-              <p class="mt-1 font-mono text-xs uppercase tracking-wider text-slate">
-                {p.lokasi_zh || p.lokasi}{p.tahun ? ` · ${p.tahun}` : ''}
-              </p>
-              {(p.narasi_zh || p.narasi) && (
-                <p class="mt-4 font-body text-sm leading-relaxed text-slate">{p.narasi_zh || p.narasi}</p>
+            )}
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h2 class="font-body text-base font-bold text-ink">{p.jenis_zh || p.jenis}</h2>
+              {p.luas && (
+                <span class="font-body text-sm text-slate">· {p.luas}</span>
               )}
-              {(p.hasil_zh || p.hasil) && (
-                <p class="mt-4 font-body text-sm font-bold text-ink">→ {p.hasil_zh || p.hasil}</p>
-              )}
-            </article>
-          ))}
-        </div>
-      )}
+            </div>
+            <p class="mt-1 font-mono text-xs uppercase tracking-wider text-slate">
+              {p.lokasi_zh || p.lokasi}{p.tahun ? ` · ${p.tahun}` : ''}
+            </p>
+            {(p.narasi_zh || p.narasi) && (
+              <p class="mt-4 font-body text-sm leading-relaxed text-slate">{p.narasi_zh || p.narasi}</p>
+            )}
+            {(p.hasil_zh || p.hasil) && (
+              <p class="mt-4 font-body text-sm text-ink">{p.hasil_zh || p.hasil}</p>
+            )}
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>
