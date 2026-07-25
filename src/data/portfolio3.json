@@ -16,14 +16,14 @@
   {
     "id": "pabrik-tembakau-1784418568351",
     "suspended": false,
-    "jenis": "Pabrik Tembakau",
-    "jenis_zh": "烟草厂",
-    "luas": "2100",
-    "tahun": "2026",
-    "lokasi": "Mojokerto, Jawa Timur",
-    "lokasi_zh": "Mojokerto, Jawa Timur",
-    "narasi": "Pembuatan izin operasioanal pabrik dan site map",
-    "narasi_zh": "工厂运营许可证办理与厂区总平面图编制",
+    "jenis": "Gedung Perkantoran ",
+    "jenis_zh": "办公楼",
+    "luas": "3500 m² ",
+    "tahun": "2022",
+    "lokasi": "Surabaya, Jawa Timur",
+    "lokasi_zh": "泗水，东爪哇",
+    "narasi": "Problem : Kelebihan KDB, kekurangan KDH, tidak ada RTH",
+    "narasi_zh": "问题 : 建筑基底系数（KDB）超标，绿地基底系数（KDH）不足，缺乏绿地开放空间（RTH）",
     "hasil": "SLF terbit, berlaku 5 tahun",
     "hasil_zh": "SLF已颁发，有效期为5年"
   }
