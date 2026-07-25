@@ -96,5 +96,19 @@
     "narasi_zh": "建筑基底系数（KDB）超标，绿地基底系数（KDH）不足",
     "hasil": "SLF Tebit → berlaku 5 tahun ",
     "hasil_zh": "SLF 已核发 → 有效期 5 年"
+  },
+  {
+    "id": "pabrik-industri-logam-1784986981164",
+    "suspended": false,
+    "jenis": "Pabrik Industri Logam ",
+    "jenis_zh": "",
+    "luas": "10.000 m²",
+    "tahun": "2026",
+    "lokasi": "Mojokerto",
+    "lokasi_zh": "莫佐克托",
+    "narasi": "Sudah ada IMB, kelebihan KDB ",
+    "narasi_zh": "已有 IMB，建筑基底系数（KDB）超标",
+    "hasil": "",
+    "hasil_zh": "SLF 已核发 → 有效期 5 年"
   }
 ]
