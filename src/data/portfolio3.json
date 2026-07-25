@@ -26,5 +26,19 @@
     "narasi_zh": "问题 : 建筑基底系数（KDB）超标，绿地基底系数（KDH）不足，缺乏绿地开放空间（RTH）",
     "hasil": "SLF terbit, berlaku 5 tahun",
     "hasil_zh": "SLF已颁发，有效期为5年"
+  },
+  {
+    "id": "rumah-tinggal-1784984095027",
+    "suspended": false,
+    "jenis": "Rumah Tinggal ",
+    "jenis_zh": "独栋住宅",
+    "luas": "150 m² ",
+    "tahun": "2023",
+    "lokasi": "Kota Surabaya ",
+    "lokasi_zh": "泗水市",
+    "narasi": "Problem : pengurusan dari nol ",
+    "narasi_zh": "问题：从零开始办理",
+    "hasil": "PBG Terbit",
+    "hasil_zh": "PBG 已核发"
   }
 ]
