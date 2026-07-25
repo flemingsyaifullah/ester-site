@@ -40,5 +40,19 @@
     "narasi_zh": "问题：从零开始办理",
     "hasil": "PBG Terbit",
     "hasil_zh": "PBG 已核发"
+  },
+  {
+    "id": "pabrik-manufaktur-1784985320142",
+    "suspended": false,
+    "jenis": "Pabrik Manufaktur ",
+    "jenis_zh": "制造工厂",
+    "luas": "2500 m²",
+    "tahun": "2023",
+    "lokasi": "Kabupaten Pasuruan ",
+    "lokasi_zh": "巴苏鲁安县",
+    "narasi": "Pengurusan tanah yang belum PBG, satu hamparan (kRK) ada yang sudah SLF ",
+    "narasi_zh": "办理尚未取得 PBG 的土地；同一整片地块（KRK）中，部分已取得 SLF",
+    "hasil": "PBG Terbit",
+    "hasil_zh": "PBG 已核发"
   }
 ]
