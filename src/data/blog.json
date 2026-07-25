@@ -1,5 +1,24 @@
 [
   {
+    "slug": "kota-industri-wajib-tertib-izin-panduan-urus-pbg-dan-slf-di-gresik",
+    "title": "Kota Industri Wajib Tertib Izin: Panduan Urus PBG dan SLF di Gresik",
+    "title_zh": "工业城市更须证照规范：格雷西克 PBG 与 SLF 办理指南",
+    "excerpt": "Sebagai salah satu pusat industri terbesar di Jawa Timur, Gresik terus dipadati pembangunan pabrik, gudang, dan bangunan komersial. Di balik geliat itu, dua dokumen menjadi syarat mutlak legalitas bangunan: Persetujuan Bangunan Gedung (PBG) sebelum membangun, dan Sertifikat Laik Fungsi (SLF) setelah bangunan berdiri.",
+    "excerpt_zh": "作为东爪哇最大的工业中心之一，格雷西克（Gresik）的厂房、仓库与商业建筑建设持续密集。在这股热潮背后，两份文件是建筑合法性的硬性前提：动工前的建筑许可证（PBG），以及建成后的适用功能证书（SLF）。如今全部办理均通过公共工程部管理的建筑管理信息系统（SIMBG）进行，由格雷西克县 DPMPTSP 审核材料完整性，公共工程部门（PUPR）核定并出具规费。",
+    "date": "2026-07-25",
+    "readTime": "3 menit baca",
+    "content": [
+      "Sebagai salah satu pusat industri terbesar di Jawa Timur, Gresik terus dipadati pembangunan pabrik, gudang, dan bangunan komersial. Di balik geliat itu, dua dokumen menjadi syarat mutlak legalitas bangunan: Persetujuan Bangunan Gedung (PBG) sebelum membangun, dan Sertifikat Laik Fungsi (SLF) setelah bangunan berdiri. Seluruh penyelenggaraannya kini dilakukan melalui Sistem Informasi Manajemen Bangunan Gedung (SIMBG) yang dikelola Kementerian PU, dengan DPMPTSP Kabupaten Gresik memeriksa kelengkapan dokumen dan Dinas PUPR menerbitkan ketetapan retribusi.",
+      "PBG diurus sebelum konstruksi dimulai. Dokumen administratifnya mencakup KTP pemohon (perorangan) atau NIB dan akta perusahaan (badan usaha), NPWP, bukti kepemilikan tanah (SHM/SHGB/HPL/AJB), Keterangan Rencana Kota (KRK)/IPPT yang masih berlaku, serta surat kuasa bila dikuasakan ke konsultan. Untuk syarat teknis, wajib dilampirkan dokumen rencana teknis — gambar arsitektur, struktur, dan MEP — yang disiapkan tenaga ahli bersertifikat. Alur umumnya: ajukan lewat OSS RBA untuk memperoleh NIB, lalu ajukan PBG secara online di SIMBG dengan mengunggah dokumen; setelah verifikasi, Dinas PUPR menerbitkan SKRD sebagai dasar pembayaran retribusi.",
+      "SLF diurus setelah konstruksi selesai sebagai bukti bangunan laik dan aman dioperasikan — sangat krusial bagi pabrik dan gudang di Gresik yang menyangkut keselamatan pekerja. Syaratnya meliputi PBG atau IMB beserta bukti bayar retribusi, serta dokumen lingkungan sesuai ketentuan seperti AMDAL, Andalalin, UKL/UPL, atau SPPL, ditambah as-built drawing, spesifikasi teknis terbangun, hasil uji utilitas, dan laporan pengkajian teknis oleh pengkaji teknis ber-SKK. Menariknya, berbeda dengan PBG yang punya retribusi berdasarkan luas dan fungsi, pengajuan SLF tidak dikenakan retribusi pemerintah karena fokusnya pada keselamatan publik."
+    ],
+    "content_zh": [
+      "作为东爪哇最大的工业中心之一，格雷西克（Gresik）的厂房、仓库与商业建筑建设持续密集。在这股热潮背后，两份文件是建筑合法性的硬性前提：动工前的建筑许可证（PBG），以及建成后的适用功能证书（SLF）。如今全部办理均通过公共工程部管理的建筑管理信息系统（SIMBG）进行，由格雷西克县 DPMPTSP 审核材料完整性，公共工程部门（PUPR）核定并出具规费。",
+      "PBG 须在动工前办理。行政材料包括 申请人身份证（个人）或企业营业基础号（NIB）及公司章程（企业）、税号（NPWP）、土地权属证明（SHM/SHGB/HPL/买卖契约），仍在有效期内的城市规划说明书（KRK）/IPPT，以及委托顾问办理时的授权书。技术材料方面，须附由持证专业人员编制的技术方案——建筑、结构与机电（MEP）图纸。一般流程为：先通过 OSS RBA 取得 NIB，再在 SIMBG 在线提交 PBG 并上传文件；审核通过后，PUPR 出具 SKRD 作为缴纳规费的依据。 ",
+      "SLF 在施工完成后办理，用以证明建筑适用且可安全使用——这对涉及工人安全的格雷西克厂房与仓库尤为关键。所需材料包括 PBG 或 IMB 及其缴费凭证，以及按规定提供的环境文件，如 AMDAL、Andalalin、UKL/UPL 或 SPPL， 另加竣工图、建成技术规格、设施检测结果，以及由持 SKK 的技术评估师出具的技术评估报告。值得注意的是，与按面积和功能计收规费的 PBG 不同，SLF 的申请不征收政府规费，因其重点在于公共安全。"
+    ]
+  },
+  {
     "slug": "wajib-tahu-sebelum-bangun-di-surabaya-syarat-lengkap-pbg-dan-slf-lewat-ssw",
     "title": "Wajib Tahu Sebelum Bangun di Surabaya: Syarat Lengkap PBG dan SLF Lewat SSW",
     "title_zh": "泗水动工前必读：通过 SSW 办理 PBG 与 SLF 的完整材料清单",
