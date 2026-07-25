@@ -68,5 +68,19 @@
     "narasi_zh": "从零开始办理 PBG 与 SLF",
     "hasil": "PBG & SLF Terbit ",
     "hasil_zh": "PBG 与 SLF 已核发"
+  },
+  {
+    "id": "gudang-1784986172498",
+    "suspended": false,
+    "jenis": "Gudang ",
+    "jenis_zh": "仓库",
+    "luas": "m²",
+    "tahun": "2025",
+    "lokasi": "Sidoarjo",
+    "lokasi_zh": "西多阿佐",
+    "narasi": "Pengurusan dari Nol ",
+    "narasi_zh": "从零开始办理",
+    "hasil": "PBG & SLF Terbit",
+    "hasil_zh": "PBG 与 SLF 已核发"
   }
 ]
