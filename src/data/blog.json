@@ -1,5 +1,28 @@
 [
   {
+    "slug": "lima-aturan-penentu-sebelum-membangun-mengenal-gsb-gss-gsp-kdb-dan-kdh",
+    "title": "Lima Aturan Penentu Sebelum Membangun: Mengenal GSB, GSS, GSP, KDB, dan KDH",
+    "title_zh": "动工前的五项关键规定：认识 GSB、GSS、GSP、KDB 与 KDH",
+    "excerpt": "Banyak orang mengira izin membangun cukup berurusan dengan luas tanah dan desain. Padahal, sebelum satu batu bata pun dipasang, ada lima ketentuan tata ruang yang diam-diam menentukan seberapa jauh, seberapa besar, dan seberapa padat sebuah bangunan boleh berdiri: GSB, GSS, GSP, KDB, dan KDH. Mengabaikannya bukan perkara sepele — mulai dari Persetujuan Bangunan Gedung (PBG) yang ditolak, bangunan disegel, hingga perintah bongkar paksa.",
+    "excerpt_zh": "许多人以为申请建筑许可只需关注土地面积和设计。然而，在第一块砖砌上之前，有五项空间规划规定早已悄然决定一座建筑可以退多远、建多大、盖多密：GSB、GSS、GSP、KDB 和 KDH。忽视它们绝非小事——轻则建筑许可证（PBG）被驳回，重则建筑被查封，甚至被勒令强制拆除。",
+    "date": "2026-07-25",
+    "readTime": "3 menit baca",
+    "content": [
+      "Banyak orang mengira izin membangun cukup berurusan dengan luas tanah dan desain. Padahal, sebelum satu batu bata pun dipasang, ada lima ketentuan tata ruang yang diam-diam menentukan seberapa jauh, seberapa besar, dan seberapa padat sebuah bangunan boleh berdiri: GSB, GSS, GSP, KDB, dan KDH. Mengabaikannya bukan perkara sepele — mulai dari Persetujuan Bangunan Gedung (PBG) yang ditolak, bangunan disegel, hingga perintah bongkar paksa.",
+      "Tiga yang pertama berbentuk \"garis batas\". Garis Sempadan Bangunan (GSB) mengatur jarak mundur minimal bangunan dari tepi jalan atau batas persil, dan berakar pada Undang-Undang Nomor 28 Tahun 2002 tentang Bangunan Gedung. Garis Sempadan Sungai (GSS) mengatur jarak aman terhadap sungai; sesuai Peraturan Menteri PUPR Nomor 28 Tahun 2015, sungai bertanggul di perkotaan disempadani minimal 3 meter dari kaki tanggul, sementara sungai tak bertanggul di perkotaan berjarak 10 meter untuk kedalaman sampai 3 meter, 15 meter untuk kedalaman 3–20 meter, dan 30 meter untuk kedalaman di atas 20 meter. Adapun Garis Sempadan Pagar (GSP) membatasi posisi pagar terhadap batas lahan dan jalan, dengan besaran yang ditetapkan lewat peraturan daerah masing-masing.",
+      "Dua sisanya berupa \"angka koefisien\". Koefisien Dasar Bangunan (KDB) membatasi persentase lahan yang boleh tertutup bangunan — misalnya KDB 60 persen berarti maksimal 60 persen lahan yang boleh dibangun, sementara 40 persen sisanya wajib terbuka. Koefisien Dasar Hijau (KDH) menetapkan porsi minimal ruang terbuka hijau untuk resapan air. Nilai KDB dan KDH tidak seragam; keduanya ditetapkan melalui Rencana Detail Tata Ruang (RDTR) tiap daerah sesuai peruntukan zonanya, dengan landasan Undang-Undang Nomor 28 Tahun 2002 dan Peraturan Pemerintah Nomor 16 Tahun 2021.",
+      "Kelima ketentuan ini bukan sekadar formalitas teknis. GSB dan GSP menjaga keteraturan serta ruang publik di tepi jalan; GSS melindungi fungsi sungai sebagai jalur air dan mencegah banjir; sedangkan KDB dan KDH memastikan tersedianya area resapan agar kawasan tidak tergenang. Semuanya diverifikasi ketika pemilik mengajukan PBG melalui Sistem Informasi Manajemen Bangunan Gedung (SIMBG). Pelanggarannya dikenai sanksi berjenjang, mulai peringatan tertulis, penghentian pembangunan, hingga pembongkaran bagian yang menyalahi aturan.",
+      "Kesimpulannya sederhana: sebelum membangun, periksa lebih dulu zonasi dan nilai GSB, GSS, GSP, KDB, serta KDH pada RDTR setempat, lalu tuangkan secara akurat dalam site plan. Langkah ini jauh lebih murah dan aman ketimbang merombak — atau bahkan meratakan — bangunan yang sudah telanjur berdiri. Bila ragu, menggandeng konsultan tata ruang sejak awal dapat membantu memastikan rencana teknis lolos verifikasi dinas dan izin terbit tanpa hambatan."
+    ],
+    "content_zh": [
+      "许多人以为申请建筑许可只需关注土地面积和设计。然而，在第一块砖砌上之前，有五项空间规划规定早已悄然决定一座建筑可以退多远、建多大、盖多密：GSB、GSS、GSP、KDB 和 KDH。忽视它们绝非小事——轻则建筑许可证（PBG）被驳回，重则建筑被查封，甚至被勒令强制拆除。",
+      "前三项是\"界线\"。建筑退界线（GSB）规定建筑物相对于道路或地块边界的最小退让距离，其依据为 2002 年第 28 号《建筑物法》。河岸退界线（GSS）规定与河流的安全距离；根据 公共工程与住房部 2015 年第 28 号条例，城区内有堤河流须自堤脚起至少退让 3 米，而城区内无堤河流则依深度而定：深度不超过 3 米者退 10 米，深度 3 至 20 米者退 15 米，深度超过 20 米者退 30 米。至于围墙退界线（GSP），则限定围墙相对于地块与道路的位置，其数值由各地方条例确定。",
+      "后两项是\"系数\"。建筑基底系数（KDB）限制被建筑覆盖的用地比例——例如 KDB 为 60% 意味着最多只能建满六成用地，其余 40% 必须保持开放。绿地基底系数（KDH）则规定用于雨水下渗的绿色开放空间最低占比。KDB 与 KDH 的数值并不统一，均由各地详细空间规划（RDTR）依分区用途确定，并以 2002 年第 28 号法律及 2021 年第 16 号政府条例为法律依据。",
+      "这五项规定绝非单纯的技术形式。GSB 与 GSP 维护道路沿线的秩序与公共空间；GSS 保护河流的行洪功能、预防洪涝；而 KDB 与 KDH 则确保留有下渗区，使区域免于积水。业主通过建筑管理信息系统（SIMBG）申请 PBG 时，这些指标都会被逐一核验。违规将面临递进式处罚：从书面警告、勒令停工，直至拆除违规部分。",
+      "结论很简单：动工之前，先在当地 RDTR 中核实分区规划及 GSB、GSS、GSP、KDB、KDH 的数值，并准确落实到场地平面图中。这远比事后拆改——甚至铲平——已建成的建筑更省钱、更稳妥。若心中存疑，从一开始就聘请空间规划顾问协助，有助于确保技术方案通过主管部门审核、许可顺利核发。"
+    ]
+  },
+  {
     "slug": "apa-bedanya-pbg-dan-slf",
     "title": "Apa bedanya PBG dan SLF?",
     "title_zh": "常见问题：泗水的建筑许可（PBG）与适用性证书（SLF）",
