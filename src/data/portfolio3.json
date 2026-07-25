@@ -54,5 +54,19 @@
     "narasi_zh": "办理尚未取得 PBG 的土地；同一整片地块（KRK）中，部分已取得 SLF",
     "hasil": "PBG Terbit",
     "hasil_zh": "PBG 已核发"
+  },
+  {
+    "id": "pabrik-industri-air-mineral-1784985906884",
+    "suspended": false,
+    "jenis": "Pabrik Industri air Mineral ",
+    "jenis_zh": "矿泉水厂",
+    "luas": "12.000 m²",
+    "tahun": "2024",
+    "lokasi": "Kabupaten Pasuruan ",
+    "lokasi_zh": "巴苏鲁安县",
+    "narasi": "Pengurusan dari nol PBG & SLF ",
+    "narasi_zh": "从零开始办理 PBG 与 SLF",
+    "hasil": "PBG & SLF Terbit ",
+    "hasil_zh": "PBG 与 SLF 已核发"
   }
 ]
