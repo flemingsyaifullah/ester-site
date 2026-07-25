@@ -20,5 +20,18 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      // Fix #1: Exclude admin panel from sitemap (security + SEO)
+      filter: (page) => !page.includes('/admin-tz-7360/'),
+      // Fix #2: Strip trailing slashes to match canonical URLs (no trailing slash)
+      serialize(item) {
+        const url = new URL(item.url);
+        if (url.pathname !== '/') {
+          item.url = item.url.replace(/\/$/, '');
+        }
+        return item;
+      }
+    })
+  ]
 });

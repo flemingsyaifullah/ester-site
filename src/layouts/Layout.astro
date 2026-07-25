@@ -10,9 +10,10 @@ export interface Props {
   title: string;
   description: string;
   path?: string;
+  noindex?: boolean;
 }
 
-let { title, description, path = Astro.url.pathname } = Astro.props;
+let { title, description, path = Astro.url.pathname, noindex = false } = Astro.props;
 path = path.replace(/\/$/, "") || "/";
 const siteUrl = "https://www.ester-globalindo.com";
 const canonical = new URL(path, siteUrl).toString();
@@ -35,6 +36,7 @@ const ogLocale = lang === 'zh-cn' ? 'zh_CN' : 'id_ID';
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
 
     <meta property="og:type" content="website" />
