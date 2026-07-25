@@ -82,5 +82,19 @@
     "narasi_zh": "从零开始办理",
     "hasil": "PBG & SLF Terbit",
     "hasil_zh": "PBG 与 SLF 已核发"
+  },
+  {
+    "id": "industri-manufaktur-1784986746692",
+    "suspended": false,
+    "jenis": "Industri Manufaktur",
+    "jenis_zh": "制造工厂",
+    "luas": "5000 m²",
+    "tahun": "",
+    "lokasi": "Kabupaten Mojokerto ",
+    "lokasi_zh": "莫佐克托县",
+    "narasi": "Kelebihan KDB dan kekurangan KDH ",
+    "narasi_zh": "建筑基底系数（KDB）超标，绿地基底系数（KDH）不足",
+    "hasil": "SLF Tebit → berlaku 5 tahun ",
+    "hasil_zh": "SLF 已核发 → 有效期 5 年"
   }
 ]
