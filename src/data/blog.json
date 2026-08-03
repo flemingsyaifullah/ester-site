@@ -1,5 +1,28 @@
 [
   {
+    "slug": "menghitung-disinsentif-tata-ruang-kabupaten-mojokerto-panduan-dan-contoh-sesuai-perbup-mojokerto-no-4-tahun-2026",
+    "title": "Menghitung Disinsentif Tata Ruang Kabupaten Mojokerto: Panduan dan Contoh Sesuai Perbup Mojokerto No. 4 Tahun 2026 ",
+    "title_zh": "版本（简体中文） 空间利用负向激励（Disinsentif）如何计算 莫佐克托县：依据2026年第4号莫佐克托县长条例及实例",
+    "excerpt": "Sejak 14 April 2026, Kabupaten Mojokerto memiliki aturan main yang jelas soal insentif dan disinsentif dalam pemanfaatan ruang, yaitu Peraturan Bupati Mojokerto Nomor 4 Tahun 2026. Bagi pemilik bangunan, bagian yang paling perlu dipahami adalah disinsentif berupa pengenaan kompensasi—semacam \"denda tata ruang\" yang dikenakan ketika bangunan melampaui ketentuan intensitas ruang seperti KDB, KLB, GSB, GSS, atau kekurangan KDH (ruang hijau) dibandingkan yang diwajibkan dalam KKPR/KRK.",
+    "excerpt_zh": "莫佐克托县, 自2026年4月14日起，莫佐克托县通过《2026年第4号县长条例》，为空间利用中的正向激励（insentif）与负向激励（disinsentif）确立了明确规则。对建筑业主而言，最需要理解的是以缴纳补偿金形式实施的负向激励——这是一种\"空间规划罚金\"，当建筑超出KDB（基底系数）、KLB（容积率）、GSB（建筑退线）、GSS（河岸退线）等空间强度规定，或绿化系数KDH低于KKPR/KRK所要求的标准时，即会被征收。",
+    "date": "2026-08-03",
+    "readTime": "3 menit baca",
+    "content": [
+      "Kabupaten Mojokerto, Sejak 14 April 2026, Kabupaten Mojokerto memiliki aturan main yang jelas soal insentif dan disinsentif dalam pemanfaatan ruang, yaitu Peraturan Bupati Mojokerto Nomor 4 Tahun 2026. Bagi pemilik bangunan, bagian yang paling perlu dipahami adalah disinsentif berupa pengenaan kompensasi—semacam \"denda tata ruang\" yang dikenakan ketika bangunan melampaui ketentuan intensitas ruang seperti KDB, KLB, GSB, GSS, atau kekurangan KDH (ruang hijau) dibandingkan yang diwajibkan dalam KKPR/KRK.",
+      "Perbup ini tidak sekadar mengancam sanksi, tetapi menyediakan rumus yang transparan. Untuk pelampauan KDB, KLB, GSB, atau GSS, kompensasi dihitung dengan rumus K = P × NJOP × Ik, di mana K adalah nilai kompensasi, P adalah luas pelampauan (dalam meter persegi), NJOP adalah Nilai Jual Objek Pajak lahan pada tahun berjalan, dan Ik adalah indeks kompensasi sesuai tipologi kawasan. Besaran indeks berbeda-beda: kawasan industri 0,5; permukiman perkotaan 0,4; permukiman perdesaan 0,3; sedangkan kawasan transportasi dan pariwisata masing-masing 0,4.",
+      "Agar lebih mudah dipahami, mari ikuti contoh yang tercantum dalam lampiran Perbup itu sendiri. Bayangkan sebuah lahan seluas 100 m² dengan KDB dasar 60% yang berada di kawasan permukiman perkotaan. Idealnya, luas lantai dasar bangunan hanya boleh 60 m² (100 m² × 60%). Namun kenyataannya bangunan berdiri seluas 70 m². Artinya, terjadi kelebihan luas terbangun sebesar 10 m² (70 m² − 60 m²)—inilah nilai P.",
+      "Selanjutnya, angka pelampauan itu dikalikan NJOP dan indeks kawasan. Dengan NJOP lahan Rp1.147.000 per meter dan indeks permukiman perkotaan 0,4, perhitungannya menjadi: 10 m² × Rp1.147.000 × 0,4 = Rp4.588.000. Jadi, pemilik bangunan tersebut wajib membayar kompensasi sekitar empat juta lima ratus delapan puluh delapan ribu rupiah. Bila pelanggaran KDB terjadi bersamaan dengan kekurangan KDH, kedua nilai kompensasi dijumlahkan sehingga totalnya bisa berlipat.",
+      "Yang penting diperhatikan, kompensasi ini bukan pembayaran sekali lalu selesai. Perbup menegaskan bahwa kompensasi atas pelanggaran KDB, KLB, GSB, GSS, atau KDH pada permukiman perumahan dibayarkan setiap tahun sampai pelanggarannya disesuaikan dengan ketentuan. Pembayaran dilakukan secara nontunai melalui Rekening Kas Umum Daerah, dan bukti pembayarannya kelak menjadi salah satu syarat dalam pemrosesan perizinan. Karena itu, langkah paling bijak sejak awal adalah mendesain bangunan yang taat KDB, KLB, GSB, dan KDH sesuai KRK—jauh lebih hemat daripada menanggung kompensasi berulang setiap tahun. Berkonsultasi dengan penyedia jasa perizinan yang memahami tata ruang akan membantu memastikan bangunan Anda berdiri legal sekaligus bebas dari beban disinsentif."
+    ],
+    "content_zh": [
+      "莫佐克托县, 自2026年4月14日起，莫佐克托县通过《2026年第4号县长条例》，为空间利用中的正向激励（insentif）与负向激励（disinsentif）确立了明确规则。对建筑业主而言，最需要理解的是以缴纳补偿金形式实施的负向激励——这是一种\"空间规划罚金\"，当建筑超出KDB（基底系数）、KLB（容积率）、GSB（建筑退线）、GSS（河岸退线）等空间强度规定，或绿化系数KDH低于KKPR/KRK所要求的标准时，即会被征收。",
+      "该条例不仅设定处罚，还提供了透明的计算公式。对于KDB、KLB、GSB或GSS的超标，补偿金按公式 K = P × NJOP × Ik 计算：K为补偿金额，P为超标面积（平方米），NJOP为当年地块的应税销售价值，Ik为按区域类型确定的补偿指数。各类区域指数不同：工业区为0.5；城市居住区为0.4；乡村居住区为0.3；交通区与旅游区则均为0.4。",
+      "为便于理解，我们参照条例附件中给出的实例。设想一块面积100平方米的地块，基础KDB为60%，位于城市居住区。理想情况下，建筑底层面积只能为60平方米（100×60%），但实际建成了70平方米。也就是说，超建面积为10平方米（70−60）——这就是P值。",
+      "接着，将该超标面积乘以NJOP和区域指数。以地块NJOP每平方米1,147,000印尼盾、城市居住区指数0.4计算：10 × 1,147,000 × 0.4 = 4,588,000印尼盾。因此，该业主须缴纳约458.8万印尼盾的补偿金。若KDB超标与KDH不足同时发生，两项补偿金将相加，总额可能成倍增加。",
+      "需要特别注意的是，这笔补偿金并非一次缴清即可了事。条例明确规定：对住宅区中KDB、KLB、GSB、GSS或KDH的违规，补偿金须每年缴纳，直至违规状态被整改至符合规定为止。缴款须通过地方公共财政账户（RKUD）以非现金方式进行，且缴款凭证日后将成为办理许可的必要条件之一。因此，最明智的做法是从一开始就按照KRK设计符合KDB、KLB、GSB和KDH规定的建筑——这远比每年反复承担补偿金要划算得多。委托熟悉空间规划的专业许可服务机构，将有助于确保您的建筑既合法，又免于负向激励的负担。"
+    ]
+  },
+  {
     "slug": "kota-industri-wajib-tertib-izin-panduan-urus-pbg-dan-slf-di-gresik",
     "title": "Kota Industri Wajib Tertib Izin: Panduan Urus PBG dan SLF di Gresik",
     "title_zh": "工业城市更须证照规范：格雷西克 PBG 与 SLF 办理指南",
