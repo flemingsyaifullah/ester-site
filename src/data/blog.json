@@ -1,5 +1,35 @@
 [
   {
+    "slug": "alur-dan-syarat-pengurusan-kkpr-penilaian-pkkpr-di-kabupaten-sidoarjo",
+    "title": "Alur dan Syarat Pengurusan KKPR Penilaian (PKKPR) di Kabupaten Sidoarjo",
+    "title_zh": "西多阿佐县 评估类 KKPR（PKKPR）办理流程与所需条件",
+    "excerpt": "Panduan ringkas menempuh Persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang saat lokasi usaha belum tercakup RDTR yang terintegrasi OSS.",
+    "excerpt_zh": "当经营地块尚未纳入已接入 OSS 的详细空间规划（RDTR）时，办理\"空间利用活动适配性批准（PKKPR）\"的简明指南。",
+    "date": "2026-08-07",
+    "readTime": "3 menit baca",
+    "content": [
+      "Panduan ringkas menempuh Persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang saat lokasi usaha belum tercakup RDTR yang terintegrasi OSS.",
+      "KKPR Penilaian (PKKPR) ditempuh ketika lokasi usaha belum tercakup Rencana Detail Tata Ruang (RDTR) yang telah terintegrasi ke sistem OSS. Karena zonasi digitalnya belum tersedia, kesesuaian lokasi dinilai secara manual terhadap Rencana Tata Ruang Wilayah (RTRW) yang berlaku — bila diperlukan melalui pembahasan Forum Penataan Ruang. Landasannya adalah PP No. 21 Tahun 2021, PP No. 5 Tahun 2021, dan Permen ATR/BPN No. 13 Tahun 2021. Di Kabupaten Sidoarjo, permohonan tetap diajukan melalui sistem OSS dan diproses bersama DPMPTSP setempat.",
+      "BAGAN ALUR PENGURUSAN :",
+      "1. Cek status RDTR lokasi\nPeriksa titik lokasi melalui RDTR Interaktif ATR/BPN. Bila bidang tanah belum masuk RDTR yang terintegrasi OSS, permohonan diarahkan ke jalur penilaian (PKKPR).",
+      "2. Ajukan permohonan di OSS\nMasukkan titik koordinat, luas tanah, dan kode KBLI. Lengkapi rencana jumlah lantai serta luas bangunan, lalu unggah bukti penguasaan tanah dan dokumen pendukung.",
+      "3. Berkas lengkap & bayar PNBP\nSetelah permohonan dinyatakan lengkap, sistem menerbitkan kode billing PNBP. Hitungan waktu penilaian baru berjalan setelah PNBP dibayar.",
+      "4. Penilaian dokumen terhadap RTRW\nDokumen dinilai kesesuaiannya terhadap rencana tata ruang, bila perlu dibahas dalam Forum Penataan Ruang. (Maksimal 20 hari kerja setelah dokumen sesuai dan benar, dihitung setelah pembayaran PNBP)",
+      "5. PKKPR terbit\nPersetujuan KKPR menjadi dasar melanjutkan perizinan berikutnya, seperti PBG dan SLF"
+    ],
+    "content_zh": [
+      "当经营地块尚未纳入已接入 OSS 的详细空间规划（RDTR）时，办理\"空间利用活动适配性批准（PKKPR）\"的简明指南。",
+      "评估类 KKPR（PKKPR）适用于经营地块尚未纳入已接入 OSS 系统的详细空间规划（RDTR）的情形。由于尚无数字化分区数据，须依据现行的区域空间规划（RTRW）对地块适配性进行人工评估——必要时通过空间规划论坛（FPR）审议。其法律依据为《2021 年第 21 号政府条例》《2021 年第 5 号政府条例》以及《2021 年 ATR/BPN 部长条例第 13 号》。在西多阿佐县，申请仍通过 OSS 系统提交，并由当地投资与一站式服务局（DPMPTSP）处理。",
+      "办理流程图 :",
+      "1\n查询地块 RDTR 状态\n通过 ATR/BPN 交互式 RDTR 查询地块位置。若地块尚未纳入已接入 OSS 的 RDTR，申请将转入评估路径（PKKPR）。",
+      "2\n在 OSS 提交申请\n录入坐标点、土地面积和 KBLI 代码；填写计划层数与建筑面积，随后上传土地权属证明及辅助文件。",
+      "3\n材料齐全并缴纳 PNBP\n申请被确认齐全后，系统出具 PNBP 缴费码。评估计时自缴费完成后方才开始。",
+      "4\n依据 RTRW 评估文件\n对文件与空间规划的适配性进行评估，必要时提交空间规划论坛审议。",
+      "最长 20 个工作日",
+      "5\nPKKPR 出具\n空间适配性批准是后续许可（如 PBG 与 SLF）的办理基础。"
+    ]
+  },
+  {
     "slug": "perbedaan-kkpr-otomatis-dan-kkpr-penilaian-ini-alur-lengkapnya",
     "title": "Perbedaan KKPR Otomatis dan KKPR Penilaian, Ini Alur Lengkapnya",
     "title_zh": "自动 KKPR 与 评估 KKPR 有何区别？办理流程全解析",
