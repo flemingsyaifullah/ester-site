@@ -346,6 +346,7 @@ try {
         <form id="blogForm" class="hidden" novalidate>
           <input type="hidden" id="blogSlug" name="slug" />
           <input type="hidden" id="blogIsNew" value="0" />
+          <input type="hidden" id="blogContentType" value="text" />
           
           <div class="grid gap-5">
             <div>
@@ -371,6 +372,22 @@ try {
               </div>
             </div>
             <div>
+              <!-- Mode Toggle -->
+              <div class="mb-3 flex items-center gap-3 rounded-sm border border-line bg-paper-dim px-4 py-3">
+                <span class="font-mono text-xs uppercase tracking-wider text-slate">Mode Konten (ID):</span>
+                <label class="flex cursor-pointer items-center gap-1.5">
+                  <input type="radio" id="blogModeText" name="blogMode" value="text" class="accent-blueprint" checked />
+                  <span class="font-mono text-xs text-ink">📝 Teks Biasa</span>
+                </label>
+                <label class="flex cursor-pointer items-center gap-1.5">
+                  <input type="radio" id="blogModeHtml" name="blogMode" value="html" class="accent-teal" />
+                  <span class="font-mono text-xs text-ink">💻 HTML Embed</span>
+                </label>
+              </div>
+              <!-- Hint text mode -->
+              <p id="blogHintText" class="mb-2 font-mono text-xs text-muted">Tulis artikel biasa. Pisahkan paragraf dengan baris kosong.</p>
+              <!-- Hint html mode (hidden by default) -->
+              <p id="blogHintHtml" class="mb-2 hidden font-mono text-xs text-teal">💡 Paste seluruh kode HTML dari Claude di sini (termasuk &lt;style&gt;). Jika ada versi ID dan ZH dalam satu kode, pisahkan pastenya ke kolom masing-masing.</p>
               <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ID)</label>
               <textarea id="blogContent" name="content" rows="8" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
               <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ZH)</label>
@@ -972,7 +989,18 @@ try {
     (document.getElementById('blogExcerptZh') as HTMLTextAreaElement).value = post?.excerpt_zh || '';
     (document.getElementById('blogDate') as HTMLInputElement).value = post?.date || new Date().toISOString().split('T')[0];
     (document.getElementById('blogReadTime') as HTMLInputElement).value = post?.readTime || '3 menit baca';
-    (document.getElementById('blogContent') as HTMLTextAreaElement).value = post?.content?.join('\n\n') || '';
+    const contentType = post?.content_type || 'text';
+    (document.getElementById('blogContentType') as HTMLInputElement).value = contentType;
+    // Set mode radio
+    (document.getElementById('blogModeText') as HTMLInputElement).checked = contentType !== 'html';
+    (document.getElementById('blogModeHtml') as HTMLInputElement).checked = contentType === 'html';
+    // Show/hide hints
+    document.getElementById('blogHintText')!.classList.toggle('hidden', contentType === 'html');
+    document.getElementById('blogHintHtml')!.classList.toggle('hidden', contentType !== 'html');
+    // If html mode, content is single item; if text, join with double newline
+    (document.getElementById('blogContent') as HTMLTextAreaElement).value = contentType === 'html'
+      ? (post?.content?.[0] || '')
+      : (post?.content?.join('\n\n') || '');
     (document.getElementById('blogContentZh') as HTMLTextAreaElement).value = post?.content_zh?.join('\n\n') || '';
     
     if (isNew) {
@@ -996,7 +1024,17 @@ try {
   newBlogBtn?.addEventListener('click', () => {
     renderBlogForm(null, true);
   });
-  
+
+  // Mode toggle listeners
+  document.querySelectorAll('input[name="blogMode"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      const val = (e.target as HTMLInputElement).value;
+      (document.getElementById('blogContentType') as HTMLInputElement).value = val;
+      document.getElementById('blogHintText')!.classList.toggle('hidden', val === 'html');
+      document.getElementById('blogHintHtml')!.classList.toggle('hidden', val !== 'html');
+    });
+  });
+
   async function submitBlogData(updatedBlogs: any[]) {
     saveBlogBtn.disabled = true;
     saveBlogBtn.textContent = 'Menyimpan...';
@@ -1043,6 +1081,9 @@ try {
       (document.getElementById('blogSlug') as HTMLInputElement).value = slug;
     }
     
+    const contentType = (document.getElementById('blogContentType') as HTMLInputElement).value;
+    const rawContent = (document.getElementById('blogContent') as HTMLTextAreaElement).value;
+    const rawContentZh = (document.getElementById('blogContentZh') as HTMLTextAreaElement).value;
     const newPost = {
       slug,
       title,
@@ -1051,8 +1092,12 @@ try {
       excerpt_zh: (document.getElementById('blogExcerptZh') as HTMLTextAreaElement).value,
       date: (document.getElementById('blogDate') as HTMLInputElement).value,
       readTime: (document.getElementById('blogReadTime') as HTMLInputElement).value,
-      content: (document.getElementById('blogContent') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter(p => p.trim() !== ''),
-      content_zh: (document.getElementById('blogContentZh') as HTMLTextAreaElement).value.split(/\n\s*\n/).filter(p => p.trim() !== '')
+      content_type: contentType,
+      // HTML mode: store as single-item array (no splitting). Text mode: split by blank lines.
+      content: contentType === 'html'
+        ? [rawContent.trim()]
+        : rawContent.split(/\n\s*\n/).filter(p => p.trim() !== ''),
+      content_zh: rawContentZh.split(/\n\s*\n/).filter(p => p.trim() !== '')
     };
     
     let newBlogsData = [...blogsData];
