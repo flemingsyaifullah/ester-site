@@ -74,6 +74,11 @@ src/
 ### 4. Internal Links MUST Use translatePath
 > All internal `<a href>` links in Header/Footer/Nav must use `translatePath(href)` from `i18n/utils.ts` to preserve the user's active language.
 
+### 5. Advanced SEO (Sitemap & Duplicate Content)
+> - **Sitemap (`astro.config.mjs`)**: MUST exclude `/admin-tz-7360/` via `filter` and strip trailing slashes via `serialize` to match canonical URLs perfectly.
+> - **Duplicate Portfolio Pages**: Older or alternative designs (e.g., `portofolio.astro`, `portofolio-2.astro`) MUST have `noindex={true}` in `<Layout>` to prevent duplicate content penalties. Only `portofolio-3.astro` is indexed.
+> - **NO ALIEN URLS**: Canonical, og:url, og:image, and JSON-LD MUST ALWAYS point exactly to `https://www.ester-globalindo.com`. Never to `jasaperizinan.id` or any other domain.
+
 ---
 
 ## 🔁 Content Pattern: Array-Based Page Content
