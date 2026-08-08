@@ -390,6 +390,9 @@ try {
               <p id="blogHintHtml" class="mb-2 hidden font-mono text-xs text-teal">💡 Paste seluruh kode HTML dari Claude di sini (termasuk &lt;style&gt;). Jika ada versi ID dan ZH dalam satu kode, pisahkan pastenya ke kolom masing-masing.</p>
               <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ID)</label>
               <textarea id="blogContent" name="content" rows="8" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <!-- ZH hint (shown/hidden same as ID mode) -->
+              <p id="blogHintTextZh" class="mb-2 font-mono text-xs text-muted">Tulis konten Mandarin biasa. Pisahkan paragraf dengan baris kosong.</p>
+              <p id="blogHintHtmlZh" class="mb-2 hidden font-mono text-xs text-teal">💡 Paste kode HTML versi Mandarin (ZH) dari Claude di sini.</p>
               <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ZH)</label>
               <textarea id="blogContentZh" name="content_zh" rows="8" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed"></textarea>
             </div>
@@ -1001,7 +1004,12 @@ try {
     (document.getElementById('blogContent') as HTMLTextAreaElement).value = contentType === 'html'
       ? (post?.content?.[0] || '')
       : (post?.content?.join('\n\n') || '');
-    (document.getElementById('blogContentZh') as HTMLTextAreaElement).value = post?.content_zh?.join('\n\n') || '';
+    (document.getElementById('blogContentZh') as HTMLTextAreaElement).value = contentType === 'html'
+      ? (post?.content_zh?.[0] || '')
+      : (post?.content_zh?.join('\n\n') || '');
+    // Sync ZH hints with same mode
+    document.getElementById('blogHintTextZh')!.classList.toggle('hidden', contentType === 'html');
+    document.getElementById('blogHintHtmlZh')!.classList.toggle('hidden', contentType !== 'html');
     
     if (isNew) {
       deleteBlogBtn.classList.add('hidden');
@@ -1030,8 +1038,12 @@ try {
     radio.addEventListener('change', (e) => {
       const val = (e.target as HTMLInputElement).value;
       (document.getElementById('blogContentType') as HTMLInputElement).value = val;
+      // Toggle ID hints
       document.getElementById('blogHintText')!.classList.toggle('hidden', val === 'html');
       document.getElementById('blogHintHtml')!.classList.toggle('hidden', val !== 'html');
+      // Toggle ZH hints
+      document.getElementById('blogHintTextZh')!.classList.toggle('hidden', val === 'html');
+      document.getElementById('blogHintHtmlZh')!.classList.toggle('hidden', val !== 'html');
     });
   });
 
@@ -1097,7 +1109,10 @@ try {
       content: contentType === 'html'
         ? [rawContent.trim()]
         : rawContent.split(/\n\s*\n/).filter(p => p.trim() !== ''),
-      content_zh: rawContentZh.split(/\n\s*\n/).filter(p => p.trim() !== '')
+      // ZH follows same mode as ID
+      content_zh: contentType === 'html'
+        ? (rawContentZh.trim() ? [rawContentZh.trim()] : [])
+        : rawContentZh.split(/\n\s*\n/).filter(p => p.trim() !== '')
     };
     
     let newBlogsData = [...blogsData];
