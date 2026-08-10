@@ -957,8 +957,8 @@ try {
   });
 </script>
 
-<script id="portfolioDataScript" type="application/json" set:html={JSON.stringify(proyekList)}></script>
-<script id="blogDataScript" type="application/json" set:html={JSON.stringify(blogs)}></script>
+<script id="portfolioDataScript" type="application/json" set:html={JSON.stringify(proyekList).replace(/<\//g, '<\/')}></script>
+<script id="blogDataScript" type="application/json" set:html={JSON.stringify(blogs).replace(/<\//g, '<\/')}></script>
 <script>
   /* ---- Blog JS ---- */
   let blogsData = [];
@@ -1136,7 +1136,7 @@ try {
   });
 </script>
 
-<script id="newsDataScript" type="application/json" set:html={JSON.stringify(newsItems)}></script>
+<script id="newsDataScript" type="application/json" set:html={JSON.stringify(newsItems).replace(/<\//g, '<\/')}></script>
 <script>
   /* ---- News JS ---- */
   let newsData = [];
@@ -1249,7 +1249,7 @@ try {
   });
 </script>
 
-<script id="logo2DataScript" type="application/json" set:html={JSON.stringify(logo2List)}></script>
+<script id="logo2DataScript" type="application/json" set:html={JSON.stringify(logo2List).replace(/<\//g, '<\/')}></script>
 <script>
   /* ---- Portfolio 2 JS ---- */
   let logo2Data: any[] = [];
@@ -1373,7 +1373,7 @@ try {
   document.querySelectorAll<HTMLElement>('.logo2-item').forEach(card => attachDeleteBtn(card));
 </script>
 
-<script id="p3DataScript" type="application/json" set:html={JSON.stringify(proyek3List)}></script>
+<script id="p3DataScript" type="application/json" set:html={JSON.stringify(proyek3List).replace(/<\//g, '<\/')}></script>
 <script>
   /* ---- Portfolio 3 JS ---- */
   let p3Data: any[] = [];
