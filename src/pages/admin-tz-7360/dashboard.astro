@@ -700,7 +700,7 @@ try {
   /* ---- Portfolio JS ---- */
   let portfolioData = [];
   try {
-    portfolioData = JSON.parse(document.getElementById('portfolioDataScript')?.textContent || '[]');
+    portfolioData = JSON.parse(document.getElementById('portfolioDataScript')?.getAttribute('data-json') || '[]');
   } catch(e) {}
 
   const portfolioSelect = document.getElementById('portfolioSelect') as HTMLSelectElement;
@@ -957,13 +957,13 @@ try {
   });
 </script>
 
-<script id="portfolioDataScript" type="application/json" set:html={JSON.stringify(proyekList).replace(/<\//g, '<\/')}></script>
-<script id="blogDataScript" type="application/json" set:html={JSON.stringify(blogs).replace(/<\//g, '<\/')}></script>
+<div id="portfolioDataScript" hidden data-json={JSON.stringify(proyekList)}></div>
+<div id="blogDataScript" hidden data-json={JSON.stringify(blogs)}></div>
 <script>
   /* ---- Blog JS ---- */
   let blogsData = [];
   try {
-    blogsData = JSON.parse(document.getElementById('blogDataScript')?.textContent || '[]');
+    blogsData = JSON.parse(document.getElementById('blogDataScript')?.getAttribute('data-json') || '[]');
   } catch(e) {}
   
   const blogSelect = document.getElementById('blogSelect') as HTMLSelectElement;
@@ -1136,12 +1136,12 @@ try {
   });
 </script>
 
-<script id="newsDataScript" type="application/json" set:html={JSON.stringify(newsItems).replace(/<\//g, '<\/')}></script>
+<div id="newsDataScript" hidden data-json={JSON.stringify(newsItems)}></div>
 <script>
   /* ---- News JS ---- */
   let newsData = [];
   try {
-    newsData = JSON.parse(document.getElementById('newsDataScript')?.textContent || '[]');
+    newsData = JSON.parse(document.getElementById('newsDataScript')?.getAttribute('data-json') || '[]');
   } catch(e) {}
 
   const newsSelect = document.getElementById('newsSelect') as HTMLSelectElement;
@@ -1249,12 +1249,12 @@ try {
   });
 </script>
 
-<script id="logo2DataScript" type="application/json" set:html={JSON.stringify(logo2List).replace(/<\//g, '<\/')}></script>
+<div id="logo2DataScript" hidden data-json={JSON.stringify(logo2List)}></div>
 <script>
   /* ---- Portfolio 2 JS ---- */
   let logo2Data: any[] = [];
   try {
-    logo2Data = JSON.parse(document.getElementById('logo2DataScript')?.textContent || '[]');
+    logo2Data = JSON.parse(document.getElementById('logo2DataScript')?.getAttribute('data-json') || '[]');
   } catch(e) {}
 
   const logo2Grid = document.getElementById('logo2Grid') as HTMLDivElement;
@@ -1373,12 +1373,12 @@ try {
   document.querySelectorAll<HTMLElement>('.logo2-item').forEach(card => attachDeleteBtn(card));
 </script>
 
-<script id="p3DataScript" type="application/json" set:html={JSON.stringify(proyek3List).replace(/<\//g, '<\/')}></script>
+<div id="p3DataScript" hidden data-json={JSON.stringify(proyek3List)}></div>
 <script>
   /* ---- Portfolio 3 JS ---- */
   let p3Data: any[] = [];
   try {
-    p3Data = JSON.parse(document.getElementById('p3DataScript')?.textContent || '[]');
+    p3Data = JSON.parse(document.getElementById('p3DataScript')?.getAttribute('data-json') || '[]');
   } catch(e) {}
 
   const p3Select = document.getElementById('p3Select') as HTMLSelectElement;
