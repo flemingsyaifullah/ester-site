@@ -393,7 +393,11 @@ try {
                 <p class="font-mono text-xs text-stamp mt-1">⛔ Jangan paste <strong class="text-ink">View Page Source</strong> dari browser — itu seluruh halaman website, bukan konten artikel.</p>
               </div>
               <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ID)</label>
-              <textarea id="blogContent" name="content" rows="8" class="mb-3 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <textarea id="blogContent" name="content" rows="8" class="mb-1 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed" required></textarea>
+              <div id="blogContentWarn" class="hidden mb-3 rounded border border-red-400 bg-red-50 px-3 py-2">
+                <p class="font-mono text-xs font-bold text-red-600">⛔ PERINGATAN: Konten ini berisi full halaman HTML!</p>
+                <p class="font-mono text-xs text-red-500 mt-1">Hapus semua bagian <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;body&gt;</code> — paste hanya konten artikel saja (paragraf, heading, list, dll).</p>
+              </div>
               <!-- ZH hint (shown/hidden same as ID mode) -->
               <p id="blogHintTextZh" class="mb-2 font-mono text-xs text-muted">Tulis konten Mandarin biasa. Pisahkan paragraf dengan baris kosong.</p>
               <div id="blogHintHtmlZh" class="mb-2 hidden rounded border border-teal/30 bg-teal/5 px-3 py-2">
@@ -402,7 +406,11 @@ try {
                 <p class="font-mono text-xs text-stamp mt-1">⛔ Jangan paste View Page Source dari browser.</p>
               </div>
               <label class="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate">Konten (ZH)</label>
-              <textarea id="blogContentZh" name="content_zh" rows="8" class="w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed"></textarea>
+              <textarea id="blogContentZh" name="content_zh" rows="8" class="mb-1 w-full rounded-sm border-2 border-line bg-paper-dim px-4 py-2.5 font-body text-sm text-ink outline-none focus:border-blueprint resize-y leading-relaxed"></textarea>
+              <div id="blogContentZhWarn" class="hidden mb-3 rounded border border-red-400 bg-red-50 px-3 py-2">
+                <p class="font-mono text-xs font-bold text-red-600">⛔ PERINGATAN: Konten ZH ini berisi full halaman HTML!</p>
+                <p class="font-mono text-xs text-red-500 mt-1">Hapus semua bagian <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;body&gt;</code> — paste hanya konten artikel versi Mandarin saja.</p>
+              </div>
             </div>
           </div>
           
@@ -990,6 +998,23 @@ try {
       .replace(/-+$/, '');
   }
 
+  // ---- Full HTML page detection ----
+  function isFullHtmlPage(val: string): boolean {
+    const t = val.trim().toLowerCase();
+    return t.startsWith('<!doctype') || t.startsWith('<html') || t.includes('</html>');
+  }
+  function checkFullHtml(textareaId: string, warnId: string) {
+    const ta = document.getElementById(textareaId) as HTMLTextAreaElement;
+    const warn = document.getElementById(warnId) as HTMLElement;
+    if (!ta || !warn) return;
+    const isFull = isFullHtmlPage(ta.value);
+    warn.classList.toggle('hidden', !isFull);
+    ta.classList.toggle('border-red-400', isFull);
+    ta.classList.toggle('border-line', !isFull);
+  }
+  document.getElementById('blogContent')?.addEventListener('input', () => checkFullHtml('blogContent', 'blogContentWarn'));
+  document.getElementById('blogContentZh')?.addEventListener('input', () => checkFullHtml('blogContentZh', 'blogContentZhWarn'));
+
   function renderBlogForm(post: any, isNew: boolean) {
     blogForm.classList.remove('hidden');
     (document.getElementById('blogIsNew') as HTMLInputElement).value = isNew ? '1' : '0';
@@ -1018,6 +1043,9 @@ try {
     // Sync ZH hints with same mode
     document.getElementById('blogHintTextZh')!.classList.toggle('hidden', contentType === 'html');
     document.getElementById('blogHintHtmlZh')!.classList.toggle('hidden', contentType !== 'html');
+    // Check for full HTML page content on load
+    checkFullHtml('blogContent', 'blogContentWarn');
+    checkFullHtml('blogContentZh', 'blogContentZhWarn');
     
     if (isNew) {
       deleteBlogBtn.classList.add('hidden');

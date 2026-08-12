@@ -16,6 +16,16 @@ const content = (post as any).content_zh || post.content;
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent(`您好，我刚读了 "${title}" 这篇文章，想进一步咨询。`);
 const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+
+// Strip full HTML boilerplate — ambil <style> dari <head> + isi <body> saja
+function processContent(para: string): string {
+  const t = para.trim();
+  if (!t.toLowerCase().startsWith('<!doctype') && !t.toLowerCase().startsWith('<html')) return para;
+  const styleBlocks = [...t.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map(m => m[1]).join('\n');
+  const bodyMatch = t.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const body = bodyMatch ? bodyMatch[1] : t;
+  return styleBlocks ? `<style>${styleBlocks}</style>${body}` : body;
+}
 ---
 <Layout
   title={`${title} | Ester Globalindo`}
@@ -39,7 +49,7 @@ const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
       <div class="space-y-5">
         {content.map((para: string) => (
           para.trim().startsWith('<') ? (
-            <div set:html={para} />
+            <div set:html={processContent(para)} />
           ) : (
             <p class="font-body text-base leading-relaxed text-ink">{para}</p>
           )
