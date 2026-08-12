@@ -12,7 +12,8 @@ export function getStaticPaths() {
 const { post } = Astro.props;
 const title = (post as any).title_zh || post.title;
 const excerpt = (post as any).excerpt_zh || post.excerpt;
-const content = (post as any).content_zh || post.content;
+const contentZh = (post as any).content_zh;
+const content = (contentZh && contentZh.length > 0) ? contentZh : post.content;
 const waNumber = "6282230027878";
 const waMsg = encodeURIComponent(`您好，我刚读了 "${title}" 这篇文章，想进一步咨询。`);
 const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
