@@ -23,7 +23,7 @@ function isFullHtmlPage(para: string): boolean {
 function buildSrcdoc(para: string): string {
   const t = para.trim();
   const tl = t.toLowerCase();
-  const noScroll = '<style>html{overflow:hidden}</style>';
+  const noScroll = '<style>html::-webkit-scrollbar{display:none}html{scrollbar-width:none}</style>';
   if (tl.startsWith('<!doctype') || tl.startsWith('<html')) {
     return t.replace(/<\/head>/i, `${noScroll}</head>`);
   }
