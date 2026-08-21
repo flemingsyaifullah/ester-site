@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../layouts/Layout.astro";
 import posts from "../../data/blog.json";
 
@@ -14,24 +14,25 @@ const waNumber = "6282230027878";
 const waMsg = encodeURIComponent(`Halo, saya baru baca artikel "${post.title}" dan ingin konsultasi lebih lanjut.`);
 const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-// Detect if content is a full standalone HTML page (CSS would leak into main page)
 function isFullHtmlPage(para: string): boolean {
   const tl = para.trim().toLowerCase();
   return tl.startsWith('<!doctype') || tl.startsWith('<html')
     || tl.includes('</body>') || tl.includes('</html>');
 }
 
-// Build a proper full HTML document for srcdoc iframe
 function buildSrcdoc(para: string): string {
   const t = para.trim();
   const tl = t.toLowerCase();
-  if (tl.startsWith('<!doctype') || tl.startsWith('<html')) return t;
+  const noScroll = '<style>html{overflow:hidden}</style>';
+  if (tl.startsWith('<!doctype') || tl.startsWith('<html')) {
+    return t.replace(/<\/head>/i, `${noScroll}</head>`);
+  }
   const styleTags = [...t.matchAll(/<style[^>]*>[\s\S]*?<\/style>/gi)].map(m => m[0]).join('');
   const linkTags  = [...t.matchAll(/<link[^>]*>/gi)].map(m => m[0]).join('');
   const bodyMatch = t.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   const body = bodyMatch ? bodyMatch[1]
     : t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
-  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">${linkTags}${styleTags}</head><body>${body}</body></html>`;
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">${linkTags}${styleTags}${noScroll}</head><body>${body}</body></html>`;
 }
 ---
 <Layout
@@ -45,32 +46,30 @@ function buildSrcdoc(para: string): string {
         <div class="mx-auto max-w-3xl px-5 py-14">
           <a href="/blog" class="font-mono text-xs uppercase tracking-wider text-paper/90 hover:text-white">&larr; Kembali ke Artikel</a>
           <p class="mt-4 font-mono text-xs uppercase tracking-wider text-paper/90">
-            {new Date(post.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })} · {post.readTime}
+            {new Date(post.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })} &middot; {post.readTime}
           </p>
           <h1 class="mt-2 text-balance font-display text-3xl font-bold leading-tight sm:text-4xl">{post.title}</h1>
         </div>
       </div>
     </div>
 
-    <div class="mx-auto max-w-3xl px-5 py-14">
-      <div class="space-y-5">
-        {post.content.map((para) => (
-          isFullHtmlPage(para) ? (
-            <iframe
-              srcdoc={buildSrcdoc(para)}
-              class="art-iframe w-full border-0 rounded-sm"
-              style="min-height:600px"
-              title="Konten artikel"
-              loading="lazy"
-            />
-          ) : para.trim().startsWith('<') ? (
-            <div set:html={para} />
-          ) : (
-            <p class="font-body text-base leading-relaxed text-ink">{para}</p>
-          )
-        ))}
-      </div>
-    </div>
+    {post.content.map((para) => (
+      isFullHtmlPage(para) ? (
+        <iframe
+          srcdoc={buildSrcdoc(para)}
+          class="art-iframe w-full border-0 block"
+          scrolling="no"
+          style="min-height:900px;display:block"
+          title="Konten artikel"
+        />
+      ) : para.trim().startsWith('<') ? (
+        <div class="mx-auto max-w-3xl px-5 py-5">
+          <div set:html={para} />
+        </div>
+      ) : (
+        <p class="mx-auto max-w-3xl px-5 py-2 font-body text-base leading-relaxed text-ink">{para}</p>
+      )
+    ))}
   </article>
 
   <section class="border-t border-line bg-paper">
@@ -88,14 +87,19 @@ function buildSrcdoc(para: string): string {
 </Layout>
 
 <script>
-  // Auto-resize iframes to fit their content height
+  function resizeIframe(iframe: HTMLIFrameElement) {
+    try {
+      const h = iframe.contentDocument?.documentElement?.scrollHeight
+        || iframe.contentDocument?.body?.scrollHeight;
+      if (h && h > 100) iframe.style.height = h + 'px';
+    } catch (_) {}
+  }
   document.querySelectorAll('iframe.art-iframe').forEach((el) => {
     const iframe = el as HTMLIFrameElement;
     iframe.addEventListener('load', () => {
-      try {
-        const h = iframe.contentDocument?.body?.scrollHeight;
-        if (h) iframe.style.height = (h + 48) + 'px';
-      } catch (_) {}
+      resizeIframe(iframe);
+      setTimeout(() => resizeIframe(iframe), 800);
+      setTimeout(() => resizeIframe(iframe), 2000);
     });
   });
 </script>
