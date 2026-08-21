@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import posts from "../../data/blog.json";
 
@@ -20,19 +20,24 @@ function isFullHtmlPage(para: string): boolean {
     || tl.includes('</body>') || tl.includes('</html>');
 }
 
-function buildSrcdoc(para: string): string {
+function processContent(para: string): string {
   const t = para.trim();
-  const tl = t.toLowerCase();
-  const noScroll = '<style>html::-webkit-scrollbar{display:none}html{scrollbar-width:none}</style>';
-  if (tl.startsWith('<!doctype') || tl.startsWith('<html')) {
-    return t.replace(/<\/head>/i, `${noScroll}</head>`);
-  }
-  const styleTags = [...t.matchAll(/<style[^>]*>[\s\S]*?<\/style>/gi)].map(m => m[0]).join('');
-  const linkTags  = [...t.matchAll(/<link[^>]*>/gi)].map(m => m[0]).join('');
+  
+  // Extract all <style> blocks and scope :root to :host, and body to .shadow-body
+  const styleTags = [...t.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map(m => {
+    let css = m[1];
+    css = css.replace(/:root/gi, ':host');
+    css = css.replace(/\bbody\s*\{/gi, '.shadow-body {');
+    return `<style>${css}</style>`;
+  }).join('');
+  
+  const linkTags = [...t.matchAll(/<link[^>]*>/gi)].map(m => m[0]).join('');
+  
+  // Extract <body> inner content
   const bodyMatch = t.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  const body = bodyMatch ? bodyMatch[1]
-    : t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
-  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">${linkTags}${styleTags}${noScroll}</head><body>${body}</body></html>`;
+  let body = bodyMatch ? bodyMatch[1] : t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
+  
+  return `${linkTags}${styleTags}<div class="shadow-body">${body}</div>`;
 }
 ---
 <Layout
@@ -55,13 +60,11 @@ function buildSrcdoc(para: string): string {
 
     {post.content.map((para) => (
       isFullHtmlPage(para) ? (
-        <iframe
-          srcdoc={buildSrcdoc(para)}
-          class="art-iframe w-full border-0 block"
-          scrolling="no"
-          style="min-height:900px;display:block"
-          title="Konten artikel"
-        />
+        <shadow-article class="block w-full">
+          <template>
+            <div set:html={processContent(para)} />
+          </template>
+        </shadow-article>
       ) : para.trim().startsWith('<') ? (
         <div class="mx-auto max-w-3xl px-5 py-5">
           <div set:html={para} />
@@ -87,19 +90,18 @@ function buildSrcdoc(para: string): string {
 </Layout>
 
 <script>
-  function resizeIframe(iframe: HTMLIFrameElement) {
-    try {
-      const h = iframe.contentDocument?.documentElement?.scrollHeight
-        || iframe.contentDocument?.body?.scrollHeight;
-      if (h && h > 100) iframe.style.height = h + 'px';
-    } catch (_) {}
+  class ShadowArticle extends HTMLElement {
+    connectedCallback() {
+      if (!this.shadowRoot) {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const template = this.querySelector('template');
+        if (template) {
+          shadow.appendChild(template.content.cloneNode(true));
+        }
+      }
+    }
   }
-  document.querySelectorAll('iframe.art-iframe').forEach((el) => {
-    const iframe = el as HTMLIFrameElement;
-    iframe.addEventListener('load', () => {
-      resizeIframe(iframe);
-      setTimeout(() => resizeIframe(iframe), 800);
-      setTimeout(() => resizeIframe(iframe), 2000);
-    });
-  });
+  if (!customElements.get('shadow-article')) {
+    customElements.define('shadow-article', ShadowArticle);
+  }
 </script>
