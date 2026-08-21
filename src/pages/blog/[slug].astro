@@ -14,26 +14,24 @@ const waNumber = "6282230027878";
 const waMsg = encodeURIComponent(`Halo, saya baru baca artikel "${post.title}" dan ingin konsultasi lebih lanjut.`);
 const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-// Strip full HTML boilerplate — ambil <style> + isi <body> saja
-function processContent(para: string): string {
+// Detect if content is a full standalone HTML page (CSS would leak into main page)
+function isFullHtmlPage(para: string): boolean {
+  const tl = para.trim().toLowerCase();
+  return tl.startsWith('<!doctype') || tl.startsWith('<html')
+    || tl.includes('</body>') || tl.includes('</html>');
+}
+
+// Build a proper full HTML document for srcdoc iframe
+function buildSrcdoc(para: string): string {
   const t = para.trim();
   const tl = t.toLowerCase();
-  // Detect full HTML page: starts with <!doctype/<html, OR contains </body>/</html>
-  const isFullPage = tl.startsWith('<!doctype') || tl.startsWith('<html')
-    || tl.includes('</body>') || tl.includes('</html>');
-  if (!isFullPage) return para;
-  // Extract all <style> blocks
-  const styleBlocks = [...t.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map(m => m[1]).join('\n');
-  // Extract <body> inner content
+  if (tl.startsWith('<!doctype') || tl.startsWith('<html')) return t;
+  const styleTags = [...t.matchAll(/<style[^>]*>[\s\S]*?<\/style>/gi)].map(m => m[0]).join('');
+  const linkTags  = [...t.matchAll(/<link[^>]*>/gi)].map(m => m[0]).join('');
   const bodyMatch = t.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  let body: string;
-  if (bodyMatch) {
-    body = bodyMatch[1];
-  } else {
-    // No <body> tag — strip <link> and <style> tags, keep the rest
-    body = t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
-  }
-  return styleBlocks ? `<style>${styleBlocks}</style>${body}` : body;
+  const body = bodyMatch ? bodyMatch[1]
+    : t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">${linkTags}${styleTags}</head><body>${body}</body></html>`;
 }
 ---
 <Layout
@@ -57,14 +55,21 @@ function processContent(para: string): string {
     <div class="mx-auto max-w-3xl px-5 py-14">
       <div class="space-y-5">
         {post.content.map((para) => (
-          para.trim().startsWith('<') ? (
-            <div set:html={processContent(para)} />
+          isFullHtmlPage(para) ? (
+            <iframe
+              srcdoc={buildSrcdoc(para)}
+              class="art-iframe w-full border-0 rounded-sm"
+              style="min-height:600px"
+              title="Konten artikel"
+              loading="lazy"
+            />
+          ) : para.trim().startsWith('<') ? (
+            <div set:html={para} />
           ) : (
             <p class="font-body text-base leading-relaxed text-ink">{para}</p>
           )
         ))}
       </div>
-
     </div>
   </article>
 
@@ -81,3 +86,16 @@ function processContent(para: string): string {
     </div>
   </section>
 </Layout>
+
+<script>
+  // Auto-resize iframes to fit their content height
+  document.querySelectorAll('iframe.art-iframe').forEach((el) => {
+    const iframe = el as HTMLIFrameElement;
+    iframe.addEventListener('load', () => {
+      try {
+        const h = iframe.contentDocument?.body?.scrollHeight;
+        if (h) iframe.style.height = (h + 48) + 'px';
+      } catch (_) {}
+    });
+  });
+</script>
