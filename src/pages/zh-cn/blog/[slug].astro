@@ -18,13 +18,21 @@ const waNumber = "6282230027878";
 const waMsg = encodeURIComponent(`您好，我刚读了 "${title}" 这篇文章，想进一步咨询。`);
 const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-// Strip full HTML boilerplate — ambil <style> dari <head> + isi <body> saja
+// Strip full HTML boilerplate — ambil <style> + isi <body> saja
 function processContent(para: string): string {
   const t = para.trim();
-  if (!t.toLowerCase().startsWith('<!doctype') && !t.toLowerCase().startsWith('<html')) return para;
+  const tl = t.toLowerCase();
+  const isFullPage = tl.startsWith('<!doctype') || tl.startsWith('<html')
+    || tl.includes('</body>') || tl.includes('</html>');
+  if (!isFullPage) return para;
   const styleBlocks = [...t.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map(m => m[1]).join('\n');
   const bodyMatch = t.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  const body = bodyMatch ? bodyMatch[1] : t;
+  let body: string;
+  if (bodyMatch) {
+    body = bodyMatch[1];
+  } else {
+    body = t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
+  }
   return styleBlocks ? `<style>${styleBlocks}</style>${body}` : body;
 }
 ---

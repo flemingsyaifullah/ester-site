@@ -14,15 +14,25 @@ const waNumber = "6282230027878";
 const waMsg = encodeURIComponent(`Halo, saya baru baca artikel "${post.title}" dan ingin konsultasi lebih lanjut.`);
 const lainnya = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-// Strip full HTML boilerplate — ambil <style> dari <head> + isi <body> saja
+// Strip full HTML boilerplate — ambil <style> + isi <body> saja
 function processContent(para: string): string {
   const t = para.trim();
-  if (!t.toLowerCase().startsWith('<!doctype') && !t.toLowerCase().startsWith('<html')) return para;
-  // Extract all <style> blocks from <head>
+  const tl = t.toLowerCase();
+  // Detect full HTML page: starts with <!doctype/<html, OR contains </body>/</html>
+  const isFullPage = tl.startsWith('<!doctype') || tl.startsWith('<html')
+    || tl.includes('</body>') || tl.includes('</html>');
+  if (!isFullPage) return para;
+  // Extract all <style> blocks
   const styleBlocks = [...t.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map(m => m[1]).join('\n');
   // Extract <body> inner content
   const bodyMatch = t.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  const body = bodyMatch ? bodyMatch[1] : t;
+  let body: string;
+  if (bodyMatch) {
+    body = bodyMatch[1];
+  } else {
+    // No <body> tag — strip <link> and <style> tags, keep the rest
+    body = t.replace(/<link[^>]*>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').trim();
+  }
   return styleBlocks ? `<style>${styleBlocks}</style>${body}` : body;
 }
 ---
